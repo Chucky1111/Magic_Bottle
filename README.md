@@ -2,6 +2,8 @@
   <img src="picture\mmmm_.jpg" alt="Project Logo" style="max-width: 100%; width: 220px;">
 </div>
 
+**Chinese Documentation:** [README_zh.md](README_zh.md) · [![中文文档](https://img.shields.io/badge/文档-中文版-blue)](README_zh.md)
+
 ## What are Magic Bottles?
 
 Magic Bottles are structured personality prompts for AI agents. Each bottle defines a unique character, worldview, and behavioral pattern that an AI can embody. They serve as "character classes" or "archetypes" for AI interaction, providing rich, nuanced personality traits that go beyond simple role‑playing.
