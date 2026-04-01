@@ -109,6 +109,17 @@ This project is released under the **CC0 1.0 Universal (Public Domain Dedication
 
 You can copy, modify, distribute, and perform the work, even for commercial purposes, all without asking permission. For more details, see [https://creativecommons.org/publicdomain/zero/1.0/](https://creativecommons.org/publicdomain/zero/1.0/).
 
+## Copyright and Notarization Statement
+## Blockchain Notarization
+This project has been notarized on the blockchain via Yidiancun (ZhiXinChain).
+File hash for numbers 1-101 (SHA-256):
+`30375cad90061f08471b6378c29c6aa0b06fb90c3064b362f6a020df75b03e21`
+
+File hash for numbers 102-111 (SHA-256):
+`30375cad90061f08471b6378c29c6aa0b06fb90c3064b362f6a020df75b03e21`
+
+> Others can upload files and compare hashes via the above link to verify that this work has not been tampered with.
+
 ## Acknowledgments
 
 - Translation contributors

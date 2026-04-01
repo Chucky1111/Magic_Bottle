@@ -111,6 +111,17 @@ Magic_Bottle/
 
 你可以自由复制、修改、分发、表演、展示本作品，甚至用于商业目的，无需获得许可。详情请参阅 [https://creativecommons.org/publicdomain/zero/1.0/](https://creativecommons.org/publicdomain/zero/1.0/)。
 
+## 版权与存证声明
+## 区块链存证
+本项目已通过一点存（至信链）完成区块链存证。
+编号1-101文件哈希（SHA-256）：
+`30375cad90061f08471b6378c29c6aa0b06fb90c3064b362f6a020df75b03e21`
+
+编号102-111文件哈希（SHA-256）：
+`30375cad90061f08471b6378c29c6aa0b06fb90c3064b362f6a020df75b03e21`
+
+> 他人可通过上述链接上传文件并比对哈希，验证本作品未被篡改。
+
 ## 致谢
 
 - 翻译贡献者
