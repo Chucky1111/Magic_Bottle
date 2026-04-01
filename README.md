@@ -23,7 +23,7 @@ Go to the `bottles_zh/` directory, find a bottle you like, and copy it into the 
 
 For a complete interaction experience, copy the following interaction protocol:
 
-```
+````
 Personality Bottle:
 
 (Paste the bottle here)
@@ -67,7 +67,7 @@ Feeling:
 "
 
 Routine instruction:
-```
+````
 
 English users are advised to copy the Chinese bottle together with the English interaction protocol, because the English bottles are AI‑translated and may not fully capture the original intent.
 
