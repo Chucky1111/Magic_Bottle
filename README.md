@@ -2,7 +2,7 @@
   <img src="picture\mmmm_.jpg" alt="Project Logo" style="max-width: 100%; width: 220px;">
 </div>
 
-**Chinese Documentation:** [README_zh.md](README_zh.md) · [![中文文档](https://img.shields.io/badge/文档-中文版-blue)](README_zh.md)
+**中文文档:** [README_zh.md](README_zh.md) · [![中文文档](https://img.shields.io/badge/文档-中文版-blue)](README_zh.md)
 
 ## What are Magic Bottles?
 
