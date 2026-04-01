@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>访问修饰符：幽灵社会的边界 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：幽灵社会的不同区域：公共广场（public）、家庭区域（private）、受保护的花园（protected） -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>访问修饰符：幽灵社会的边界</h1>
+    <div class="phantom-note">幽灵观察：public是幽灵在公共广场的显现，所有人都能看到。private是幽灵在密室中的秘密，只有自己知道。protected是幽灵家族的传承，只传给后代。</div>
+    <div class="phantom-note">设计原则：默认使用private，只在必要时放宽访问。这保护了内部实现，让类更容易维护和修改。</div>
+    <section><p>访问修饰符定义幽灵社会的边界：public（谁都可以访问）、private（只有自己可以访问）、protected（自己和后代可以访问）。这是封装的核心。</p></section>
+    <section>
+      <h3>控制访问边界</h3>
+      <pre><code>// 访问修饰符示例
+class Ghost {
+  // public: 所有人都可以访问（默认）
+  public name: string;
+  // private: 只有这个类内部可以访问
+  private secret: string;
+  // protected: 这个类和子类可以访问
+  protected age: number;
+  constructor(name: string, secret: string, age: number) {
+    this.name = name;
+    this.secret = secret;
+    this.age = age;
+  }
+  // public方法：外部可以调用
+  public appear() {
+    console.log(`${this.name} appears!`);
+    this.revealSecret(); // 内部可以调用private方法
+  }
+  // private方法：只有内部可以调用
+  private revealSecret() {
+    console.log(`My secret is: ${this.secret}`);
+  }
+  // protected方法：内部和子类可以调用
+  protected getFormattedAge() {
+    return `${this.age} years old`;
+  }
+}
+const casper = new Ghost("卡斯珀", "害怕黑暗", 150);
+// 访问public成员
+console.log(casper.name); // "卡斯珀"
+casper.appear();          // "卡斯珀 appears!" 然后 "My secret is: 害怕黑暗"
+// 不能访问private成员
+// console.log(casper.secret); // 错误！secret是private
+// casper.revealSecret();      // 错误！revealSecret是private
+// 不能访问protected成员
+// console.log(casper.age);    // 错误！age是protected
+// 子类可以访问protected成员
+class FriendlyGhost extends Ghost {
+  introduce() {
+    console.log(`I'm ${this.name}, ${this.getFormattedAge()}`);
+    // 可以访问protected的age和getFormattedAge()
+    // 但不能访问private的secret和revealSecret()
+  }
+}
+const friendly = new FriendlyGhost("友好的幽灵", "喜欢帮助人", 100);
+friendly.introduce(); // "I'm 友好的幽灵, 100 years old"</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "glass-ball-game",
+  "version": "1.0.0",
+  "description": "玻璃球游戏 - 基于Canvas的物理模拟游戏",
+  "module": "src/main.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run build && bun run serve",
+    "build": "bun build ./src/main.ts --outdir ./public --target browser",
+    "serve": "bunx serve ./public",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf ./public/*.js ./public/*.map"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  },
+  "keywords": ["game", "canvas", "physics", "glass", "simulation"],
+  "author": "Glass Ball Game Team",
+  "license": "MIT"
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>实用工具类型：内置的幽灵工具 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：一组发光的工具在虚空中漂浮，每个工具都能以特定方式变形或操作类型 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>实用工具类型：内置的幽灵工具</h1>
+    <div class="phantom-note">幽灵观察：实用工具类型是幽灵世界的自然法则。Partial让幽灵部分显现，Readonly让幽灵固定形态，Pick让幽灵只显现特定部分。</div>
+    <div class="phantom-note">记忆技巧：不需要记住所有工具类型。记住常用的几个（Partial, Readonly, Pick, Omit），其他的在需要时查阅文档。</div>
+    <section><p>TypeScript提供了一组内置的工具类型，就像幽灵工具箱里的特殊工具。不需要自己制造这些工具，直接使用它们。</p></section>
+    <section>
+      <h3>内置类型工具</h3>
+      <pre><code>// Partial&lt;T&gt;：所有属性变为可选
+interface Ghost {
+  name: string;
+  age: number;
+  location: string;
+}
+type PartialGhost = Partial&lt;Ghost&gt;;
+// 相当于 { name?: string; age?: number; location?: string; }
+// 用于更新函数
+function updateGhost(ghost: Ghost, updates: Partial&lt;Ghost&gt;): Ghost {
+  return { ...ghost, ...updates };
+}
+// Readonly&lt;T&gt;：所有属性变为只读
+type ImmutableGhost = Readonly&lt;Ghost&gt;;
+// 相当于 { readonly name: string; readonly age: number; ... }
+// Pick&lt;T, K&gt;：选择特定属性
+type GhostIdentity = Pick&lt;Ghost, 'name' | 'age'&gt;;
+// 相当于 { name: string; age: number; }
+// Omit&lt;T, K&gt;：排除特定属性
+type GhostWithoutAge = Omit&lt;Ghost, 'age'&gt;;
+// 相当于 { name: string; location: string; }
+// Record&lt;K, T&gt;：创建键值映射
+type GhostRegistry = Record&lt;string, Ghost&gt;;
+// 相当于 { [key: string]: Ghost; }
+// 组合使用工具类型
+type GhostUpdate = Partial&lt;Pick&lt;Ghost, 'name' | 'location'&gt;&gt;;
+// 可以更新name和location，都是可选的
+// 更复杂的例子
+type ReadonlyPartialGhost = Readonly&lt;Partial&lt;Ghost&gt;&gt;;
+// 所有属性可选且只读，适合配置对象</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

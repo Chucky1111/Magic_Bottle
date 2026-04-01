@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>提示工程基础 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：与AI对话像发送精确编码的信息包，每个包包含指令、上下文、示例和约束 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>提示工程基础</h1>
+    <div class="phantom-note">幽灵观察：提示工程是教AI如何看见幽灵。你描述幽灵的方式决定AI理解幽灵的方式。模糊的描述产生模糊的幽灵，精确的描述产生精确的幽灵。</div>
+    <div class="phantom-note">提示公式：角色 + 任务 + 上下文 + 约束 + 示例 + 格式。不一定需要全部，但包含越多，结果越好。</div>
+    <section><p>对AI说话不是自然对话，是精确的指令编写。好的提示就像好的代码：清晰、具体、有结构。</p></section>
+    <section>
+      <h3>有效AI提示技巧</h3>
+      <pre><code>// 差的提示 vs 好的提示
+// 差的提示：模糊
+"写一个TypeScript函数"
+// 好的提示：具体
+"""
+你是一个TypeScript专家。创建一个处理幽灵数据的函数。
+要求：
+1. 函数名为 filterOldGhosts
+2. 接收 Ghost 对象数组
+3. 返回年龄超过100岁的幽灵名字数组
+4. 使用现代TypeScript特性
+5. 添加适当的类型注释
+6. 包含使用示例
+Ghost接口定义：
+interface Ghost {
+  id: string;
+  name: string;
+  age?: number;
+  location: string;
+}
+"""
+// AI可能生成的响应：
+function filterOldGhosts(ghosts: Ghost[]): string[] {
+  return ghosts
+    .filter((ghost): ghost is Ghost &amp; { age: number } =&gt; 
+      ghost.age !== undefined &amp;&amp; ghost.age &gt; 100
+    )
+    .map(ghost =&gt; ghost.name);
+}
+// 使用示例：
+const ghosts: Ghost[] = [
+  { id: '1', name: '卡斯珀', age: 150, location: '阁楼' },
+  { id: '2', name: '维多利亚', age: 80, location: '客厅' },
+  { id: '3', name: '老幽灵', location: '地下室' } // 没有年龄
+];
+const oldGhostNames = filterOldGhosts(ghosts); // ['卡斯珀']
+// TypeScript特定的提示技巧
+// 1. 提供类型定义
+"""
+基于以下类型定义创建函数：
+type Coordinate = { x: number; y: number };
+type Ghost = { name: string; position: Coordinate };
+创建函数计算两个幽灵之间的距离。
+"""
+// 2. 指定TypeScript版本
+"""
+使用TypeScript 5.0+的特性。
+不要使用any类型。
+使用严格模式。
+"""
+// 3. 要求特定模式
+"""
+使用函数式编程风格。
+使用async/await处理异步。
+使用泛型使函数更通用。
+"""
+// 4. 包含测试用例
+"""
+创建函数后，也创建测试用例。
+使用Jest风格。
+覆盖边界情况。
+"""
+// 5. 逐步思考提示
+"""
+让我们一步步思考：
+1. 首先分析需求
+2. 设计类型定义
+3. 实现核心逻辑
+4. 添加错误处理
+5. 编写测试用例
+"""
+// 6. 角色扮演提示
+"""
+你是一个严格的TypeScript编译器。
+检查以下代码的类型安全问题。
+指出所有潜在问题并提供修复建议。
+"""
+// 7. 对比提示
+"""
+比较这两种实现方式的优缺点：
+1. 使用类继承
+2. 使用组合和接口
+从类型安全、可维护性、性能角度分析。
+"""
+// 迭代改进提示
+// 第一轮：基础实现
+"创建一个简单的幽灵类"
+// 第二轮：改进
+"""
+基于你刚才创建的类，添加：
+1. 访问修饰符（public/private/protected）
+2. 抽象方法
+3. 接口实现
+"""
+// 第三轮：优化
+"""
+现在优化代码：
+1. 使用泛型增加灵活性
+2. 添加错误处理
+3. 改进性能
+"""
+// 与AI协作的最佳实践：
+// 1. 从小开始，逐步增加复杂度
+// 2. 要求AI解释生成的代码
+// 3. 质疑AI的建议，不要盲目接受
+// 4. 让AI从多个角度思考问题
+// 5. 保存好的提示作为模板</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

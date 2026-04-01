@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万分寻常之瓶 - 玻璃球游戏</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-flask"></i> 万分寻常之瓶 #114</h1>
+      <p class="subtitle">七情六欲皆伤身，开心悲伤都无趣，打油一首躺椅睡</p>
+    </header>
+
+    <main>
+      <div class="game-area">
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        <div class="controls">
+          <button id="addBallBtn"><i class="fas fa-plus-circle"></i> 加个球</button>
+          <button id="clearBtn"><i class="fas fa-trash"></i> 清空</button>
+          <div class="emotion-display" id="emotionDisplay">
+            <span>当前情绪：<span id="currentEmotion">寻常</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="bottle-info">
+          <h2><i class="fas fa-wine-bottle"></i> 魔瓶特质</h2>
+          <ul>
+            <li><strong>类型：</strong>生活系</li>
+            <li><strong>编号：</strong>114</li>
+            <li><strong>核心驱动力：</strong>七情六欲皆伤身，开心悲伤都无趣</li>
+            <li><strong>行为惯性：</strong>躺躺椅，摇摇扇</li>
+          </ul>
+        </div>
+
+        <div class="emotion-potions">
+          <h2><i class="fas fa-vial"></i> 情绪魔药</h2>
+          <div class="potion" data-emotion="surprise">
+            <div class="potion-color" style="background-color: #ffeb3b;"></div>
+            <span>初生的惊喜</span>
+          </div>
+          <div class="potion" data-emotion="chase">
+            <div class="potion-color" style="background-color: #ff9800;"></div>
+            <span>如火焰一般追逐闪电</span>
+          </div>
+          <div class="potion" data-emotion="mock">
+            <div class="potion-color" style="background-color: #9c27b0;"></div>
+            <span>轻蔑的嘲弄</span>
+          </div>
+          <div class="potion" data-emotion="ending">
+            <div class="potion-color" style="background-color: #795548;"></div>
+            <span>竞技场的散场时刻</span>
+          </div>
+        </div>
+
+        <div class="instructions">
+          <h2><i class="fas fa-info-circle"></i> 玩法说明</h2>
+          <p>拖拽球体移动，让它们互相碰撞。</p>
+          <p>碰撞会触发情绪效果，但也就那样。</p>
+          <p>没什么特别的，看看就好。</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>暴风烈日不常有，常常都是寻常阴晴日。</p>
+      <p class="signature">—— 万分寻常之瓶</p>
+    </footer>
+  </div>
+
+  <div id="recliner">
+    <i class="fas fa-chair"></i>
+  </div>
+
+  <div id="fan">
+    <i class="fas fa-fan"></i>
+  </div>
+
+  <script type="module" src="./src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+OEBPS/attic/ai-assistance/ai-tools.xhtml:69: parser error : xmlParseEntityRef: no name
+      ghost.age !== undefined && ghost.age &gt; 100
+                               ^
+OEBPS/attic/ai-assistance/ai-tools.xhtml:69: parser error : xmlParseEntityRef: no name
+      ghost.age !== undefined && ghost.age &gt; 100
+                                ^
+OEBPS/attic/ai-assistance/prompt-engineering.xhtml:46: parser error : xmlParseEntityRef: no name
+    .filter((ghost): ghost is Ghost & { age: number } => 
+                                     ^
+OEBPS/attic/ai-assistance/prompt-engineering.xhtml:47: parser error : xmlParseEntityRef: no name
+      ghost.age !== undefined && ghost.age > 100
+                               ^
+OEBPS/attic/ai-assistance/prompt-engineering.xhtml:47: parser error : xmlParseEntityRef: no name
+      ghost.age !== undefined && ghost.age > 100
+                                ^
+OEBPS/conclusion.xhtml:174: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/conclusion.xhtml:196: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/entrance/index-backup.xhtml:112: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/entrance/index-backup.xhtml:159: parser error : Opening and ending tag mismatch: html line 2 and div
+  </div>
+        ^
+OEBPS/entrance/why-types-matter.xhtml:140: parser error : Opening and ending tag mismatch: User line 137 and code
+}</code></pre>
+        ^
+OEBPS/entrance/why-types-matter.xhtml:140: parser error : Opening and ending tag mismatch: code line 134 and pre
+}</code></pre>
+              ^
+OEBPS/entrance/why-types-matter.xhtml:142: parser error : Opening and ending tag mismatch: pre line 134 and div
+          </div>
+                ^
+OEBPS/entrance/why-types-matter.xhtml:168: parser error : Opening and ending tag mismatch: div line 127 and section
+    </section>
+              ^
+OEBPS/entrance/why-types-matter.xhtml:282: parser error : Opening and ending tag mismatch: section line 125 and div
+  </div>
+        ^
+OEBPS/entrance/why-types-matter.xhtml:283: parser error : Opening and ending tag mismatch: div line 13 and body
+  </body>
+         ^
+OEBPS/entrance/why-types-matter.xhtml:284: parser error : Opening and ending tag mismatch: body line 12 and html
+</html>
+       ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:60: parser error : StartTag: invalid element name
+  requiredConditions: ["room.temperature < 15"],
+                                          ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:95: parser error : error parsing attribute name
+  getAllRules(): Array<RoomEntryRule | PhenomenonTrigger | TimeEffect>;
+                                     ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:95: parser error : Couldn't find end of Start Tag RoomEntryRule line 95
+  getAllRules(): Array<RoomEntryRule | PhenomenonTrigger | TimeEffect>;
+                                     ^
+OEBPS/haunted-house/phase3/utility-types.xhtml:23: parser error : xmlParseEntityRef: no name
+      <pre><code>type HauntedRoom = Room & { ghostCount: number };</code></pre>
+                                          ^
+OEBPS/haunted-house/phase6/performance-optimization.xhtml:24: parser error : error parsing attribute name
+const ghostCache = new Map<string, Ghost>();</code></pre>
+                                 ^
+OEBPS/haunted-house/phase6/performance-optimization.xhtml:24: parser error : Couldn't find end of Start Tag string line 24
+const ghostCache = new Map<string, Ghost>();</code></pre>
+                                 ^
+OEBPS/rooms/generics/conditional-types.xhtml:24: parser error : StartTag: invalid element name
+type Test1 = IsString<"hello">;  // true
+                      ^
+OEBPS/rooms/generics/conditional-types.xhtml:26: parser error : error parsing attribute name
+type Test3 = IsString<string | number>; // boolean (分布式条件类型)
+                             ^
+OEBPS/rooms/generics/conditional-types.xhtml:26: parser error : Couldn't find end of Start Tag string line 26
+type Test3 = IsString<string | number>; // boolean (分布式条件类型)
+                             ^
+OEBPS/rooms/generics/conditional-types.xhtml:29: parser error : error parsing attribute name
+type StringArrayElement = ExtractElementType<string[]>; // string
+                                                   ^
+OEBPS/rooms/generics/conditional-types.xhtml:29: parser error : Couldn't find end of Start Tag string line 29
+type StringArrayElement = ExtractElementType<string[]>; // string
+                                                   ^
+OEBPS/rooms/generics/conditional-types.xhtml:30: parser error : error parsing attribute name
+type NumberArrayElement = ExtractElementType<number[]>; // number
+                                                   ^
+OEBPS/rooms/generics/conditional-types.xhtml:30: parser error : Couldn't find end of Start Tag number line 30
+type NumberArrayElement = ExtractElementType<number[]>; // number
+                                                   ^
+OEBPS/rooms/generics/conditional-types.xhtml:33: parser error : StartTag: invalid element name
+type FuncReturn = ReturnType<() => string>;      // string
+                             ^
+OEBPS/rooms/generics/conditional-types.xhtml:34: parser error : StartTag: invalid element name
+type AsyncReturn = ReturnType<() => Promise&lt;number&gt;>; // Promise&lt;number
+                              ^
+OEBPS/rooms/generics/conditional-types.xhtml:48: parser error : Opening and ending tag mismatch: MaybeString line 48 and code
+type DefinitelyString = NonNullable<MaybeString>; // string</code></pre>
+                                                                  ^
+OEBPS/rooms/generics/conditional-types.xhtml:48: parser error : Opening and ending tag mismatch: Ghost line 44 and pre
+type DefinitelyString = NonNullable<MaybeString>; // string</code></pre>
+                                                                        ^
+OEBPS/rooms/generics/conditional-types.xhtml:49: parser error : Opening and ending tag mismatch: code line 22 and section
+    </section>
+              ^
+OEBPS/rooms/generics/conditional-types.xhtml:64: parser error : Opening and ending tag mismatch: pre line 22 and div
+  </div>
+        ^
+OEBPS/rooms/generics/conditional-types.xhtml:65: parser error : Opening and ending tag mismatch: section line 20 and body
+  </body>
+         ^
+OEBPS/rooms/generics/conditional-types.xhtml:66: parser error : Opening and ending tag mismatch: div line 14 and html
+</html>
+       ^
+OEBPS/rooms/generics/generic-basics.xhtml:30: parser error : Specification mandates value for attribute extends
+function getName<T extends { name: string }>(entity: T): string {
+                           ^
+OEBPS/rooms/generics/generic-basics.xhtml:30: parser error : attributes construct error
+function getName<T extends { name: string }>(entity: T): string {
+                           ^
+OEBPS/rooms/generics/generic-basics.xhtml:30: parser error : Couldn't find end of Start Tag T line 30
+function getName<T extends { name: string }>(entity: T): string {
+                           ^
+OEBPS/rooms/generics/generic-basics.xhtml:44: parser error : Opening and ending tag mismatch: Ghost line 35 and code
+};</code></pre>
+         ^
+OEBPS/rooms/generics/generic-basics.xhtml:44: parser error : Opening and ending tag mismatch: code line 22 and pre
+};</code></pre>
+               ^
+OEBPS/rooms/generics/generic-basics.xhtml:45: parser error : Opening and ending tag mismatch: pre line 22 and section
+    </section>
+              ^
+OEBPS/rooms/generics/generic-basics.xhtml:60: parser error : Opening and ending tag mismatch: section line 20 and div
+  </div>
+        ^
+OEBPS/rooms/generics/generic-basics.xhtml:61: parser error : Opening and ending tag mismatch: div line 14 and body
+  </body>
+         ^
+OEBPS/rooms/generics/generic-basics.xhtml:62: parser error : Opening and ending tag mismatch: body line 12 and html
+</html>
+       ^
+OEBPS/rooms/generics/generic-constraints.xhtml:27: parser error : Specification mandates value for attribute extends
+function logLength<T extends { length: number }>(item: T): void {
+                             ^
+OEBPS/rooms/generics/generic-constraints.xhtml:27: parser error : attributes construct error
+function logLength<T extends { length: number }>(item: T): void {
+                             ^
+OEBPS/rooms/generics/generic-constraints.xhtml:27: parser error : Couldn't find end of Start Tag T line 27
+function logLength<T extends { length: number }>(item: T): void {
+                             ^
+OEBPS/rooms/generics/generic-constraints.xhtml:33: parser error : Specification mandates value for attribute extends
+function processEntity<T extends Ghost & Timestamped>(entity: T): void {
+                                 ^
+OEBPS/rooms/generics/generic-constraints.xhtml:33: parser error : attributes construct error
+function processEntity<T extends Ghost & Timestamped>(entity: T): void {
+                                 ^
+OEBPS/rooms/generics/generic-constraints.xhtml:33: parser error : Couldn't find end of Start Tag T line 33
+function processEntity<T extends Ghost & Timestamped>(entity: T): void {
+                                 ^
+OEBPS/rooms/generics/generic-constraints.xhtml:33: parser error : xmlParseEntityRef: no name
+function processEntity<T extends Ghost & Timestamped>(entity: T): void {
+                                        ^
+OEBPS/rooms/generics/generic-constraints.xhtml:37: parser error : error parsing attribute name
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+                      ^
+OEBPS/rooms/generics/generic-constraints.xhtml:37: parser error : Couldn't find end of Start Tag T line 37
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+                      ^
+OEBPS/rooms/generics/utility-types.xhtml:37: parser error : error parsing attribute name
+// Pick<T, K>：选择特定属性
+         ^
+OEBPS/rooms/generics/utility-types.xhtml:37: parser error : Couldn't find end of Start Tag T line 37
+// Pick<T, K>：选择特定属性
+         ^
+OEBPS/rooms/generics/utility-types.xhtml:38: parser error : error parsing attribute name
+type GhostIdentity = Pick<Ghost, 'name' | 'age'>;
+                               ^
+OEBPS/rooms/generics/utility-types.xhtml:38: parser error : Couldn't find end of Start Tag Ghost line 38
+type GhostIdentity = Pick<Ghost, 'name' | 'age'>;
+                               ^
+OEBPS/rooms/generics/utility-types.xhtml:39: parser error : error parsing attribute name
+// Omit<T, K>：排除特定属性
+         ^
+OEBPS/rooms/generics/utility-types.xhtml:39: parser error : Couldn't find end of Start Tag T line 39
+// Omit<T, K>：排除特定属性
+         ^
+OEBPS/rooms/generics/utility-types.xhtml:40: parser error : error parsing attribute name
+type GhostWithoutAge = Omit<Ghost, 'age'>;
+                                 ^
+OEBPS/rooms/generics/utility-types.xhtml:40: parser error : Couldn't find end of Start Tag Ghost line 40
+type GhostWithoutAge = Omit<Ghost, 'age'>;
+                                 ^
+OEBPS/rooms/generics/utility-types.xhtml:41: parser error : error parsing attribute name
+// Record<K, T>：创建键值映射
+           ^
+OEBPS/rooms/generics/utility-types.xhtml:41: parser error : Couldn't find end of Start Tag K line 41
+// Record<K, T>：创建键值映射
+           ^
+OEBPS/rooms/generics/utility-types.xhtml:42: parser error : error parsing attribute name
+type GhostRegistry = Record<string, Ghost>;
+                                  ^
+OEBPS/rooms/generics/utility-types.xhtml:42: parser error : Couldn't find end of Start Tag string line 42
+type GhostRegistry = Record<string, Ghost>;
+                                  ^
+OEBPS/rooms/generics/utility-types.xhtml:44: parser error : error parsing attribute name
+type GhostUpdate = Partial<Pick<Ghost, 'name' | 'location'>>;
+                               ^
+OEBPS/rooms/generics/utility-types.xhtml:44: parser error : Couldn't find end of Start Tag Pick line 44
+type GhostUpdate = Partial<Pick<Ghost, 'name' | 'location'>>;
+                               ^
+OEBPS/rooms/generics/utility-types.xhtml:44: parser error : error parsing attribute name
+type GhostUpdate = Partial<Pick<Ghost, 'name' | 'location'>>;
+                                     ^
+OEBPS/rooms/generics/utility-types.xhtml:44: parser error : Couldn't find end of Start Tag Ghost line 44
+type GhostUpdate = Partial<Pick<Ghost, 'name' | 'location'>>;
+                                     ^
+OEBPS/rooms/generics/utility-types.xhtml:46: parser error : error parsing attribute name
+type ReadonlyPartialGhost = Readonly<Partial<Ghost>>;
+                                            ^
+OEBPS/rooms/generics/utility-types.xhtml:46: parser error : Couldn't find end of Start Tag Partial line 46
+type ReadonlyPartialGhost = Readonly<Partial<Ghost>>;
+                                            ^
+OEBPS/rooms/generics/utility-types.xhtml:46: parser error : Opening and ending tag mismatch: Ghost line 46 and code
+// 所有属性可选且只读，适合配置对象</code></pre>
+                                                          ^
+OEBPS/rooms/generics/utility-types.xhtml:46: parser error : Opening and ending tag mismatch: Ghost line 35 and pre
+// 所有属性可选且只读，适合配置对象</code></pre>
+                                                                ^
+OEBPS/rooms/generics/utility-types.xhtml:47: parser error : Opening and ending tag mismatch: Ghost line 31 and section
+    </section>
+              ^
+OEBPS/rooms/generics/utility-types.xhtml:62: parser error : Opening and ending tag mismatch: Ghost line 28 and div
+  </div>
+        ^
+OEBPS/rooms/generics/utility-types.xhtml:63: parser error : Opening and ending tag mismatch: code line 22 and body
+  </body>
+         ^
+OEBPS/rooms/generics/utility-types.xhtml:64: parser error : Opening and ending tag mismatch: pre line 22 and html
+</html>
+       ^

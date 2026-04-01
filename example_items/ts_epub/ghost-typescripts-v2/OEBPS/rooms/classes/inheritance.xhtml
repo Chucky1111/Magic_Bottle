@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>继承：幽灵王朝的建立 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：幽灵家族树在虚空中展开，祖先的能力和特性沿着分支传递给后代 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>继承：幽灵王朝的建立</h1>
+    <div class="phantom-note">幽灵观察：继承是幽灵王朝的建立。Ghost是祖先，Poltergeist和FriendlyGhost是不同分支的后代。每个后代继承祖先的特性，并添加自己的独特能力。</div>
+    <div class="phantom-note">设计建议：优先使用组合而不是继承。继承创建"是什么"的关系，组合创建"有什么"的关系。继承紧密耦合，组合更灵活。</div>
+    <section><p>继承说："我是你的一种，所以我拥有你的一切，再加上我自己的特点。"这是面向对象的核心——构建类型体系，复用代码。</p></section>
+    <section>
+      <h3>构建类型层次</h3>
+      <pre><code>// 基类：通用幽灵
+class Ghost {
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  appear() {
+    console.log(`${this.name} appears!`);
+  }
+  disappear() {
+    console.log(`${this.name} disappears...`);
+  }
+  getDescription() {
+    return `${this.name}, ${this.age} years old`;
+  }
+}
+// 子类1：骚灵（能移动物体）
+class Poltergeist extends Ghost {
+  strength: number; // 新属性
+  constructor(name: string, age: number, strength: number) {
+    super(name, age); // 调用父类构造函数
+    this.strength = strength;
+  }
+  // 新方法
+  moveObject(object: string) {
+    console.log(`${this.name} moves ${object} with strength ${this.strength}!`);
+  }
+  // 覆盖父类方法
+  appear() {
+    console.log(`${this.name} appears with a creepy noise!`);
+  }
+}
+// 子类2：友好幽灵（能帮助人类）
+class FriendlyGhost extends Ghost {
+  helpfulness: number; // 新属性
+  constructor(name: string, age: number, helpfulness: number) {
+    super(name, age);
+    this.helpfulness = helpfulness;
+  }
+  // 新方法
+  help(human: string) {
+    console.log(`${this.name} helps ${human} with helpfulness ${this.helpfulness}!`);
+  }
+  // 覆盖父类方法
+  getDescription() {
+    return `${super.getDescription()} (helpfulness: ${this.helpfulness})`;
+  }
+}
+// 使用继承体系
+const casper = new Ghost("卡斯珀", 150);
+const poltergeist = new Poltergeist("骚灵", 200, 5);
+const friendly = new FriendlyGhost("友好的幽灵", 100, 8);
+casper.appear();           // "卡斯珀 appears!"
+poltergeist.appear();      // "骚灵 appears with a creepy noise!" (覆盖的方法)
+poltergeist.moveObject("椅子"); // "骚灵 moves 椅子 with strength 5!" (新方法)
+friendly.help("小明");      // "友好的幽灵 helps 小明 with helpfulness 8!" (新方法)
+console.log(friendly.getDescription()); // "友好的幽灵, 100 years old (helpfulness: 8)" (覆盖的方法)
+// 多态：将子类视为父类
+const ghosts: Ghost[] = [casper, poltergeist, friendly];
+ghosts.forEach(ghost =&gt; ghost.appear()); // 每个幽灵以自己方式显现</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

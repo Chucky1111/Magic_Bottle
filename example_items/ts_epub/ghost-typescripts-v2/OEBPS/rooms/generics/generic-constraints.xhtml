@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>泛型约束：边界的设定 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：泛型模板周围出现发光的边界线，限制可以填入的类型材料 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>泛型约束：边界的设定</h1>
+    <div class="phantom-note">幽灵观察：泛型约束是幽灵活动范围的边界。幽灵可以在整个鬼屋中穿梭，但不能离开鬼屋。约束定义了这个鬼屋的范围。</div>
+    <div class="phantom-note">设计原则：从宽松的约束开始，只在必要时添加更严格的约束。让代码尽可能通用，但足够具体以保持类型安全。</div>
+    <section><p>没有约束的泛型说："给我任何类型。"有约束的泛型说："给我某种特定类型的类型。"约束不是限制，是明确要求。</p></section>
+    <section>
+      <h3>设定类型边界</h3>
+      <pre><code>// 没有约束：太宽松
+function logLength&lt;T&gt;(item: T): void {
+  // console.log(item.length); // 错误！不知道T是否有length属性
+}
+// 有约束：明确要求
+function logLength&lt;T extends { length: number }&gt;(item: T): void {
+  console.log(item.length); // 安全！T必须有length属性
+}
+logLength("hello");           // 字符串有length
+logLength([1, 2, 3]);         // 数组有length
+// logLength(42);             // 错误！数字没有length
+// 多重约束
+function processEntity&lt;T extends Ghost &amp; Timestamped&gt;(entity: T): void {
+  console.log(entity.name);      // 来自Ghost
+  console.log(entity.createdAt); // 来自Timestamped
+}
+// keyof约束：确保属性存在
+function getProperty&lt;T, K extends keyof T&gt;(obj: T, key: K): T[K] {
+  return obj[key];
+}
+const ghost = { name: "卡斯珀", age: 150 };
+getProperty(ghost, "name"); // 返回string
+getProperty(ghost, "age");  // 返回number
+// getProperty(ghost, "color"); // 错误！ghost没有color属性</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

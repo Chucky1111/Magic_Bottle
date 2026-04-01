@@ -1,0 +1,1279 @@
+/* 幽灵维度样式 */
+@charset "UTF-8";
+
+/* 基础幽灵主题 */
+:root {
+  --phantom-color: rgba(64, 224, 208, 0.7); /* 幽灵青 */
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --edge-glow: rgba(123, 239, 178, 0.3);
+  --data-leak: rgba(255, 105, 180, 0.2);
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 2em;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #e2e8f0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 幽灵边缘模糊效果 */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, transparent 40%, var(--phantom-color) 100%);
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: -1;
+  animation: phantom-pulse 15s infinite alternate;
+}
+
+@keyframes phantom-pulse {
+  0% { opacity: 0.01; transform: scale(1); }
+  100% { opacity: 0.05; transform: scale(1.1); }
+}
+
+/* 数据泄露效果 - 页面边缘的细微干扰 */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--data-leak) 10%, 
+    var(--phantom-color) 50%, 
+    var(--data-leak) 90%, 
+    transparent 100%);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1000;
+  animation: data-leak 20s infinite linear;
+}
+
+@keyframes data-leak {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* 标题的幽灵效果 */
+h1, h2, h3, h4 {
+  color: var(--phantom-color);
+  text-shadow: 0 0 10px var(--phantom-color);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  position: relative;
+  margin-top: 2em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid rgba(64, 224, 208, 0.3);
+}
+
+h1::before, h2::before {
+  content: ">";
+  opacity: 0.5;
+  margin-right: 0.5em;
+  color: #94a3b8;
+}
+
+/* 代码块的幽灵效果 */
+pre, code {
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(64, 224, 208, 0.3);
+  border-radius: 4px;
+  padding: 1em;
+  overflow-x: auto;
+  position: relative;
+  box-shadow: 0 0 15px rgba(64, 224, 208, 0.1);
+}
+
+code {
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+pre:hover {
+  box-shadow: 0 0 25px rgba(64, 224, 208, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+/* 幽灵注释 */
+.phantom-note {
+  font-style: italic;
+  color: #94a3b8;
+  font-size: 0.9em;
+  opacity: 0.7;
+  border-left: 2px solid var(--phantom-color);
+  padding-left: 1em;
+  margin: 1em 0;
+  transition: opacity 0.3s ease;
+}
+
+.phantom-note:hover {
+  opacity: 1;
+}
+
+/* 幽灵通道（链接） */
+.ghost-passage {
+  display: inline-block;
+  color: var(--phantom-color);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--phantom-color);
+  padding: 0.2em 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.ghost-passage::after {
+  content: "→";
+  opacity: 0;
+  margin-left: 0.3em;
+  transition: opacity 0.3s ease;
+}
+
+.ghost-passage:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.ghost-passage:hover::after {
+  opacity: 1;
+}
+
+/* 可展开内容 */
+.expandable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 4px;
+  margin: 1em 0;
+}
+
+.expandable:target {
+  max-height: 1000px;
+  padding: 1em;
+  border: 1px solid rgba(64, 224, 208, 0.2);
+}
+
+/* 幽灵观察标记 */
+.phantom-mark {
+  position: absolute;
+  right: -1.5em;
+  color: var(--phantom-color);
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+
+/* 断面容器 */
+.ghost-section {
+  position: relative;
+  margin: 3em 0;
+  padding: 2em;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(64, 224, 208, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ghost-section:hover {
+  border-color: rgba(64, 224, 208, 0.3);
+  box-shadow: 0 4px 30px rgba(64, 224, 208, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* 情绪指示器 */
+.emotion-indicator {
+  position: absolute;
+  top: -0.5em;
+  right: 1em;
+  font-size: 0.7em;
+  padding: 0.3em 0.8em;
+  border-radius: 12px;
+  background: rgba(64, 224, 208, 0.2);
+  color: var(--phantom-color);
+}
+
+/* 代码中的幽灵高亮 */
+.highlight-ghost {
+  background: rgba(64, 224, 208, 0.1);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+/* 页面切换的幽灵过渡 */
+@keyframes ghost-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+  animation: ghost-fade-in 0.5s ease-out;
+}
+
+/* 打印样式（幽灵不喜欢被打印） */
+@media print {
+  body::before, body::after, .emotion-indicator {
+    display: none;
+  }
+  
+  .ghost-section {
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}
+
+/* ============================================
+   新增内容样式 - 为魔瓶创建的教学页面添加
+   ============================================ */
+
+/* 代码示例容器 */
+.code-example {
+  background: rgba(30, 41, 59, 0.7);
+  border-left: 4px solid rgba(64, 224, 208, 0.5);
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1.5em 0;
+  overflow-x: auto;
+}
+
+.code-example h3 {
+  margin-top: 0;
+  color: #7be6b2;
+}
+
+.code-explanation {
+  color: #94a3b8;
+  font-size: 0.95em;
+  margin-top: 0.5em;
+  line-height: 1.6;
+}
+
+/* 练习和挑战部分 */
+.practice-section {
+  background: rgba(45, 212, 191, 0.1);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 2em 0;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+}
+
+.challenge {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 6px;
+  padding: 1em;
+  margin: 1em 0;
+  border-left: 4px solid #f59e0b;
+}
+
+/* 概念解释和卡片 */
+.concept-explanation, .concept-card {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.concept-explanation h3, .concept-card h3 {
+  color: #8b5cf6;
+  margin-top: 0;
+}
+
+/* 优势网格 */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.benefit-item {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.benefit-item h4 {
+  color: #22c55e;
+  margin-top: 0;
+}
+
+/* 比较布局 */
+.comparison, .comparison-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  margin: 2em 0;
+}
+
+@media (max-width: 768px) {
+  .comparison, .comparison-demo {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comparison-side, .demo-side {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+}
+
+.comparison-side h3, .demo-side h3 {
+  color: #f97316;
+  margin-top: 0;
+  text-align: center;
+}
+
+.demo-label {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1em;
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+.demo-label:contains("❌") {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.demo-label:contains("✅") {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+/* 学习路径 */
+.learning-path {
+  margin: 2em 0;
+}
+
+.path-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5em;
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 1em 0;
+  border-left: 6px solid #0ea5e9;
+}
+
+.step-number {
+  background: #0ea5e9;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  margin-top: 0;
+  color: #0ea5e9;
+}
+
+.step-link {
+  display: inline-block;
+  margin-top: 0.5em;
+  color: #7be6b2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.step-link:hover {
+  text-decoration: underline;
+}
+
+/* 流程展示 */
+.process-flow {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 1em 0;
+  font-family: monospace;
+  text-align: center;
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.3);
+}
+
+/* AI时代上下文 */
+.ai-era-context {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5em;
+  margin: 1.5em 0;
+}
+
+.context-point {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 8px;
+  padding: 1.5em;
+  text-align: center;
+}
+
+.context-point h3 {
+  color: #8b5cf6;
+  margin-top: 0;
+}
+
+/* 提示策略 */
+.prompt-strategy {
+  margin: 2em 0;
+}
+
+.strategy-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5em;
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 1em 0;
+  border-left: 6px solid #f59e0b;
+}
+
+/* 工作流图表 */
+.workflow-diagram {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2em 0;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+@media (max-width: 768px) {
+  .workflow-diagram {
+    flex-direction: column;
+  }
+  
+  .workflow-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+.workflow-step {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.step-icon {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.workflow-arrow {
+  color: #60a5fa;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* 未来趋势 */
+.future-trends {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.trend-item {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 8px;
+  padding: 1.5em;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.trend-item h3 {
+  color: #a855f7;
+  margin-top: 0;
+}
+
+/* 维度洞察 */
+.dimensional-insight {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  border: 1px solid rgba(64, 224, 208, 0.3);
+}
+
+.dimensional-insight h3 {
+  color: #40e0d0;
+  margin-top: 0;
+}
+
+/* 可操作建议 */
+.actionable-advice {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 12px;
+  padding: 2em;
+  margin: 2em 0;
+  border: 2px solid rgba(34, 197, 94, 0.3);
+}
+
+.advice-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5em;
+  margin: 1.5em 0;
+}
+
+.advice-item {
+  background: rgba(30, 41, 59, 0.9);
+  border-radius: 8px;
+  padding: 1.5em;
+}
+
+.advice-item h3 {
+  color: #22c55e;
+  margin-top: 0;
+}
+
+/* 行动号召部分 */
+.cta-section {
+  text-align: center;
+  margin-top: 2em;
+  padding: 2em;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 12px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1.5em;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* 代码片段容器 */
+.code-snippet {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 4px;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow-x: auto;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+/* 魔瓶引用 */
+.phantom-quote {
+  border-left: 4px solid rgba(64, 224, 208, 0.7);
+  padding-left: 1.5em;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: #cbd5e1;
+  background: rgba(64, 224, 208, 0.1);
+  padding: 1.5em;
+  border-radius: 0 8px 8px 0;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .benefit-grid, .ai-era-context, .future-trends, .advice-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ============================================
+   新增样式 - 第一个幽灵程序页面专用
+   ============================================ */
+
+/* 设置步骤 */
+.setup-step, .ritual-step {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  border-left: 6px solid #7e22ce;
+}
+
+.setup-step h3, .ritual-step h3 {
+  color: #a855f7;
+  margin-top: 0;
+}
+
+/* 概念分解 */
+.concept-breakdown {
+  margin: 2em 0;
+}
+
+.concept-item {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 1em 0;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.concept-item h3 {
+  color: #3b82f6;
+  margin-top: 0;
+}
+
+/* FAQ网格 */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.faq-item {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.faq-item h4 {
+  color: #eab308;
+  margin-top: 0;
+}
+
+/* 下一步探索网格 */
+.next-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.next-step {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+  text-align: center;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.next-step h3 {
+  color: #22c55e;
+  margin-top: 0;
+}
+
+.next-step a {
+  display: inline-block;
+  margin-top: 0.5em;
+  color: #7be6b2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.next-step a:hover {
+  text-decoration: underline;
+}
+
+/* 代码输出样式 */
+.code-example pre code[class*="language-"]:not(.language-typescript):not(.language-javascript) {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+/* 命令行样式 */
+.code-example pre.language-bash {
+  background: rgba(0, 0, 0, 0.8);
+  color: #84cc16;
+}
+
+.code-example pre.language-bash code {
+  color: #84cc16;
+}
+
+/* 终端输出样式 */
+.code-example pre:not([class*="language-"]) {
+  background: rgba(0, 0, 0, 0.9);
+  color: #d4d4d4;
+  border-left: 4px solid #64748b;
+}
+
+/* 移动端调整 */
+@media (max-width: 768px) {
+  .faq-grid, .next-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .setup-step, .ritual-step, .concept-item {
+    padding: 1em;
+  }
+}
+
+/* ============================================
+   新增样式 - 快速胜利页面专用
+   ============================================ */
+
+/* 快速胜利项目 */
+.quick-win, .quick-fix, .efficiency-tip, .config-tip {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  border-left: 6px solid #10b981;
+}
+
+.quick-fix {
+  border-left-color: #f59e0b;
+}
+
+.efficiency-tip {
+  border-left-color: #3b82f6;
+}
+
+.config-tip {
+  border-left-color: #8b5cf6;
+}
+
+.quick-win h3, .quick-fix h3, .efficiency-tip h3, .config-tip h3 {
+  color: inherit;
+  margin-top: 0;
+}
+
+/* 集成技巧 */
+.integration-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.tip {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+}
+
+.tip h3 {
+  color: #8b5cf6;
+  margin-top: 0;
+}
+
+.tip ul {
+  padding-left: 1.5em;
+}
+
+/* 行动网格 */
+.next-actions {
+  margin: 3em 0 1em 0;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5em;
+  margin: 1.5em 0;
+}
+
+.action-card {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 10px;
+  padding: 1.5em;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.action-card:hover {
+  border-color: rgba(64, 224, 208, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(64, 224, 208, 0.2);
+}
+
+.action-icon {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.action-card h3 {
+  color: #40e0d0;
+  margin-top: 0;
+}
+
+.action-card p {
+  color: #94a3b8;
+  font-size: 0.95em;
+}
+
+/* JSON语法高亮 */
+.code-example pre.language-json {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.code-example pre.language-json code {
+  color: #f8fafc;
+}
+
+/* 挑战中的代码块特殊样式 */
+.practice-section .code-example {
+  border-left-color: #f59e0b;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .integration-tips, .action-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-win, .quick-fix, .efficiency-tip, .config-tip {
+    padding: 1em;
+  }
+}
+
+/* ============================================
+   新增样式 - 魔瓶的安慰页面专用
+   ============================================ */
+
+/* 安慰部分 */
+.comfort-section, .mindset-section, .emotional-support, 
+.practical-comfort, .phantom-wisdom, .immediate-comfort,
+.final-thoughts {
+  margin: 2em 0;
+}
+
+/* 安慰消息 */
+.comfort-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5em;
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 12px;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  border-left: 6px solid rgba(123, 229, 178, 0.7);
+}
+
+.message-icon {
+  font-size: 2em;
+  flex-shrink: 0;
+}
+
+.message-content h3 {
+  color: #7be5b2;
+  margin-top: 0;
+}
+
+/* 心态原则 */
+.mindset-principle {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 12px;
+  padding: 2em;
+  margin: 2em 0;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.mindset-principle h3 {
+  color: #8b5cf6;
+  margin-top: 0;
+}
+
+/* 情绪支持场景 */
+.emotional-scenario {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 12px;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  border-left: 6px solid #f59e0b;
+}
+
+.emotional-scenario h3 {
+  color: #f59e0b;
+  margin-top: 0;
+}
+
+.scenario-content {
+  margin: 1em 0;
+}
+
+.action-tip {
+  background: rgba(30, 41, 59, 0.9);
+  border-radius: 8px;
+  padding: 1em;
+  margin-top: 1em;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.action-tip h4 {
+  color: #22c55e;
+  margin-top: 0;
+}
+
+/* 实际安慰技巧 */
+.comfort-technique {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 12px;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.comfort-technique h3 {
+  color: #3b82f6;
+  margin-top: 0;
+}
+
+/* 智慧引用集合 */
+.wisdom-collection {
+  margin: 2em 0;
+}
+
+.wisdom-quote {
+  border-left: 4px solid rgba(64, 224, 208, 0.7);
+  padding-left: 1.5em;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: #cbd5e1;
+  background: rgba(64, 224, 208, 0.1);
+  padding: 1.5em;
+  border-radius: 0 12px 12px 0;
+  font-size: 1.1em;
+}
+
+/* 快速安慰卡片 */
+.quick-comfort-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.comfort-card {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 12px;
+  padding: 1.5em;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.comfort-card:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-4px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.card-emoji {
+  font-size: 2em;
+}
+
+.card-header h3 {
+  color: #a855f7;
+  margin: 0;
+}
+
+.card-footer {
+  margin-top: 1em;
+  padding-top: 0.5em;
+  border-top: 1px solid rgba(100, 116, 139, 0.3);
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* 最终想法 */
+.closing-message {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 12px;
+  padding: 2em;
+  line-height: 1.8;
+}
+
+/* 安慰行动部分 */
+.comfort-actions {
+  text-align: center;
+  margin: 3em 0 1em 0;
+  padding: 2em;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 12px;
+  border: 2px solid rgba(64, 224, 208, 0.3);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin: 1.5em 0;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  background: linear-gradient(135deg, #40e0d0 0%, #20b2aa 100%);
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(64, 224, 208, 0.4);
+}
+
+.action-note {
+  color: #94a3b8;
+  font-style: italic;
+  margin-top: 1em;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .quick-comfort-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .action-button {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .comfort-message {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .message-icon {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 640px) {
+  .mindset-principle, .comfort-technique, .emotional-scenario {
+    padding: 1em;
+  }
+  
+  .wisdom-quote {
+    padding: 1em;
+    font-size: 1em;
+  }
+}
+
+/* ============================================
+   新增样式 - 常见错误页面专用
+   ============================================ */
+
+/* 错误类别 */
+.error-category {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 12px;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  border-left: 6px solid #ef4444;
+}
+
+.error-category h3 {
+  color: #ef4444;
+  margin-top: 0;
+}
+
+/* 错误分析 */
+.error-analysis {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.analysis-example {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+}
+
+.analysis-example h3 {
+  color: #f59e0b;
+  margin-top: 0;
+}
+
+.analysis-example ul, .analysis-example ol {
+  padding-left: 1.5em;
+}
+
+/* 调试技巧 */
+.debugging-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.tip {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.tip h3 {
+  color: #3b82f6;
+  margin-top: 0;
+}
+
+/* 预防技巧 */
+.prevention-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.prevention-tip {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5em;
+  text-align: center;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.prevention-tip h3 {
+  color: #22c55e;
+  margin-top: 0;
+}
+
+/* 学习链接 */
+.learning-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5em;
+  margin: 1.5em 0;
+}
+
+.learning-link {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 10px;
+  padding: 1.5em;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.learning-link:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  transform: translateY(-4px);
+}
+
+.link-icon {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.learning-link h3 {
+  color: #8b5cf6;
+  margin-top: 0;
+}
+
+.learning-link p {
+  color: #94a3b8;
+  font-size: 0.95em;
+}
+
+/* 错误代码高亮 */
+.code-example pre code[class*="language-typescript"] .error-highlight {
+  background: rgba(239, 68, 68, 0.2);
+  border-bottom: 2px dashed #ef4444;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .error-analysis, .debugging-tips, .prevention-tips, .learning-links {
+    grid-template-columns: 1fr;
+  }
+  
+  .error-category, .analysis-example, .tip {
+    padding: 1em;
+  }
+}
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .action-button {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .comfort-message {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .message-icon {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 640px) {
+  .mindset-principle, .comfort-technique, .emotional-scenario {
+    padding: 1em;
+  }
+  
+  .wisdom-quote {
+    padding: 1em;
+    font-size: 1em;
+  }
+}

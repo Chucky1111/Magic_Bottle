@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>ESLint与Prettier：代码整洁 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：代码像原始材料通过两个精密的机器：一个检查质量（ESLint），一个打磨形状（Prettier） -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>ESLint与Prettier：代码整洁</h1>
+    <div class="phantom-note">幽灵观察：TypeScript是幽灵的本质检查（是否成形），ESLint是幽灵行为规范（是否优雅），Prettier是幽灵外观统一（是否美观）。</div>
+    <div class="phantom-note">工具哲学：让工具做它们擅长的事。TypeScript做类型检查，ESLint做代码质量，Prettier做代码格式。不要用一个工具做所有事。</div>
+    <section><p>TypeScript检查类型正确性，ESLint检查代码质量，Prettier统一代码风格。三个工具各司其职，共同创造优美的代码。</p></section>
+    <section>
+      <h3>代码质量工具链</h3>
+      <pre><code>// package.json中的依赖
+/*
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "prettier": "^3.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0"
+  }
+*/
+// .eslintrc.js - ESLint配置
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended' // 必须放在最后
+  ],
+  env: {
+    node: true,
+    es2022: true
+  },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: './tsconfig.json' // 用于类型感知的规则
+  },
+  rules: {
+    // TypeScript特定规则
+    '@typescript-eslint/explicit-function-return-type': 'off', // 不强制显式返回类型
+    '@typescript-eslint/no-explicit-any': 'warn',           // 警告使用any
+    '@typescript-eslint/no-unused-vars': ['error', { 
+      'argsIgnorePattern': '^_' 
+    }],
+    // 代码质量规则
+    'no-console': 'warn',      // 警告console.log
+    'eqeqeq': ['error', 'always'], // 必须使用===和!==
+    'curly': ['error', 'all'], // 必须使用大括号
+    // Prettier集成
+    'prettier/prettier': 'error'
+  },
+  overrides: [
+    {
+      files: ['*.test.ts', '*.spec.ts'],
+      rules: {
+        'no-console': 'off' // 测试文件允许console
+      }
+    }
+  ]
+};
+// .prettierrc.js - Prettier配置
+module.exports = {
+  semi: true,
+  trailingComma: 'es5',
+  singleQuote: true,
+  printWidth: 100,
+  tabWidth: 2,
+  useTabs: false,
+  bracketSpacing: true,
+  arrowParens: 'avoid',
+  endOfLine: 'lf'
+};
+// .prettierignore - Prettier忽略文件
+/*
+node_modules
+dist
+coverage
+*.min.js
+*.d.ts
+*/
+// package.json脚本
+/*
+  "scripts": {
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src",
+    "type-check": "tsc --noEmit"
+  }
+*/
+// 编辑器集成（.vscode/settings.json）
+/*
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.preferences.importModuleSpecifier": "non-relative"
+}
+*/
+// 常见ESLint规则解释
+/*
+  // 代码质量
+  'no-var': 'error'                    // 必须使用let/const，不用var
+  'prefer-const': 'error'              // 如果可以，使用const而不是let
+  'no-multiple-empty-lines': 'error'   // 不允许多个空行
+  // TypeScript特定
+  '@typescript-eslint/consistent-type-imports': 'error' // 统一类型导入方式
+  '@typescript-eslint/no-non-null-assertion': 'warn'    // 警告非空断言
+  '@typescript-eslint/ban-ts-comment': 'warn'           // 警告TS注释
+  // 最佳实践
+  'no-else-return': 'warn'             // 如果可以，避免else return
+  'prefer-template': 'error'           // 优先使用模板字符串
+  'object-shorthand': 'error'          // 使用对象简写
+*/
+// 工作流程
+// 1. 写代码
+// 2. 保存时自动格式化（Prettier）
+// 3. 保存时自动修复ESLint问题
+// 4. 手动运行npm run type-check进行类型检查
+// 5. 提交前运行所有检查</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

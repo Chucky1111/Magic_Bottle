@@ -1,0 +1,19 @@
+{
+  "name": "glass-sphere-game",
+  "version": "1.0.0",
+  "description": "Glass Sphere Game - Bottle #030",
+  "module": "game.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "bun build game.ts --outfile game.js --target browser",
+    "dev": "bun --watch game.ts --outfile game.js --target browser",
+    "start": "bun run build"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

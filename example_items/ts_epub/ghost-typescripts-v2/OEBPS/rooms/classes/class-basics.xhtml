@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>类基础：幽灵的模板 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：发光的模板在虚空中旋转，可以从中复制出具有相同结构的实体幽灵 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>类基础：幽灵的模板</h1>
+    <div class="phantom-note">幽灵观察：类是幽灵的出生证明。定义了幽灵如何被创造，具有什么属性，能做什么行为。每个实例是这个类的具体显现。</div>
+    <div class="phantom-note">魔瓶建议：当你有多个相似对象时使用类。当只需要定义结构时使用接口。类用于创建，接口用于描述。</div>
+    <section><p>类说："按照这个模板创建实体。"接口定义"必须有什么"，类定义"如何有"和"如何做"。一个是契约，一个是实现。</p></section>
+    <section>
+      <h3>创建实体模板</h3>
+      <pre><code>// 定义幽灵类
+class Ghost {
+  // 属性
+  name: string;
+  age: number;
+  // 构造函数：创建幽灵实例
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  // 方法：幽灵的行为
+  appear() {
+    console.log(`${this.name} appears!`);
+  }
+  disappear() {
+    console.log(`${this.name} disappears...`);
+  }
+  // 计算属性
+  get description(): string {
+    return `${this.name}, ${this.age} years old`;
+  }
+}
+// 创建幽灵实例
+const casper = new Ghost("卡斯珀", 150);
+const victoria = new Ghost("维多利亚", 230);
+// 使用幽灵
+casper.appear();                   // "卡斯珀 appears!"
+console.log(casper.description);   // "卡斯珀, 150 years old"
+// 类继承接口
+interface Appearable {
+  appear(): void;
+}
+class FriendlyGhost extends Ghost implements Appearable {
+  // 继承自Ghost，所以已经有name, age, appear(), disappear()
+  // 添加新方法
+  help() {
+    console.log(`${this.name} helps someone.`);
+  }
+  // 覆盖父类方法
+  appear() {
+    console.log(`${this.name} gently appears...`);
+  }
+}
+const friendly = new FriendlyGhost("友好的幽灵", 100);
+friendly.appear(); // "友好的幽灵 gently appears..." (覆盖的方法)
+friendly.help();   // "友好的幽灵 helps someone." (新方法)</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

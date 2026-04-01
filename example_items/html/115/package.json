@@ -1,0 +1,19 @@
+{
+  "name": "115",
+  "module": "src/game.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run --hot src/game.ts",
+    "serve": "bun run public/index.html",
+    "build": "bun build src/game.ts --outdir=public/js --minify",
+    "start": "bunx serve public"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "serve": "^14.2.6"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

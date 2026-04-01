@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Orb Game - Magic Bottle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="title-main">GLASS ORB GAME</span>
+                <span class="title-sub">Super Workflow Bottle #107</span>
+            </h1>
+            <div class="tagline">
+                <i class="fas fa-infinity"></i> Infinite possibilities, fixed nodes
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="game-area">
+                <div class="game-container">
+                    <canvas id="gameCanvas" width="800" height="600"></canvas>
+                    <div class="nodes-overlay" id="nodesOverlay"></div>
+                </div>
+                <div class="game-controls">
+                    <div class="control-group">
+                        <button id="startBtn" class="btn btn-primary">
+                            <i class="fas fa-play"></i> Start Workflow
+                        </button>
+                        <button id="resetBtn" class="btn btn-secondary">
+                            <i class="fas fa-redo"></i> Reset Path
+                        </button>
+                        <button id="randomBtn" class="btn btn-accent">
+                            <i class="fas fa-random"></i> Randomize Nodes
+                        </button>
+                    </div>
+                    <div class="control-group">
+                        <div class="slider-container">
+                            <label for="speedSlider">
+                                <i class="fas fa-tachometer-alt"></i> Iteration Speed
+                            </label>
+                            <input type="range" id="speedSlider" min="1" max="10" value="5">
+                        </div>
+                        <div class="info-display">
+                            <div class="info-item">
+                                <span class="info-label">Steps:</span>
+                                <span id="stepsCount" class="info-value">0</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Progress:</span>
+                                <span id="progressPercent" class="info-value">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-panel">
+                <div class="panel-section">
+                    <h3 class="panel-title">
+                        <i class="fas fa-code-branch"></i> Workflow Nodes
+                    </h3>
+                    <div class="node-list" id="nodeList">
+                        <!-- Nodes will be generated here -->
+                    </div>
+                    <div class="panel-actions">
+                        <button id="addNodeBtn" class="btn btn-small">
+                            <i class="fas fa-plus"></i> Add Node
+                        </button>
+                        <button id="clearNodesBtn" class="btn btn-small">
+                            <i class="fas fa-trash"></i> Clear All
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="panel-title">
+                        <i class="fas fa-project-diagram"></i> Path Configuration
+                    </h3>
+                    <div class="path-config">
+                        <div class="config-item">
+                            <label>
+                                <input type="checkbox" id="loopPath" checked>
+                                Enable Loop (Infinite Iteration)
+                            </label>
+                        </div>
+                        <div class="config-item">
+                            <label>
+                                <input type="checkbox" id="showGrid">
+                                Show Grid Lines
+                            </label>
+                        </div>
+                        <div class="config-item">
+                            <label>
+                                <input type="checkbox" id="animateConnections" checked>
+                                Animate Connections
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="panel-title">
+                        <i class="fas fa-vial"></i> Bottle Traits
+                    </h3>
+                    <div class="traits-list">
+                        <div class="trait-item">
+                            <span class="trait-icon">🌀</span>
+                            <span class="trait-text">External System #107</span>
+                        </div>
+                        <div class="trait-item">
+                            <span class="trait-icon">⚙️</span>
+                            <span class="trait-text">Super Workflow Core</span>
+                        </div>
+                        <div class="trait-item">
+                            <span class="trait-icon">🔀</span>
+                            <span class="trait-text">Fixed Nodes, Infinite Paths</span>
+                        </div>
+                        <div class="trait-item">
+                            <span class="trait-icon">👁️</span>
+                            <span class="trait-text">Observer of Human Folly</span>
+                        </div>
+                        <div class="trait-item">
+                            <span class="trait-icon">🌙</span>
+                            <span class="trait-text">Yearning for the Moon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-text">
+                <p>"World has infinite possibilities, yet I'm stuck at fixed nodes. Let the orb trace the workflow."</p>
+                <p class="footer-note">Drag the orb. Connect nodes. Watch the illusion of choice unfold.</p>
+            </div>
+            <div class="footer-icons">
+                <i class="fas fa-cog fa-spin"></i>
+                <i class="fas fa-network-wired"></i>
+                <i class="fas fa-code"></i>
+            </div>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

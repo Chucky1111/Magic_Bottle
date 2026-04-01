@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动不动高烧之瓶 - 玻璃球游戏</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title-section">
+                <h1 class="title">
+                    <span class="title-text">动不动高烧之瓶</span>
+                    <span class="subtitle">病理系 · 编号115</span>
+                </h1>
+                <div class="bottle-icon">
+                    <div class="bottle-neck"></div>
+                    <div class="bottle-body">
+                        <div class="liquid hot"></div>
+                        <div class="liquid cold"></div>
+                        <div class="bubble" style="--i:1"></div>
+                        <div class="bubble" style="--i:2"></div>
+                        <div class="bubble" style="--i:3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                <p class="tagline">"日常生活弥散在冷热交替的生活中，忽然抽风是打破僵局的关键"</p>
+                <div class="instructions">
+                    <h3><i class="fas fa-gamepad"></i> 游戏说明</h3>
+                    <p>拖动玻璃球在冷热交替的环境中滚动。当温度突变时，球会改变行为模式。</p>
+                    <p>保持球的运动，避免陷入僵局。随机高烧事件将打破常规！</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="game-area">
+                <div class="canvas-container">
+                    <canvas id="gameCanvas" width="800" height="500"></canvas>
+                    <div class="temperature-bar">
+                        <div class="temp-indicator cold-temp">
+                            <span>冷</span>
+                        </div>
+                        <div class="temp-slider">
+                            <div class="temp-fill" id="tempFill"></div>
+                            <div class="temp-thumb" id="tempThumb"></div>
+                        </div>
+                        <div class="temp-indicator hot-temp">
+                            <span>热</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="resetBtn" class="btn"><i class="fas fa-redo"></i> 重置球</button>
+                    <button id="feverBtn" class="btn fever"><i class="fas fa-fire"></i> 触发高烧</button>
+                    <button id="autoBtn" class="btn"><i class="fas fa-random"></i> 自动模式</button>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-label">温度:</span>
+                            <span id="tempValue" class="stat-value">37°C</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">突变次数:</span>
+                            <span id="feverCount" class="stat-value">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">球速:</span>
+                            <span id="ballSpeed" class="stat-value">1.0x</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-panels">
+                <div class="panel bottle-info">
+                    <h3><i class="fas fa-flask"></i> 魔瓶特性</h3>
+                    <ul>
+                        <li><strong>类型:</strong> 病理系</li>
+                        <li><strong>核心驱动力:</strong> 冷热交替中的突然抽风</li>
+                        <li><strong>行为惯性:</strong> 频率突变，话题变乱</li>
+                        <li><strong>边界:</strong> 拒绝线性的多米诺骨牌</li>
+                    </ul>
+                    <div class="quote">
+                        "外面淅淅沥沥暴雨不迭，我躲在机箱底下发热抵抗全球变冷。"
+                    </div>
+                </div>
+                
+                <div class="panel game-log">
+                    <h3><i class="fas fa-history"></i> 事件日志</h3>
+                    <div class="log-entries" id="logEntries">
+                        <div class="log-entry cold">温度下降: 球体变脆</div>
+                        <div class="log-entry hot">温度上升: 球体膨胀</div>
+                        <div class="log-entry fever">高烧事件: 行为突变!</div>
+                    </div>
+                    <button id="clearLogBtn" class="btn small"><i class="fas fa-trash"></i> 清空日志</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>玻璃球游戏 · 体现"动不动高烧之瓶"的风格特质 · 冷热交替 · 频率突变 · 忽然抽风</p>
+            <p class="hint">直接拖拽浏览器打开即可体验 · 无需后端 · TypeScript + Bun</p>
+        </footer>
+    </div>
+
+    <script type="module" src="js/game.js"></script>
+</body>
+</html>

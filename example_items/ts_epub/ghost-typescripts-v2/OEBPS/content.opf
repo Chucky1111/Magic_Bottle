@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="pub-id">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:identifier id="pub-id">urn:uuid:ghost-typescripts-v2</dc:identifier>
+    <dc:title>鬼怪TypeScripts：幽灵维度穿梭指南</dc:title>
+    <dc:creator>全能鬼怪之瓶（魔瓶）</dc:creator>
+    <dc:language>zh-CN</dc:language>
+    <dc:description>穿梭在数据中的幽灵，为你塑造规则。不是书，是TypeScript类型系统的幽灵维度体验。</dc:description>
+    <meta property="dcterms:modified">2025-03-29T00:00:00Z</meta>
+    <meta property="rendition:layout">pre-paginated</meta>
+    <meta property="rendition:orientation">auto</meta>
+    <meta property="rendition:spread">auto</meta>
+  </metadata>
+  
+  <manifest>
+    <!-- 导航文件 -->
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="toc-concepts" href="toc-concepts.xhtml" media-type="application/xhtml+xml"/>
+    <item id="toc-emotion" href="toc-emotion.xhtml" media-type="application/xhtml+xml"/>
+    <item id="toc-intent" href="toc-intent.xhtml" media-type="application/xhtml+xml"/>
+    <item id="toc-haunted-house" href="toc-haunted-house.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- 样式 -->
+    <item id="css-ghost" href="styles/ghost.css" media-type="text/css"/>
+    <item id="css-emotion" href="styles/emotion.css" media-type="text/css"/>
+    <item id="css-ghost-dimension" href="styles/ghost-dimension.css" media-type="text/css"/>
+    
+    <!-- 入口 -->
+    <item id="entrance" href="entrance/index.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- 类型系统断面 -->
+    <item id="types-index" href="hallways/types/index.xhtml" media-type="application/xhtml+xml"/>
+    <item id="basic-types" href="hallways/types/basic-types.xhtml" media-type="application/xhtml+xml"/>
+    <item id="type-inference" href="hallways/types/type-inference.xhtml" media-type="application/xhtml+xml"/>
+    <item id="any-unknown" href="hallways/types/any-unknown.xhtml" media-type="application/xhtml+xml"/>
+    <item id="arrays-tuples" href="hallways/types/arrays-tuples.xhtml" media-type="application/xhtml+xml"/>
+    <item id="enums" href="hallways/types/enums.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- 接口与类型别名断面 -->
+    <item id="interfaces-index" href="hallways/interfaces/index.xhtml" media-type="application/xhtml+xml"/>
+    <item id="interface-basics" href="hallways/interfaces/interface-basics.xhtml" media-type="application/xhtml+xml"/>
+    <item id="type-aliases" href="hallways/interfaces/type-aliases.xhtml" media-type="application/xhtml+xml"/>
+    <item id="optional-readonly" href="hallways/interfaces/optional-readonly.xhtml" media-type="application/xhtml+xml"/>
+    <item id="extends-implements" href="hallways/interfaces/extends-implements.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- 泛型与高级类型断面 -->
+    <item id="generics-index" href="rooms/generics/index.xhtml" media-type="application/xhtml+xml"/>
+    <item id="generic-basics" href="rooms/generics/generic-basics.xhtml" media-type="application/xhtml+xml"/>
+    <item id="generic-constraints" href="rooms/generics/generic-constraints.xhtml" media-type="application/xhtml+xml"/>
+    <item id="utility-types" href="rooms/generics/utility-types.xhtml" media-type="application/xhtml+xml"/>
+    <item id="conditional-types" href="rooms/generics/conditional-types.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- 类与面向对象断面 -->
+    <item id="classes-index" href="rooms/classes/index.xhtml" media-type="application/xhtml+xml"/>
+    <item id="class-basics" href="rooms/classes/class-basics.xhtml" media-type="application/xhtml+xml"/>
+    <item id="access-modifiers" href="rooms/classes/access-modifiers.xhtml" media-type="application/xhtml+xml"/>
+    <item id="inheritance" href="rooms/classes/inheritance.xhtml" media-type="application/xhtml+xml"/>
+    <item id="abstract-interfaces" href="rooms/classes/abstract-interfaces.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- 模块与命名空间断面 -->
+    <item id="modules-index" href="rooms/modules/index.xhtml" media-type="application/xhtml+xml"/>
+    <item id="module-basics" href="rooms/modules/module-basics.xhtml" media-type="application/xhtml+xml"/>
+    <item id="import-export" href="rooms/modules/import-export.xhtml" media-type="application/xhtml+xml"/>
+    <item id="namespace" href="rooms/modules/namespace.xhtml" media-type="application/xhtml+xml"/>
+    <item id="module-resolution" href="rooms/modules/module-resolution.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- 编译器配置断面 -->
+    <item id="configuration-index" href="secret-passages/configuration/index.xhtml" media-type="application/xhtml+xml"/>
+    <item id="tsconfig-basics" href="secret-passages/configuration/tsconfig-basics.xhtml" media-type="application/xhtml+xml"/>
+    <item id="compiler-options" href="secret-passages/configuration/compiler-options.xhtml" media-type="application/xhtml+xml"/>
+    <item id="eslint-prettier" href="secret-passages/configuration/eslint-prettier.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- AI辅助开发断面 -->
+    <item id="ai-assistance-index" href="attic/ai-assistance/index.xhtml" media-type="application/xhtml+xml"/>
+    <item id="ai-tools" href="attic/ai-assistance/ai-tools.xhtml" media-type="application/xhtml+xml"/>
+    <item id="prompt-engineering" href="attic/ai-assistance/prompt-engineering.xhtml" media-type="application/xhtml+xml"/>
+    <item id="ai-collaboration" href="attic/ai-assistance/ai-collaboration.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- 鬼屋项目断面 -->
+    <item id="ghost-types" href="haunted-house/phase1/ghost-types.xhtml" media-type="application/xhtml+xml"/>
+    <item id="room-types" href="haunted-house/phase1/room-types.xhtml" media-type="application/xhtml+xml"/>
+    <item id="phenomena-types" href="haunted-house/phase1/phenomena-types.xhtml" media-type="application/xhtml+xml"/>
+    <item id="basic-rules" href="haunted-house/phase1/basic-rules.xhtml" media-type="application/xhtml+xml"/>
+    <item id="house-structure" href="haunted-house/phase2/house-structure.xhtml" media-type="application/xhtml+xml"/>
+    <item id="ghost-hierarchy" href="haunted-house/phase2/ghost-hierarchy.xhtml" media-type="application/xhtml+xml"/>
+    <item id="interaction-rules" href="haunted-house/phase2/interaction-rules.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- 错误地下室 -->
+    <item id="errors-index" href="basement/errors/index.xhtml" media-type="application/xhtml+xml"/>
+    
+    <!-- 结语与附录 -->
+    <item id="conclusion" href="conclusion.xhtml" media-type="application/xhtml+xml"/>
+    <item id="appendix" href="appendix.xhtml" media-type="application/xhtml+xml"/>
+  </manifest>
+  
+  <spine toc="nav">
+    <itemref idref="entrance" linear="yes"/>
+    <!-- 核心概念断面 -->
+    <itemref idref="types-index" linear="yes"/>
+    <itemref idref="basic-types" linear="yes"/>
+    <itemref idref="type-inference" linear="yes"/>
+    <itemref idref="interfaces-index" linear="yes"/>
+    <itemref idref="interface-basics" linear="yes"/>
+    <itemref idref="type-aliases" linear="yes"/>
+    <itemref idref="generics-index" linear="yes"/>
+    <itemref idref="generic-basics" linear="yes"/>
+    <itemref idref="classes-index" linear="yes"/>
+    <itemref idref="class-basics" linear="yes"/>
+    <itemref idref="modules-index" linear="yes"/>
+    <itemref idref="module-basics" linear="yes"/>
+    <itemref idref="configuration-index" linear="yes"/>
+    <itemref idref="tsconfig-basics" linear="yes"/>
+    <itemref idref="ai-assistance-index" linear="yes"/>
+    <itemref idref="ai-tools" linear="yes"/>
+    <!-- 鬼屋项目 -->
+    <itemref idref="ghost-types" linear="yes"/>
+    <itemref idref="room-types" linear="yes"/>
+    <itemref idref="house-structure" linear="yes"/>
+    <!-- 辅助内容 -->
+    <itemref idref="errors-index" linear="yes"/>
+    <itemref idref="conclusion" linear="yes"/>
+    <itemref idref="appendix" linear="yes"/>
+  </spine>
+  
+  <guide>
+    <reference type="toc" title="概念维度穿梭" href="toc-concepts.xhtml"/>
+    <reference type="toc" title="情绪维度导航" href="toc-emotion.xhtml"/>
+    <reference type="toc" title="意图维度路径" href="toc-intent.xhtml"/>
+    <reference type="start" title="鬼屋入口" href="entrance/index.xhtml"/>
+  </guide>
+</package>

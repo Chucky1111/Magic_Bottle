@@ -1,0 +1,19 @@
+{
+  "name": "glassball-game",
+  "version": "1.0.0",
+  "description": "玻璃球游戏：内在混沌的显现",
+  "module": "server.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run server.ts",
+    "build": "bun build ./src/main.ts --outdir ./dist --target browser",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

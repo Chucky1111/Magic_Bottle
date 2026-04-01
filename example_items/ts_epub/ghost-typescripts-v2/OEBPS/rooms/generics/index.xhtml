@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>时空穿梭：泛型与高级类型 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：类型模板在时空中穿梭，每个模板可以填入不同的具体类型，产生无限的可能性 -->
+  <div class="ghost-section">
+    <h1>时空穿梭：泛型与高级类型</h1>
+    <div class="phantom-note">
+      幽灵观察：泛型是幽灵的变形能力，同一个幽灵可以显现为不同形态，保持相同的本质结构。
+    </div>
+    <!-- 介绍 -->
+    <section>
+      <p>泛型和高级类型是TypeScript最强大的特性之一。它们让你创建<strong>可重用、灵活的类型模板</strong>。</p>
+      <p><strong>泛型</strong>说："给我一个类型，我给你一个专门为它设计的东西。"<br/>
+      <strong>高级类型</strong>是类型层面的编程工具。</p>
+      <div class="phantom-note">
+        魔瓶提醒：当你有重复的类型模式时，考虑泛型。如果多个函数或类有相似的结构但处理不同的类型，泛型可以帮你。
+      </div>
+    </section>
+    <!-- 入口 -->
+    <section>
+      <h2>泛型与高级类型入口</h2>
+      <div class="entrance-options">
+        <div class="option">
+          <h3><a href="generic-basics.xhtml">泛型基础：类型参数化</a></h3>
+          <p>创建可重用的类型模板，一次定义，多次使用。</p>
+          <p class="hint">适合：第一次接触泛型的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="generic-constraints.xhtml">泛型约束：边界的设定</a></h3>
+          <p>控制泛型的灵活性，确保类型安全。</p>
+          <p class="hint">适合：需要限制泛型类型的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="utility-types.xhtml">实用工具类型：内置的幽灵工具</a></h3>
+          <p>TypeScript内置的类型工具，如Partial、Readonly、Pick等。</p>
+          <p class="hint">适合：需要操作和转换类型的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="conditional-types.xhtml">条件类型：类型逻辑</a></h3>
+          <p>类型层面的if-else语句，根据条件选择不同类型。</p>
+          <p class="hint">适合：需要类型逻辑的人</p>
+        </div>
+      </div>
+    </section>
+    <!-- 泛型使用场景 -->
+    <section>
+      <h2>泛型使用场景</h2>
+      <ul>
+        <li><strong>集合类</strong>：List&lt;T&gt;、Stack&lt;T&gt;、Queue&lt;T&gt;</li>
+        <li><strong>API响应</strong>：ApiResponse&lt;T&gt;，T是实际数据类型</li>
+        <li><strong>事件系统</strong>：Event&lt;T&gt;，T是事件数据</li>
+        <li><strong>工具函数</strong>：identity&lt;T&gt;(x: T): T</li>
+        <li><strong>组件属性</strong>：Component&lt;Props&gt;</li>
+      </ul>
+      <div class="phantom-note">
+        泛型是抽象思维的工具。当你发现自己在写重复的类型定义时，考虑是否可以用泛型抽象它们。
+      </div>
+    </section>
+    <!-- 穿梭到其他区域 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到相关区域</h3>
+      <ul>
+        <li><a href="../../hallways/interfaces/index.xhtml">边缘地带：接口与类型别名</a> - 定义类型结构的基础</li>
+        <li><a href="../classes/index.xhtml">篡夺叙事：类与面向对象</a> - 泛型类</li>
+        <li><a href="../../toc-haunted-house.xhtml">鬼屋项目：完整实践</a> - 应用泛型构建幽灵世界</li>
+        <li><a href="../../attic/ai-assistance/index.xhtml">AI辅助开发：类型优先的AI协作</a> - 用泛型指导AI</li>
+      </ul>
+    </nav>
+    </div>
+</body>
+</html>

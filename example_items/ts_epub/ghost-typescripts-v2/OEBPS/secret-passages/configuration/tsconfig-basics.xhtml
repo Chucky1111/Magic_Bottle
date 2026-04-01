@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>tsconfig.json基础 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：控制室中有一个巨大的控制面板，每个开关控制TypeScript编译器的不同方面 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>tsconfig.json基础</h1>
+    <div class="phantom-note">幽灵观察：tsconfig.json是鬼屋的建筑规范。它定义幽灵世界的物理法则：幽灵可以做什么，不能做什么，如何显现。</div>
+    <div class="phantom-note">配置哲学：从严格配置开始（strict: true），只在必要时放宽限制。类型安全是TypeScript的最大优势。</div>
+    <section><p>tsconfig.json是TypeScript项目的控制中心。它告诉TypeScript编译器："这是我的项目，这是我希望你如何处理它。"</p></section>
+    <section>
+      <h3>项目配置基础</h3>
+      <pre><code>// tsconfig.json 基础结构
+{
+  // 编译器选项 - 最重要的部分
+  "compilerOptions": {
+    // 输出目标
+    "target": "ES2022",          // 编译成的JavaScript版本
+    "module": "ESNext",          // 模块系统
+    "lib": ["ES2022", "DOM"],    // 包含的库定义
+    // 模块解析
+    "moduleResolution": "bundler", // 模块解析策略
+    "baseUrl": "./",              // 基础路径
+    "paths": {                    // 路径映射
+      "@/*": ["src/*"]
+    },
+    // 输出
+    "outDir": "./dist",           // 输出目录
+    "rootDir": "./src",           // 源文件根目录
+    // 严格性选项
+    "strict": true,               // 开启所有严格检查
+    "noImplicitAny": true,        // 不允许隐式的any类型
+    "strictNullChecks": true,     // 严格的null检查
+    "strictFunctionTypes": true,  // 严格的函数类型检查
+    // 类型检查
+    "noUnusedLocals": true,       // 检查未使用的局部变量
+    "noUnusedParameters": true,   // 检查未使用的参数
+    "noImplicitReturns": true,    // 检查函数是否总是返回值
+    // JavaScript支持
+    "allowJs": true,              // 允许JavaScript文件
+    "checkJs": true,              // 检查JavaScript文件中的类型
+    // 其他
+    "esModuleInterop": true,      // 更好的CommonJS/ES模块互操作
+    "skipLibCheck": true,         // 跳过库文件的类型检查
+    "forceConsistentCasingInFileNames": true // 强制文件名大小写一致
+  },
+  // 包含的文件
+  "include": [
+    "src/**/*"                    // 包含src目录下的所有文件
+  ],
+  // 排除的文件
+  "exclude": [
+    "node_modules",               // 排除node_modules
+    "dist",                       // 排除输出目录
+    "**/*.test.ts",               // 排除测试文件
+    "**/*.spec.ts"                // 排除规格文件
+  ],
+  // 文件引用
+  "files": [
+    "src/types.d.ts"              // 显式包含的文件
+  ],
+  // 继承配置
+  "extends": "./tsconfig.base.json" // 继承基础配置
+}
+// 继承配置示例
+// tsconfig.base.json - 基础配置
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "module": "ESNext"
+  }
+}
+// tsconfig.json - 扩展配置
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",  // 添加或覆盖选项
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"]
+}
+// 特定环境的配置
+// tsconfig.test.json - 测试配置
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true  // 测试时不输出文件
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*"
+  ]
+}</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>泛型基础：类型参数化 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：透明的模板在虚空中旋转，可以填入不同的类型材料，产生不同的具体形状 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>泛型基础：类型参数化</h1>
+    <div class="phantom-note">幽灵观察：泛型是幽灵的变形能力——同一个幽灵可以显现为不同形态，但保持相同的本质结构。</div>
+    <div class="phantom-note">魔瓶建议：当你有重复的类型模式时，考虑泛型。如果多个函数或类有相似的结构但处理不同的类型，泛型可以帮你。</div>
+    <section><p>泛型说："给我一个类型，我给你一个专门为它设计的东西。"这是类型层面的模板——一次定义，多次使用，每次针对不同的具体类型。</p></section>
+    <section>
+      <h3>类型参数化</h3>
+      <pre><code>// 没有泛型：重复的代码
+function getGhostName(ghost: Ghost): string {
+  return ghost.name;
+}
+function getHumanName(human: Human): string {
+  return human.name;
+}
+// 有泛型：一次定义，多次使用
+function getName&lt;T extends { name: string }&gt;(entity: T): string {
+  return entity.name;
+}
+// 使用泛型函数
+const ghostName = getName(ghost);    // T被推断为Ghost
+const humanName = getName(human);    // T被推断为Human
+// 泛型接口
+interface Container&lt;T&gt; {
+  content: T;
+  getContent(): T;
+  setContent(content: T): void;
+}
+// 具体化泛型接口
+const ghostContainer: Container&lt;Ghost&gt; = {
+  content: casper,
+  getContent() { return this.content; },
+  setContent(ghost: Ghost) { this.content = ghost; }
+};
+const numberContainer: Container&lt;number&gt; = {
+  content: 42,
+  getContent() { return this.content; },
+  setContent(num: number) { this.content = num; }
+};</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

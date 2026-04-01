@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>命名空间：历史的遗留 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：古老的组织结构像发光的层级目录，逐渐被现代的平面模块结构取代 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>命名空间：历史的遗留</h1>
+    <div class="phantom-note">幽灵观察：命名空间是幽灵世界的古老王国制度，有严格的层级。现代模块系统是联邦制，每个文件平等独立。</div>
+    <div class="phantom-note">现代用法：在新代码中使用ES模块。命名空间主要用于组织第三方库的类型声明，或处理遗留代码。</div>
+    <section><p>命名空间是TypeScript早期的模块系统，在现代ES模块普及前使用。现在主要用在声明文件（.d.ts）中组织类型。</p></section>
+    <section>
+      <h3>传统的组织方式</h3>
+      <pre><code>// 定义命名空间
+namespace GhostWorld {
+  export interface Ghost {      // 必须export才能在外部访问
+    name: string;
+    appear(): void;
+  }
+  export class FriendlyGhost implements Ghost {
+    constructor(public name: string) {}
+    appear() {
+      console.log(`${this.name} gently appears...`);
+    }
+  }
+  // 嵌套命名空间
+  export namespace Haunts {
+    export interface Haunt {
+      location: string;
+      intensity: number;
+    }
+  }
+  // 私有，只能在命名空间内部访问
+  const SECRET_PHRASE = "Boo!";
+}
+// 使用命名空间
+const ghost: GhostWorld.Ghost = {
+  name: "卡斯珀",
+  appear() { console.log("Boo!"); }
+};
+const friendly = new GhostWorld.FriendlyGhost("友好的幽灵");
+const haunt: GhostWorld.Haunts.Haunt = {
+  location: "老宅",
+  intensity: 5
+};
+// 命名空间合并（跨文件扩展）
+// file1.ts
+namespace GhostWorld {
+  export interface Poltergeist {
+    strength: number;
+  }
+}
+// file2.ts  
+namespace GhostWorld {
+  export function createPoltergeist(): Poltergeist {
+    return { strength: 10 };
+  }
+}
+// 三斜线指令引用命名空间
+/// &lt;reference path="ghost-world.ts" /&gt;
+// 命名空间与现代模块的对比
+// 现代ES模块（推荐）：
+export interface Ghost { /* ... */ }
+export class FriendlyGhost { /* ... */ }
+// 使用时：
+import { Ghost, FriendlyGhost } from './ghosts';</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

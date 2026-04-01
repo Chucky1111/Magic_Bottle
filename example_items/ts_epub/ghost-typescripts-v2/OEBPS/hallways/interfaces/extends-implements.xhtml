@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>扩展与实现：契约的继承 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：契约卷轴相互连接，子契约继承父契约的条款并添加自己的新条款 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>扩展与实现：契约的继承</h1>
+    <div class="phantom-note">幽灵观察：接口扩展是幽灵王朝的建立——祖先的能力传给后代。类实现是幽灵的社会契约——承诺遵守某些行为准则。</div>
+    <div class="phantom-note">魔瓶建议：扩展用于"是什么"的关系（Poltergeist是Ghost的一种），实现用于"能做什么"的关系（这个类能像Ghost一样行动）。</div>
+    <section><p>扩展说："我拥有父契约的一切，再加上更多。"实现说："我承诺遵守这个契约。"一个是继承特性，一个是遵守承诺。</p></section>
+    <section>
+      <h3>构建契约体系</h3>
+      <pre><code>// 接口扩展：构建契约体系
+interface Ghost {
+  name: string;
+  appear(): void;
+}
+interface FriendlyGhost extends Ghost {
+  helpHumans(): void;  // 友好幽灵能帮助人类
+}
+interface Poltergeist extends Ghost {
+  moveObjects(): void; // 骚灵能移动物体
+}
+// 类实现：承诺遵守契约
+class BasicGhost implements Ghost {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  appear() {
+    console.log(`${this.name} appears!`);
+  }
+}
+class FriendlyCaspar implements FriendlyGhost {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  appear() {
+    console.log(`${this.name} gently appears...`);
+  }
+  helpHumans() {
+    console.log(`${this.name} helps the humans.`);
+  }
+}
+// 多层扩展
+interface SupernaturalEntity {
+  existsInDimension: string;
+}
+interface Ghost extends SupernaturalEntity {
+  // 继承自SupernaturalEntity，所以也有existsInDimension
+  name: string;
+  appear(): void;
+}</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

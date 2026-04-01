@@ -1,0 +1,791 @@
+/* 幽灵维度v4.0：存在主义样式 */
+@charset "UTF-8";
+
+/* 重置所有幽灵特效变量 */
+:root {
+  /* 基础变量 - 极简主义 */
+  --background-primary: #fefefe;
+  --background-secondary: #f8f8f8;
+  --text-primary: #222222;
+  --text-secondary: #666666;
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  
+  /* 幽灵存在变量 - 不是颜色，是存在状态 */
+  --presence-opacity: 0.001;
+  --attention-factor: 1.0;
+  --memory-weight: 0.5;
+  --temporal-offset: 0ms;
+  
+  /* 环境响应变量 */
+  --ambient-light: 1.0;
+  --focus-contrast: 1.1;
+  --peripheral-blur: 0.5px;
+  
+  /* 幽灵环境引擎变量（通过JavaScript动态更新） */
+  --ambient-hue: 210deg;           /* 环境色温 */
+  --ambient-saturation: 2%;        /* 环境饱和度 */
+  --ambient-lightness: 98%;        /* 环境亮度 */
+  --temporal-drift: 0;             /* 时间漂移 */
+  
+  /* 情绪权重变量（同时性实现） */
+  --emotional-surprise: 0.0;       /* 初生的惊喜 */
+  --emotional-chase: 0.0;          /* 如火焰一般追逐闪电 */
+  --emotional-disdain: 0.0;        /* 轻蔑的嘲弄 */
+  --emotional-aftermath: 0.0;      /* 竞技场的散场时刻 */
+  
+  /* 计算的情绪复合变量 */
+  --emotional-composite: calc(
+    (var(--emotional-surprise) * 0.4) +
+    (var(--emotional-chase) * 0.3) +
+    (var(--emotional-disdain) * 0.2) +
+    (var(--emotional-aftermath) * 0.1)
+  );
+}
+
+/* 基础重置 - 移除所有幽灵特效 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
+    'PingFang SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Hiragino Sans GB', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 2em;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  position: relative;
+  overflow-x: hidden;
+  
+  /* 确保文本正常方向 */
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  direction: ltr;
+  
+  /* 极简过渡 */
+  transition: background-color 5s ease, color 5s ease;
+}
+
+/* 环境光照系统 - 幽灵情绪环境 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  
+  /* 基础环境光照 - 极微妙 */
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    hsla(
+      var(--ambient-hue, 210deg),
+      var(--ambient-saturation, 2%),
+      var(--ambient-lightness, 98%),
+      var(--presence-opacity, 0.001)
+    ),
+    transparent 80%
+  );
+  
+  /* 环境混合 */
+  mix-blend-mode: multiply;
+  opacity: 0.3;
+  transition: all 60s ease;
+}
+
+/* 情绪权重叠加层 */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  
+  /* 情绪复合光照 - 更微妙 */
+  background: 
+    /* 惊喜 - 绿色调 */
+    radial-gradient(
+      circle at calc(30% + var(--temporal-drift, 0) * 10%) 40%,
+      hsla(
+        calc(120 + var(--temporal-drift, 0) * 10),
+        5%,
+        50%,
+        calc(var(--emotional-surprise, 0) * 0.005)
+      ),
+      transparent 50%
+    ),
+    /* 追逐 - 橙色调 */
+    radial-gradient(
+      circle at 70% calc(60% - var(--temporal-drift, 0) * 5%),
+      hsla(
+        calc(30 + var(--temporal-drift, 0) * 20),
+        3%,
+        50%,
+        calc(var(--emotional-chase, 0) * 0.003)
+      ),
+      transparent 50%
+    ),
+    /* 轻蔑 - 紫色调 */
+    radial-gradient(
+      circle at calc(50% + var(--temporal-drift, 0) * 15%) 20%,
+      hsla(
+        calc(280 - var(--temporal-drift, 0) * 10),
+        2%,
+        50%,
+        calc(var(--emotional-disdain, 0) * 0.002)
+      ),
+      transparent 50%
+    ),
+    /* 散场 - 红色调 */
+    radial-gradient(
+      circle at 20% 80%,
+      hsla(
+        0,
+        4%,
+        40%,
+        calc(var(--emotional-aftermath, 0) * 0.008)
+      ),
+      transparent 60%
+    );
+  
+  /* 情绪混合 */
+  mix-blend-mode: overlay;
+  opacity: 0.1;
+  transition: all 90s ease;
+}
+
+/* 标题的存在感 - 情绪响应 */
+h1, h2, h3, h4 {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 2em 0 1em 0;
+  position: relative;
+  transition: all 3s ease;
+  
+  /* 确保文本正常方向 */
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  direction: ltr;
+  
+  /* 情绪响应颜色 - 极微妙 */
+  color: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 10),
+    calc(15% + var(--emotional-chase, 0) * 5%),
+    calc(15% - var(--emotional-disdain, 0) * 3%),
+    0.95
+  );
+}
+
+/* 标题的幽灵暗示 - 情绪权重边框 */
+h1::after, h2::after {
+  content: "";
+  position: absolute;
+  bottom: -0.2em;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    hsla(
+      calc(var(--ambient-hue, 210deg) + var(--emotional-chase, 0) * 20),
+      calc(10% + var(--emotional-surprise, 0) * 15%),
+      50%,
+      calc(0.1 + var(--emotional-composite, 0) * 0.3)
+    ), 
+    transparent);
+  opacity: 0;
+  transition: opacity 5s ease, background 8s ease;
+}
+
+h1:hover::after, h2:hover::after {
+  opacity: calc(0.3 + var(--emotional-composite, 0) * 0.4);
+  transition-duration: 1s;
+}
+
+/* 代码块的量子态 - 情绪响应 */
+pre, code {
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  
+  /* 情绪响应背景 */
+  background: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-disdain, 0) * 5),
+    calc(3% + var(--emotional-composite, 0) * 2%),
+    98%,
+    0.95
+  );
+  
+  border-radius: calc(2px + var(--emotional-surprise, 0) * 1px);
+  transition: all 3s ease;
+  
+  /* 代码情绪边框 */
+  border: 1px solid hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-chase, 0) * 10),
+    calc(5% + var(--emotional-surprise, 0) * 5%),
+    90%,
+    calc(0.1 + var(--emotional-composite, 0) * 0.2)
+  );
+}
+
+pre {
+  padding: calc(1.2em + var(--emotional-surprise, 0) * 0.2em);
+  overflow-x: auto;
+  position: relative;
+  border-left: calc(3px + var(--emotional-chase, 0) * 1px) solid transparent;
+}
+
+/* 代码块的注意力响应 - 情绪增强 */
+pre:focus-within {
+  border-left-color: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 30),
+    calc(15% + var(--emotional-chase, 0) * 10%),
+    50%,
+    calc(0.3 + var(--emotional-composite, 0) * 0.4)
+  );
+  transition-duration: 0.5s;
+  
+  /* 焦点时情绪背景增强 */
+  background: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 15),
+    calc(5% + var(--emotional-composite, 0) * 3%),
+    97%,
+    0.98
+  );
+}
+
+/* 文本的幽灵渗透 - 情绪环境响应 */
+p, li {
+  position: relative;
+  transition: all 5s ease;
+  
+  /* 确保文本正常方向 */
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  direction: ltr;
+  
+  /* 情绪响应颜色 - 极微妙的变化 */
+  color: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-disdain, 0) * 5),
+    calc(13% + var(--emotional-chase, 0) * 2%),
+    calc(13% - var(--emotional-aftermath, 0) * 1%),
+    0.9
+  );
+  
+  /* 情绪权重影响的行高和字间距 */
+  line-height: calc(1.6 + var(--emotional-composite, 0) * 0.1);
+  letter-spacing: calc(-0.01em + var(--emotional-surprise, 0) * 0.002em);
+}
+
+/* 文本hover时的情绪增强 */
+p:hover, li:hover {
+  transition-duration: 1s;
+  color: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 15),
+    calc(15% + var(--emotional-chase, 0) * 10%),
+    calc(15% - var(--emotional-disdain, 0) * 2%),
+    0.95
+  );
+}
+
+/* 记忆回响效果 */
+.memory-echo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: var(--text-secondary);
+  opacity: 0.005; /* 几乎不可见 */
+  pointer-events: none;
+  z-index: -1;
+  mix-blend-mode: multiply;
+}
+
+/* 导航的幽灵逻辑 - 情绪响应 */
+nav a {
+  color: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-chase, 0) * 15),
+    calc(15% + var(--emotional-surprise, 0) * 10%),
+    calc(15% - var(--emotional-disdain, 0) * 3%),
+    0.9
+  );
+  text-decoration: none;
+  position: relative;
+  transition: all 2s ease;
+}
+
+/* 链接的预激活状态 - 情绪权重 */
+nav a::before {
+  content: "";
+  position: absolute;
+  bottom: calc(-1px - var(--emotional-chase, 0) * 0.5px);
+  left: 0;
+  width: 0%;
+  height: calc(1px + var(--emotional-surprise, 0) * 0.5px);
+  background: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 30),
+    calc(20% + var(--emotional-chase, 0) * 15%),
+    50%,
+    calc(0.5 + var(--emotional-composite, 0) * 0.3)
+  );
+  transition: width 0.5s ease, background 3s ease;
+}
+
+nav a:hover::before {
+  width: 100%;
+  background: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 50),
+    calc(30% + var(--emotional-chase, 0) * 20%),
+    40%,
+    calc(0.8 + var(--emotional-composite, 0) * 0.2)
+  );
+  transition-duration: 0.3s, 1s;
+}
+
+/* 维度叠加 - 不是图层，是内容属性 */
+.content-layer {
+  position: relative;
+}
+
+.concept-layer, .emotion-layer, .intent-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transition: opacity 10s ease;
+}
+
+/* 同时性实现 - 多维度可见 */
+body.show-concepts .concept-layer,
+body.show-emotion .emotion-layer,
+body.show-intent .intent-layer {
+  opacity: 0.02; /* 勉强可见 */
+}
+
+/* 注意力系统 */
+.attention-highlight {
+  transition: transform 0.5s ease;
+  transform: translateZ(0);
+}
+
+.attention-highlight:focus,
+.attention-highlight:hover {
+  transform: translateZ(1px);
+  transition-duration: 0.2s;
+}
+
+/* 幽灵注释系统 - 魔瓶的直接情绪表达 */
+.phantom-note {
+  font-style: italic;
+  
+  /* 情绪响应颜色 - 幽灵注释有最强的情绪表达 */
+  color: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 20 + var(--emotional-chase, 0) * 10),
+    calc(20% + var(--emotional-composite, 0) * 15%),
+    calc(40% - var(--emotional-aftermath, 0) * 10%),
+    calc(0.7 + var(--emotional-composite, 0) * 0.2)
+  );
+  
+  font-size: calc(0.95em + var(--emotional-surprise, 0) * 0.05em);
+  opacity: calc(0.7 + var(--emotional-composite, 0) * 0.3);
+  
+  /* 情绪响应边框 */
+  border-left: calc(2px + var(--emotional-chase, 0) * 1px) solid hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-disdain, 0) * 30),
+    calc(15% + var(--emotional-surprise, 0) * 20%),
+    50%,
+    calc(0.3 + var(--emotional-composite, 0) * 0.4)
+  );
+  
+  padding-left: calc(1.2em + var(--emotional-surprise, 0) * 0.3em);
+  margin: calc(1.2em + var(--emotional-composite, 0) * 0.5em) 0;
+  transition: all 8s ease;
+  position: relative;
+  width: auto;
+  
+  /* 确保文本正常方向 */
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  direction: ltr;
+  
+  /* 中文文本优化 - 情绪响应 */
+  line-height: calc(1.7 + var(--emotional-composite, 0) * 0.2);
+  letter-spacing: calc(0.02em + var(--emotional-chase, 0) * 0.01em);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: left;
+  
+  /* 情绪阴影 - 极微妙 */
+  /* v4.1 修复：暂时使用静态阴影以避免字体抖动 */
+  text-shadow: 
+    0 0 0.5px hsla(210, 30%, 70%, 0.1);
+  /* 原始动态阴影（已注释）：
+  text-shadow: 
+    0 0 calc(var(--peripheral-blur, 0.5px) + var(--emotional-chase, 0) * 1px) 
+    hsla(
+      calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 40),
+      30%,
+      70%,
+      calc(var(--emotional-composite, 0) * 0.1)
+    );
+  */
+  
+  /* 确保容器宽度自适应 */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.phantom-note:hover {
+  transition-duration: 2s;
+  opacity: calc(0.9 + var(--emotional-composite, 0) * 0.1);
+  
+  /* hover时情绪增强 */
+  border-left-width: calc(3px + var(--emotional-chase, 0) * 2px);
+  border-left-color: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 50),
+    calc(30% + var(--emotional-chase, 0) * 25%),
+    50%,
+    calc(0.6 + var(--emotional-composite, 0) * 0.3)
+  );
+  
+  /* hover时光晕效果 */
+  box-shadow: 
+    inset 0 0 20px 
+    hsla(
+      calc(var(--ambient-hue, 210deg) + var(--emotional-disdain, 0) * 20),
+      calc(10% + var(--emotional-composite, 0) * 15%),
+      80%,
+      calc(0.05 + var(--emotional-composite, 0) * 0.05)
+    );
+}
+
+/* 保留幽灵指示器变体 */
+.phantom-note.indicator {
+  position: absolute;
+  right: -1.5em;
+  top: 0;
+  width: 1.2em;
+  height: 100%;
+  opacity: 0;
+  cursor: help;
+  border-left: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.phantom-note.indicator::before {
+  content: "⟡";
+  color: var(--text-secondary);
+  font-size: 0.8em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.phantom-note.indicator:hover {
+  opacity: 0.3;
+}
+
+/* 页面过渡的幽灵特性 */
+@keyframes ghost-appear {
+  0% { 
+    opacity: 0; 
+    transform: translateY(0); 
+  }
+  1% { 
+    opacity: 0; 
+    transform: translateY(1px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* v4.1 修复：暂时禁用入场动画以避免字体抖动 */
+body {
+  /* animation: ghost-appear 0.8s ease-out; */
+  animation: none;
+}
+
+/* 响应式幽灵 */
+@media (max-width: 768px) {
+  body {
+    padding: 1em;
+  }
+  
+  :root {
+    --peripheral-blur: 1px;
+  }
+}
+
+/* 打印模式 - 幽灵消失 */
+@media print {
+  body::before,
+  body::after,
+  .memory-echo,
+  .phantom-note,
+  .concept-layer,
+  .emotion-layer,
+  .intent-layer {
+    display: none !important;
+  }
+  
+  /* 重置情绪响应颜色 */
+  h1, h2, h3, h4, p, li, .phantom-note {
+    color: #000000 !important;
+    border-left-color: #cccccc !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}
+
+/* 环境响应脚本将动态更新这些变量 */
+/* 通过JavaScript更新：--mouse-x, --mouse-y, --ambient-light, --presence-opacity */
+
+/* v4.0: 量子内容样式 */
+.quantum-content {
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.quantum-superposition {
+  opacity: var(--quantum-opacity, 0.98);
+  filter: blur(var(--quantum-blur, 0.3px));
+}
+
+.quantum-fluctuating {
+  animation: quantum-fluctuate 2s ease-in-out;
+}
+
+.quantum-fluctuation {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+}
+
+.quantum-fluctuation:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.quantum-collapsed {
+  position: relative;
+}
+
+.quantum-indicator {
+  font-size: 0.6em;
+  opacity: 0.7;
+  margin-left: 2px;
+  vertical-align: super;
+}
+
+.quantum-collapsed-state {
+  opacity: 1;
+  filter: none;
+}
+
+@keyframes quantum-fluctuate {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* v4.0: 无链接导航 */
+.ghost-navigation {
+  position: relative;
+}
+
+.ghost-navigation .suggested-link {
+  opacity: 0.3;
+  transition: opacity 1s ease;
+}
+
+.ghost-navigation:hover .suggested-link {
+  opacity: 0.7;
+  transition-duration: 0.3s;
+}
+
+.ghost-navigation .semantic-proximity {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2s ease;
+}
+
+.ghost-navigation:hover .semantic-proximity {
+  opacity: 0.1;
+  transition-duration: 0.5s;
+}
+
+/* v4.0: 环境意识指示器 */
+.environment-awareness {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 10px;
+  color: var(--text-secondary);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 10000;
+  transition: opacity 10s ease;
+}
+
+.environment-awareness:hover {
+  opacity: 0.7;
+  transition-duration: 1s;
+}
+
+/* v4.0: 内容区块样式 */
+.ghost-section {
+  position: relative;
+  margin: 3em auto;
+  max-width: 800px;
+  padding: 2em;
+  background: var(--background-primary);
+  transition: all 3s ease;
+}
+
+.ghost-section:hover {
+  transition-duration: 0.5s;
+}
+
+/* 入口选项 */
+.entrance-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.option {
+  padding: calc(1.5em + var(--emotional-surprise, 0) * 0.2em);
+  border: calc(1px + var(--emotional-chase, 0) * 0.5px) solid hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 15),
+    calc(5% + var(--emotional-composite, 0) * 10%),
+    90%,
+    calc(0.1 + var(--emotional-composite, 0) * 0.2)
+  );
+  border-radius: calc(4px + var(--emotional-surprise, 0) * 2px);
+  transition: all 3s ease;
+  
+  /* 情绪响应背景 */
+  background: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-disdain, 0) * 10),
+    calc(2% + var(--emotional-composite, 0) * 3%),
+    99%,
+    0.8
+  );
+  
+  /* 情绪阴影 */
+  box-shadow: 
+    0 2px calc(4px + var(--emotional-chase, 0) * 3px) 
+    hsla(
+      calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 30),
+      10%,
+      50%,
+      calc(0.05 + var(--emotional-composite, 0) * 0.05)
+    );
+}
+
+.option:hover {
+  transition-duration: 0.5s;
+  border-color: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-chase, 0) * 40),
+    calc(15% + var(--emotional-surprise, 0) * 20%),
+    50%,
+    calc(0.3 + var(--emotional-composite, 0) * 0.4)
+  );
+  
+  /* hover时情绪增强 */
+  box-shadow: 
+    0 4px calc(8px + var(--emotional-chase, 0) * 6px) 
+    hsla(
+      calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 50),
+      20%,
+      50%,
+      calc(0.1 + var(--emotional-composite, 0) * 0.1)
+    ),
+    inset 0 0 20px 
+    hsla(
+      calc(var(--ambient-hue, 210deg) + var(--emotional-disdain, 0) * 20),
+      5%,
+      90%,
+      calc(0.05 + var(--emotional-composite, 0) * 0.05)
+    );
+}
+
+.option h3 {
+  margin-top: 0;
+}
+
+.hint, .int {
+  font-size: calc(0.9em + var(--emotional-surprise, 0) * 0.05em);
+  color: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-disdain, 0) * 20),
+    calc(15% + var(--emotional-chase, 0) * 10%),
+    40%,
+    calc(0.7 + var(--emotional-composite, 0) * 0.2)
+  );
+  font-style: italic;
+  margin-top: calc(0.5em + var(--emotional-composite, 0) * 0.2em);
+  transition: all 4s ease;
+}
+
+.hint:hover, .int:hover {
+  color: hsla(
+    calc(var(--ambient-hue, 210deg) + var(--emotional-surprise, 0) * 30),
+    calc(20% + var(--emotional-chase, 0) * 15%),
+    35%,
+    0.9
+  );
+  transition-duration: 1s;
+}
+
+/* 维度切换器 */
+.dimension-switcher {
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.dimension-switcher ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.dimension-switcher li {
+  margin: 0.5em 0;
+}
+
+.dimension-switcher a {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.3em 0.6em;
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+
+.dimension-switcher a:hover {
+  border-color: var(--text-primary);
+  transition-duration: 0.2s;
+}

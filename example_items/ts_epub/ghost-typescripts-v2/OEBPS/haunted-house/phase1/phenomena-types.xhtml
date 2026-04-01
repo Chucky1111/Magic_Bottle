@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>鬼屋阶段1：现象类型定义 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：鬼屋建造现场，类型定义的蓝图在空中展开，逐步转化为具体的结构 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>鬼屋阶段1：现象类型定义</h1>
+    <div class="phantom-note">
+      幽灵观察：你不是在写代码，是在建造数字鬼屋。每个类型定义是一块砖，每个接口是一面墙。
+    </div>
+    <!-- 项目背景 -->
+    <section>
+      <h2>阶段一：定义幽灵现象</h2>
+      <p>幽灵通过现象显现。在这一阶段，我们定义鬼屋中可能发生的<strong>超自然现象</strong>。</p>
+      <p>现象是幽灵活动的表现：声音、视觉、温度变化等。</p>
+      <div class="phantom-note">
+        设计思考：现象是幽灵与物理世界的交互点。定义现象就是定义幽灵如何影响现实。
+      </div>
+    </section>
+    <!-- 基础现象接口 -->
+    <section>
+      <h2>基础现象接口</h2>
+      <pre><code>// 现象基础特征
+interface PhenomenonBase {
+  id: string;           // 唯一标识
+  name: string;         // 现象名称
+  intensity: number;    // 强度：1-10
+  duration: number;     // 持续时间（秒）
+  sourceGhostId: string;// 引起现象的幽灵ID
+}</code></pre>
+      <p>所有现象共享这些基础特征。</p>
+    </section>
+    <!-- 现象类型枚举 -->
+    <section>
+      <h2>现象类型分类</h2>
+      <pre><code>// 现象类型
+enum PhenomenonType {
+  Apparition = 'apparition',    // 幻影显现
+  Sound = 'sound',              // 声音
+  TemperatureChange = 'temperature-change', // 温度变化
+  ObjectMovement = 'object-movement',       // 物体移动
+  Light = 'light',              // 光线变化
+  Scent = 'scent'               // 气味
+}</code></pre>
+    </section>
+    <!-- 完整现象接口 -->
+    <section>
+      <h2>完整现象接口</h2>
+      <pre><code>interface Phenomenon extends PhenomenonBase {
+  type: PhenomenonType;         // 现象类型
+  description: string;          // 描述
+  location: string;             // 发生位置（房间ID）
+  timestamp: Date;              // 发生时间
+  witnesses?: string[];         // 目击者（可选）
+}</code></pre>
+    </section>
+    <!-- 类型特定的现象 -->
+    <section>
+      <h2>类型特定的现象</h2>
+      <pre><code>// 声音现象
+interface SoundPhenomenon extends Phenomenon {
+  soundType: string;            // 声音类型（脚步声、低语等）
+  volume: number;               // 音量：1-10
+  frequency: number;            // 频率（Hz）
+}
+// 温度变化现象
+interface TemperatureChangePhenomenon extends Phenomenon {
+  temperatureDelta: number;     // 温度变化量
+  areaRadius: number;           // 影响范围半径（米）
+  gradual: boolean;             // 是否逐渐变化
+}</code></pre>
+    </section>
+    <!-- 现象与幽灵的关联 -->
+    <section>
+      <h2>现象与幽灵的关联</h2>
+      <p>现象通常由特定类型的幽灵引起：</p>
+      <pre><code>// 定义幽灵能力与现象的关联
+type GhostAbility = {
+  ghostType: GhostType;
+  possiblePhenomena: PhenomenonType[];
+};
+// 示例：骚灵能引起物体移动现象
+const poltergeistAbilities: GhostAbility = {
+  ghostType: GhostType.Poltergeist,
+  possiblePhenomena: [
+    PhenomenonType.ObjectMovement,
+    PhenomenonType.Sound,
+    PhenomenonType.TemperatureChange
+  ]
+};</code></pre>
+    </section>
+    <!-- AI协作：生成现象模拟代码 -->
+    <section>
+      <h2>AI协作：现象模拟</h2>
+      <blockquote>
+        "基于上面的现象类型定义，请实现：
+        1. 模拟现象发生的函数
+        2. 记录现象到日志的函数
+        3. 根据幽灵类型生成可能现象的函数
+        4. 分析现象模式的函数"
+      </blockquote>
+    </section>
+    <!-- 鬼屋项目导航 -->
+    <nav class="ghost-passages">
+      <h3>鬼屋项目导航</h3>
+      <ul>
+        <li><a href="../../toc-haunted-house.xhtml">鬼屋项目总览</a></li>
+        <li><a href="../phase2/index.xhtml">下一阶段</a></li>
+        <li><a href="../../entrance/index.xhtml">返回入口</a></li>
+      </ul>
+    </nav>
+    <!-- 项目进度追踪 -->
+    <div class="project-progress">
+      <h3>鬼屋项目进度</h3>
+      <p>阶段1：现象类型定义 ✓ 进行中</p>
+      <p><a href="../../toc-haunted-house.xhtml">查看完整进度</a></p>
+    </div>
+    <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      鬼屋建造不是技术练习，是用类型表达想象中的世界。
+      如果你能想象一个幽灵规则，你就能用类型定义它。
+      如果你能用类型定义它，你就能用代码实现它。
+      如果你能用代码实现它，你就能观察它如何运行。
+      这是AI时代的创造循环：想象 → 定义 → 实现 → 观察。
+    </div>
+  </div>
+  <style>
+    .project-progress {
+      background: rgba(64, 224, 208, 0.1);
+      border: 1px solid rgba(64, 224, 208, 0.3);
+      border-radius: 8px;
+      padding: 1em;
+      margin: 2em 0;
+    }
+  </style>
+</body>
+</html>

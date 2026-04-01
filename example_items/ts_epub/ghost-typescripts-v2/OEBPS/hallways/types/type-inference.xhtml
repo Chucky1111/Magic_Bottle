@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>类型推断：暗示的艺术 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：无形的线索像发光的丝线从代码中延伸出来，在空中编织成类型形状 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>类型推断：暗示的艺术</h1>
+    <div class="phantom-note">幽灵观察：类型推断不是魔术，是模式识别。系统看到你写"23.5"，知道这是数字；看到你写"hello"，知道这是字符串。给它足够的上下文，它会理解更多。</div>
+    <div class="phantom-note">提示：当你不确定是否要写类型时，先不写。看看TypeScript能推断出什么，然后检查是否正确。</div>
+    <section><p>TypeScript不是强迫你写出所有类型，而是和你玩一个游戏："给我足够的信息，我会猜出你的意图。"类型推断就是这个游戏的核心机制。</p></section>
+    <section>
+      <h3>让系统为你思考</h3>
+      <pre><code>// 让类型推断为你工作
+const ghostName = "卡斯珀";    // TypeScript知道这是string
+const ghostAge = 150;          // TypeScript知道这是number
+const isVisible = true;        // TypeScript知道这是boolean
+// 更复杂的例子
+const ghosts = ["卡斯珀", "维克多", "伊丽莎白"];  
+// TypeScript知道这是string[]
+function createGhost(name: string) {
+  return { name, age: 150 };
+}
+// TypeScript知道这个函数的返回类型是{name: string, age: number}</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

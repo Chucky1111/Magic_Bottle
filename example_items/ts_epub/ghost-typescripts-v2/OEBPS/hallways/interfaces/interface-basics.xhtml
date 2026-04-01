@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>接口：幽灵的契约 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：半透明的契约卷轴在空中展开，发光的条款定义了幽灵必须遵守的规则 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>接口：幽灵的契约</h1>
+    <div class="phantom-note">幽灵观察：接口是幽灵社会的法律。它们定义幽灵必须有的能力，但不规定这些能力如何实现。</div>
+    <div class="phantom-note">魔瓶世界观："没有无法塑造的规则，只有无法表达的现状。"接口就是你表达规则的方式。</div>
+    <section><p>接口说："如果你想要成为X，你必须能做Y。"不关心你如何做到，只关心你能做到。这是规则，不是实现。</p></section>
+    <section>
+      <h3>定义与实现契约</h3>
+      <pre><code>// 定义幽灵契约
+interface Ghost {
+  name: string;
+  appear(): void;
+  disappear(): void;
+}
+// 实现契约
+class FriendlyGhost implements Ghost {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  appear() {
+    console.log(`${this.name} gently appears...`);
+  }
+  disappear() {
+    console.log(`${this.name} fades away...`);
+  }
+}
+// 使用契约
+function interactWithGhost(ghost: Ghost) {
+  ghost.appear();
+  // 我们知道ghost有name、appear()和disappear()，因为接口保证了这一点
+}</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

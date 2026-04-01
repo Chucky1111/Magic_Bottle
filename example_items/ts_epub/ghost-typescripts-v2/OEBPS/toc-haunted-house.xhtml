@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>鬼屋维度：完整项目实践 v4.0</title>
+  <link rel="stylesheet" href="styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <div class="ghost-section">
+    <h1>鬼屋维度：完整项目实践</h1>
+    <div class="phantom-note">
+      幽灵观察：这不是项目教程，是鬼屋建造手册。你不是在学习，而是在塑造一个数字幽灵世界。
+    </div>
+    <!-- 项目概述 -->
+    <section>
+      <h2>鬼屋项目概述</h2>
+      <p>你将构建一个<strong>幽灵维度模拟系统</strong>——一个用TypeScript类型系统定义的、由AI实现的、可运行的幽灵世界。</p>
+      <p><strong>核心理念</strong>：用类型定义规则，让AI实现规则，观察规则如何创造现实。</p>
+      <div class="phantom-note">
+        传统项目："如何做"。鬼屋项目："如果规则是这样，会创造什么现实？"
+      </div>
+    </section>
+    <!-- 鬼屋建造阶段 -->
+    <section>
+      <h2>鬼屋建造阶段</h2>
+      <h3>阶段一：地基 - 基本类型定义</h3>
+      <p>定义鬼屋的基本元素：幽灵、房间、现象。</p>
+      <ul>
+        <li><a href="haunted-house/phase1/ghost-types.xhtml">幽灵类型定义</a> - Ghost, Spirit, Poltergeist</li>
+        <li><a href="haunted-house/phase1/room-types.xhtml">房间类型定义</a> - Room, Corridor, Chamber</li>
+        <li><a href="haunted-house/phase1/phenomena-types.xhtml">现象类型定义</a> - Apparition, Sound, TemperatureChange</li>
+        <li><a href="haunted-house/phase1/basic-rules.xhtml">基本规则接口</a> - 幽灵如何与房间交互</li>
+      </ul>
+      <h3>阶段二：结构 - 接口与关系</h3>
+      <p>定义鬼屋的结构和幽灵之间的关系。</p>
+      <ul>
+        <li><a href="haunted-house/phase2/house-structure.xhtml">鬼屋结构接口</a> - 房间连接方式</li>
+        <li><a href="haunted-house/phase2/ghost-hierarchy.xhtml">幽灵层次结构</a> - 继承与多态</li>
+        <li><a href="haunted-house/phase2/interaction-rules.xhtml">交互规则接口</a> - 幽灵与环境的交互</li>
+        <li><a href="haunted-house/phase2/time-system.xhtml">时间系统接口</a> - 鬼屋中的时间流动</li>
+      </ul>
+      <h3>阶段三：机制 - 泛型与高级类型</h3>
+      <p>定义鬼屋的运行机制和动态规则。</p>
+      <ul>
+        <li><a href="haunted-house/phase3/generic-phenomena.xhtml">泛型现象系统</a> - 可重用的现象模板</li>
+        <li><a href="haunted-house/phase3/conditional-rules.xhtml">条件规则类型</a> - 基于条件的幽灵行为</li>
+        <li><a href="haunted-house/phase3/utility-types.xhtml">实用工具类型</a> - 鬼屋专用的类型工具</li>
+        <li><a href="haunted-house/phase3/event-system.xhtml">事件系统类型</a> - 幽灵事件的触发与处理</li>
+      </ul>
+      <h3>阶段四：组织 - 模块与配置</h3>
+      <p>组织代码结构，配置编译环境。</p>
+      <ul>
+        <li><a href="haunted-house/phase4/module-structure.xhtml">模块结构设计</a> - 代码的领地划分</li>
+        <li><a href="haunted-house/phase4/tsconfig.xhtml">项目配置</a> - TypeScript编译器设置</li>
+        <li><a href="haunted-house/phase4/ai-integration.xhtml">AI集成配置</a> - 如何让AI帮助实现</li>
+        <li><a href="haunted-house/phase4/testing-setup.xhtml">测试配置</a> - 验证鬼屋规则</li>
+      </ul>
+      <h3>阶段五：实现 - AI辅助开发</h3>
+      <p>利用AI实现鬼屋的具体功能。</p>
+      <ul>
+        <li><a href="haunted-house/phase5/ai-prompting.xhtml">给AI的鬼屋提示</a> - 如何描述幽灵世界需求</li>
+        <li><a href="haunted-house/phase5/code-generation.xhtml">代码生成实践</a> - 基于类型生成实现</li>
+        <li><a href="haunted-house/phase5/error-handling.xhtml">错误处理与调试</a> - 修复鬼屋中的问题</li>
+        <li><a href="haunted-house/phase5/testing.xhtml">测试幽灵行为</a> - 验证规则是否正确实现</li>
+      </ul>
+      <h3>阶段六：扩展 - 高级特性与优化</h3>
+      <p>扩展鬼屋功能，优化性能。</p>
+      <ul>
+        <li><a href="haunted-house/phase6/performance-optimization.xhtml">性能优化</a> - 让鬼屋运行更流畅</li>
+        <li><a href="haunted-house/phase6/advanced-patterns.xhtml">高级设计模式</a> - 复杂幽灵行为的实现</li>
+        <li><a href="haunted-house/phase6/extensibility.xhtml">可扩展性设计</a> - 如何轻松添加新幽灵类型</li>
+        <li><a href="haunted-house/phase6/deployment.xhtml">部署与分享</a> - 让他人体验你的鬼屋</li>
+      </ul>
+    </section>
+    <!-- 非线性建造选项 -->
+    <section>
+      <h2>非线性建造：从任何阶段开始</h2>
+      <p>鬼屋可以按任何顺序建造。选择你的起始点：</p>
+      <div class="construction-options">
+        <div class="option">
+          <h3><a href="haunted-house/nonlinear/start-with-ghost.xhtml">从幽灵开始</a></h3>
+          <p>先定义幽灵类型，然后构建围绕幽灵的环境。</p>
+        </div>
+        <div class="option">
+          <h3><a href="haunted-house/nonlinear/start-with-rules.xhtml">从规则开始</a></h3>
+          <p>先定义鬼屋规则，然后创建符合规则的幽灵和房间。</p>
+        </div>
+        <div class="option">
+          <h3><a href="haunted-house/nonlinear/start-with-error.xhtml">从错误开始</a></h3>
+          <p>先看常见错误，然后学习如何避免，再开始建造。</p>
+        </div>
+        <div class="option">
+          <h3><a href="haunted-house/nonlinear/start-with-ai.xhtml">从AI开始</a></h3>
+          <p>先让AI生成基础代码，然后理解和完善类型定义。</p>
+        </div>
+      </div>
+    </section>
+    <!-- 鬼屋展示区 -->
+    <section>
+      <h2>鬼屋展示区</h2>
+      <p>查看已完成的鬼屋示例，获取灵感：</p>
+      <ul>
+        <li><a href="haunted-house/examples/simple-haunt.xhtml">简单出没鬼屋</a> - 基础示例</li>
+        <li><a href="haunted-house/examples/complex-hierarchy.xhtml">复杂层次鬼屋</a> - 高级继承体系</li>
+        <li><a href="haunted-house/examples/dynamic-rules.xhtml">动态规则鬼屋</a> - 基于条件的幽灵行为</li>
+        <li><a href="haunted-house/examples/ai-generated.xhtml">AI生成的鬼屋</a> - 完全由AI设计实现</li>
+      </ul>
+    </section>
+    <!-- 鬼屋完成度追踪 -->
+    <section>
+      <h2>你的鬼屋完成度</h2>
+      <p>完成断面后标记，追踪你的建造进度：</p>
+      <div class="progress-tracker">
+        <div class="phase">
+          <h3>阶段一：地基</h3>
+          <ul>
+            <li><input type="checkbox" /> 幽灵类型定义</li>
+            <li><input type="checkbox" /> 房间类型定义</li>
+            <li><input type="checkbox" /> 现象类型定义</li>
+            <li><input type="checkbox" /> 基本规则接口</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <h3>阶段二：结构</h3>
+          <ul>
+            <li><input type="checkbox" /> 鬼屋结构接口</li>
+            <li><input type="checkbox" /> 幽灵层次结构</li>
+            <li><input type="checkbox" /> 交互规则接口</li>
+            <li><input type="checkbox" /> 时间系统接口</li>
+          </ul>
+        </div>
+        <!-- 更多阶段... -->
+      </div>
+      <div class="phantom-note">
+        完成度不是目标，建造过程才是。享受用类型塑造幽灵世界的体验。
+      </div>
+    </section>
+    <nav class="dimension-switcher">
+      <p>切换到其他维度：</p>
+      <ul>
+        <li><a href="toc-concepts.xhtml">概念维度</a>（按技术概念穿梭）</li>
+        <li><a href="toc-emotion.xhtml">情绪维度</a>（按感觉穿梭）</li>
+        <li><a href="toc-intent.xhtml">意图维度</a>（按目标穿梭）</li>
+        <li><a href="entrance/index.xhtml">返回入口</a></li>
+      </ul>
+    </nav>
+  </div>
+  </body>
+</html>

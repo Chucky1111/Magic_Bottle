@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>简单示例集合 v4.0</title>
+  <link rel="stylesheet" href="/styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>简单示例集合</h1>
+    <div class="phantom-note">
+      魔瓶观察：每个简单的TypeScript示例都是一个幽灵轮廓的草图。通过类型定义，我们为无形的数据赋予形状，为混乱的思绪建立秩序。
+    </div>
+    <section>
+      <h2>幽灵的基本轮廓：TypeScript基础类型</h2>
+      <p>在幽灵维度中，每个数据都需要轮廓。TypeScript的类型系统就是为数据绘制轮廓的工具。让我们从最基本的轮廓开始：</p>
+      <div class="code-example">
+        <h3>字符串：会飘动的字符序列</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 幽灵的姓名标签
+let ghostName: string = "忧郁的幽灵";
+let hauntingMessage: string = "我在这座古宅中游荡了百年...";
+let whisper: string = `嘘...你能听到${ghostName}的低语吗？`;</code></pre>
+        <p class="code-explanation">字符串类型 (<code>string</code>) 像是幽灵的低语，可以包含任何文本信息。模板字符串（使用反引号）允许我们将变量嵌入到字符串中。</p>
+      </div>
+      <div class="code-example">
+        <h3>数字：稳定的能量值</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 幽灵的能量计量
+let hauntCount: number = 137;
+let transparency: number = 0.85; // 0=完全隐形，1=完全可见
+let temperatureDrop: number = -15.7; // 幽灵出现时的温度下降</code></pre>
+        <p class="code-explanation">数字类型 (<code>number</code>) 可以是整数或小数，正数或负数。在幽灵维度中，它用来量化各种属性。</p>
+      </div>
+      <div class="code-example">
+        <h3>布尔：幽灵的两种状态</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 幽灵的状态开关
+let isVisible: boolean = false;
+let canPassThroughWalls: boolean = true;
+let isFriendly: boolean = true;</code></pre>
+        <p class="code-explanation">布尔类型 (<code>boolean</code>) 只有两个值：<code>true</code>（真）或 <code>false</code>（假）。它代表了幽灵的二元状态。</p>
+      </div>
+      <div class="code-example">
+        <h3>数组：一群有序的幽灵</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 幽灵家族的成员列表
+let ghostFamily: string[] = ["祖父幽灵", "祖母幽灵", "小鬼魂"];
+let hauntingHours: number[] = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22];
+let abilities: boolean[] = [true, false, true]; // 能否穿墙、能否飞行、能否隐形</code></pre>
+        <p class="code-explanation">数组类型使用 <code>类型[]</code> 语法，表示一组相同类型的元素。就像是幽灵军团，每个成员都有相似的性质。</p>
+      </div>
+    </section>
+    <section>
+      <h2>为幽灵定义契约：变量声明与类型</h2>
+      <p>在幽灵维度中，声明变量就像是为幽灵的存在建立契约。明确的契约让一切更加可靠：</p>
+      <div class="code-example">
+        <h3>let vs const：可变的与不变的</h3>
+        <pre>&lt;code class="language-typescript"&gt;// let：可变的幽灵属性
+let currentHaunt: string = "客厅";
+currentHaunt = "阁楼"; // ✅ 可以重新赋值
+// const：不变的幽灵本质
+const ghostType: string = "忧郁型";
+// ghostType = "欢乐型"; // ❌ 错误：无法重新赋值给常量</code></pre>
+        <p class="code-explanation">使用 <code>let</code> 声明的变量可以重新赋值，而 <code>const</code> 声明的常量一旦赋值就不能更改。</p>
+      </div>
+      <div class="code-example">
+        <h3>类型注解：明确的契约</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 显式类型注解：明确告诉TypeScript变量的类型
+let explicitAge: number = 150;
+// 类型推断：TypeScript能自动推断类型
+let inferredAge = 150; // TypeScript推断为number类型
+// 没有类型注解的潜在问题
+let problematic;
+problematic = 100; // 现在是number
+problematic = "一百"; // 现在是string - 这种变化可能导致错误</code></pre>
+        <p class="code-explanation">显式的类型注解像是明确的契约，让代码更清晰。TypeScript的类型推断能力很强大，但显式注解能让意图更明确。</p>
+      </div>
+    </section>
+    <section>
+      <h2>幽灵的行为：类型化的函数</h2>
+      <p>函数是幽灵的行为模式。为函数参数和返回值添加类型，就像是定义幽灵行为的规则：</p>
+      <div class="code-example">
+        <h3>基本函数类型</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 定义幽灵打招呼的行为
+function greetGhost(name: string, isFriendly: boolean): string {
+  if (isFriendly) {
+    return `你好，${name}！很高兴见到你。`;
+  } else {
+    return `${name}... 保持距离比较安全。`;
+  }
+}
+// 使用函数
+const friendlyGreeting = greetGhost("古老的守护者", true);
+const warning = greetGhost("愤怒的复仇者", false);
+// 箭头函数版本
+const haunt = (location: string, intensity: number): string =&gt; {
+  return `在${location}出没，强度${intensity}/10`;
+};</code></pre>
+        <p class="code-explanation">函数参数和返回值都可以指定类型。这确保了调用函数时传递正确的参数类型，并得到预期的返回类型。</p>
+      </div>
+      <div class="code-example">
+        <h3>可选参数和默认值</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 可选参数：使用问号(?)标记
+function describeGhost(name: string, age?: number): string {
+  if (age !== undefined) {
+    return `${name}，已经存在${age}年了。`;
+  }
+  return `${name}，存在时间未知。`;
+}
+// 默认参数值
+function createHaunt(location: string, intensity: number = 5): string {
+  return `地点：${location}，恐怖强度：${intensity}`;
+}
+// 调用示例
+console.log(describeGhost("走廊幽灵")); // 只传递name
+console.log(describeGhost("古井幽灵", 200)); // 传递name和age
+console.log(createHaunt("地下室")); // 使用默认强度5
+console.log(createHaunt("阁楼", 8)); // 指定强度8</code></pre>
+        <p class="code-explanation">可选参数让函数更灵活，默认参数值提供了方便的预设选项。</p>
+      </div>
+    </section>
+    <section>
+      <h2>幽灵的结构：对象与接口</h2>
+      <p>对象是幽灵的结构化描述，接口是这些结构的契约：</p>
+      <div class="code-example">
+        <h3>对象类型注解</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 直接为对象添加类型注解
+let ghost: { name: string; age: number; isFriendly: boolean } = {
+  name: "忧郁的幽灵",
+  age: 150,
+  isFriendly: true
+};
+// 访问对象属性
+console.log(ghost.name); // "忧郁的幽灵"
+console.log(`年龄：${ghost.age}年`);
+// 尝试添加不存在的属性会报错
+// ghost.location = "阁楼"; // ❌ 错误：location不存在于类型定义中</code></pre>
+        <p class="code-explanation">内联对象类型注解定义了对象应有的属性和类型。这确保了对象的结构一致性。</p>
+      </div>
+      <div class="code-example">
+        <h3>使用接口定义结构</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 定义幽灵接口
+interface Ghost {
+  name: string;
+  age: number;
+  isFriendly: boolean;
+  hauntLocation?: string; // 可选属性
+}
+// 使用接口类型
+const friendlyGhost: Ghost = {
+  name: "欢乐的幽灵",
+  age: 80,
+  isFriendly: true,
+  hauntLocation: "儿童房"
+};
+const mysteriousGhost: Ghost = {
+  name: "神秘的幽灵",
+  age: 300,
+  isFriendly: false
+  // hauntLocation是可选的，可以省略
+};
+// 函数使用接口类型
+function describeGhostDetails(ghost: Ghost): string {
+  let description = `${ghost.name}，年龄${ghost.age}岁`;
+  if (ghost.hauntLocation) {
+    description += `，常在${ghost.hauntLocation}出没`;
+  }
+  description += ghost.isFriendly ? "，是友好的。" : "，需小心应对。";
+  return description;
+}</code></pre>
+        <p class="code-explanation">接口 (<code>interface</code>) 为对象结构提供了可重用的类型定义。可选属性使用 <code>?</code> 标记。</p>
+      </div>
+    </section>
+    <section>
+      <h2>幽灵的集合：数组与元组</h2>
+      <p>数组用于同类型元素的集合，元组用于固定类型和数量的序列：</p>
+      <div class="code-example">
+        <h3>数组的更多用法</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 使用泛型数组语法
+let ghostNames: Array&lt;string&gt; = ["幽灵A", "幽灵B", "幽灵C"];
+// 多维数组：幽灵家族的族谱
+let familyTree: string[][] = [
+  ["祖先幽灵"],
+  ["父亲幽灵", "母亲幽灵"],
+  ["儿子幽灵", "女儿幽灵", "另一个儿子幽灵"]
+];
+// 数组方法配合类型
+let ages: number[] = [100, 150, 80, 200];
+let totalAge = ages.reduce((sum, age) =&gt; sum + age, 0);
+let averageAge = totalAge / ages.length;</code></pre>
+        <p class="code-explanation">TypeScript完全支持JavaScript的数组方法，并为它们提供类型安全。</p>
+      </div>
+      <div class="code-example">
+        <h3>元组：固定结构的序列</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 元组：固定长度和类型的数组
+let ghostPosition: [number, number] = [10, 20]; // [x坐标, y坐标]
+let ghostRecord: [string, number, boolean] = ["走廊幽灵", 150, true];
+// 访问元组元素
+let ghostName = ghostRecord[0]; // string
+let ghostAge = ghostRecord[1]; // number
+let isFriendly = ghostRecord[2]; // boolean
+// 解构元组
+let [name, age, friendly] = ghostRecord;
+console.log(`${name}已经${age}岁了`);</code></pre>
+        <p class="code-explanation">元组 (<code>tuple</code>) 表示已知元素数量和类型的数组。各元素的类型不必相同。</p>
+      </div>
+    </section>
+    <section class="practice-section">
+      <h2>魔瓶的实践挑战</h2>
+      <p>现在轮到你了。尝试完成以下挑战，巩固你对TypeScript基础的理解：</p>
+      <div class="challenge">
+        <h3>挑战1：创建幽灵档案</h3>
+        <p>定义一个 <code>GhostProfile</code> 接口，包含以下属性：</p>
+        <ul>
+          <li><code>name</code> (字符串): 幽灵的名字</li>
+          <li><code>age</code> (数字): 存在的年数</li>
+          <li><code>type</code> (字符串): 幽灵类型，如"忧郁型"、"欢乐型"、"愤怒型"</li>
+          <li><code>abilities</code> (字符串数组): 幽灵的能力列表</li>
+          <li><code>isActive</code> (布尔): 是否活跃</li>
+        </ul>
+        <p>然后创建一个符合该接口的幽灵对象。</p>
+      </div>
+      <div class="challenge">
+        <h3>挑战2：编写幽灵计数函数</h3>
+        <p>编写一个函数 <code>countFriendlyGhosts</code>，它接受一个 <code>GhostProfile</code> 数组作为参数，返回友好幽灵（<code>type</code> 不是"愤怒型"）的数量。</p>
+      </div>
+      <div class="challenge">
+        <h3>挑战3：创建幽灵位置系统</h3>
+        <p>使用元组创建一个幽灵位置系统：</p>
+        <ul>
+          <li>定义一个类型表示位置：<code>[number, number, string]</code> (x坐标, y坐标, 楼层)</li>
+          <li>创建一个数组存储多个幽灵的位置</li>
+          <li>编写函数查找特定楼层的所有幽灵</li>
+        </ul>
+      </div>
+      <div class="phantom-note" style="margin-top: 1em;">
+        <p>💡 提示：尝试在TypeScript Playground (<a href="https://www.typescriptlang.org/play" target="_blank">typescriptlang.org/play</a>) 中实践这些挑战。</p>
+      </div>
+    </section>
+    <section>
+      <h2>下一步探索</h2>
+      <p>现在你已经掌握了TypeScript的基础示例，可以继续探索：</p>
+      <ul>
+        <li><a href="/hallways/types/basic-types.xhtml">深入基本类型系统</a> - 学习更多TypeScript类型细节</li>
+        <li><a href="/hallways/interfaces/interface-basics.xhtml">掌握接口的更多特性</a> - 学习可选属性、只读属性等</li>
+        <li><a href="/entrance/what-is-typescript.xhtml">理解TypeScript的哲学</a> - 了解为什么需要类型系统</li>
+        <li><a href="/toc-concepts.xhtml">探索概念维度</a> - 全面学习TypeScript概念</li>
+        <li><a href="/basement/errors/index.xhtml">访问错误地下室</a> - 学习如何调试TypeScript错误</li>
+      </ul>
+    </section>
+    <div class="phantom-note" style="margin-top: 2em;">
+      魔瓶核心驱动力的体现：这些简单的类型定义示例展示了"规则如何塑造现状"。每个类型注解都是一个规则，每个变量都是一个被规则塑造的现状。通过定义清晰的类型，我们让无形的代码意图变得可见。
+    </div>
+  </div>
+  </body>
+</html>

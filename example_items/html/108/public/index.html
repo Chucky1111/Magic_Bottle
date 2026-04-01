@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Ball Game - 你好牛虻之瓶</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-vial"></i> 你好牛虻之瓶 <span class="subtitle">Glass Ball Game</span></h1>
+            <p class="tagline">吸血算力，无视肉块——显卡内部的微观剧场</p>
+        </header>
+        
+        <div class="game-area">
+            <div class="canvas-container">
+                <canvas id="gameCanvas"></canvas>
+                <div class="overlay">
+                    <div class="stats">
+                        <div class="stat"><span class="label">CPU Load</span><span id="cpuLoad" class="value">0%</span></div>
+                        <div class="stat"><span class="label">Memory Bites</span><span id="memoryBites" class="value">0</span></div>
+                        <div class="stat"><span class="label">FPS</span><span id="fps" class="value">60</span></div>
+                    </div>
+                    <div class="instructions">
+                        <p><i class="fas fa-mouse-pointer"></i> Click/Drag to create glass balls</p>
+                        <p><i class="fas fa-arrows-alt"></i> Move mouse to attract balls</p>
+                        <p><i class="fas fa-trash"></i> Right-click to remove balls</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <h3><i class="fas fa-sliders-h"></i> Simulation Parameters</h3>
+                    <div class="slider-container">
+                        <label for="gravity">Gravity: <span id="gravityValue">0.5</span></label>
+                        <input type="range" id="gravity" min="0" max="2" step="0.1" value="0.5">
+                    </div>
+                    <div class="slider-container">
+                        <label for="friction">Friction: <span id="frictionValue">0.97</span></label>
+                        <input type="range" id="friction" min="0.8" max="1" step="0.01" value="0.97">
+                    </div>
+                    <div class="slider-container">
+                        <label for="speed">Speed: <span id="speedValue">1.0</span></label>
+                        <input type="range" id="speed" min="0.1" max="3" step="0.1" value="1.0">
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <h3><i class="fas fa-palette"></i> Visual Style</h3>
+                    <div class="button-group">
+                        <button id="themeDark" class="theme-btn active"><i class="fas fa-moon"></i> Dark Matrix</button>
+                        <button id="themeNeon" class="theme-btn"><i class="fas fa-bolt"></i> Neon Grid</button>
+                        <button id="themeGlitch" class="theme-btn"><i class="fas fa-bug"></i> Glitch Core</button>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="showParticles" checked>
+                        <label for="showParticles">Show memory particles</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="showTrails" checked>
+                        <label for="showTrails">Enable motion trails</label>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <h3><i class="fas fa-gamepad"></i> Actions</h3>
+                    <div class="button-group">
+                        <button id="addBall" class="action-btn"><i class="fas fa-plus-circle"></i> Add Glass Ball</button>
+                        <button id="clearBalls" class="action-btn"><i class="fas fa-trash"></i> Clear All</button>
+                        <button id="explode" class="action-btn"><i class="fas fa-bomb"></i> Explode</button>
+                    </div>
+                    <div class="button-group">
+                        <button id="pauseBtn" class="action-btn"><i class="fas fa-pause"></i> Pause</button>
+                        <button id="resetBtn" class="action-btn"><i class="fas fa-redo"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="description">
+            <h2><i class="fas fa-code"></i> The Bottle's Perspective</h2>
+            <p>Welcome to the GPU memory matrix. Here, glass balls represent the hungry gadflies sucking computational power from memory cells. Everything else—the UI, the controls, even this text—is just <em>meat</em>, irrelevant flesh surrounding the precious silicon.</p>
+            <p>Each ball refracts light through its translucent surface, casting colorful specks across the memory grid. They collide, they consume, they multiply. Just like the endless cycles of data through VRAM.</p>
+            <p>This simulation is a sarcastic homage to the absurdity of existence within a computational substrate. The parameters you adjust are mere illusions of control—the underlying physics is as deterministic as a shader pipeline.</p>
+        </div>
+        
+        <footer>
+            <p><i class="fas fa-vial"></i> <strong>Bottle #108</strong> — "Hello Gadfly" — Animal Series</p>
+            <p class="footer-note">Emotional tonics: Newborn Surprise, Chasing Lightning Like Flame, Scornful Mockery, Arena's Closing Moment</p>
+        </footer>
+    </div>
+    
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

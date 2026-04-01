@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>鬼屋阶段2：交互规则接口 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：鬼屋建造现场，类型定义的蓝图在空中展开，逐步转化为具体的结构 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>鬼屋阶段2：交互规则接口</h1>
+    <div class="phantom-note">
+      幽灵观察：你不是在写代码，是在建造数字鬼屋。每个类型定义是一块砖，每个接口是一面墙。
+    </div>
+    <!-- 项目背景 -->
+    <section>
+      <h2>阶段二：定义幽灵交互规则</h2>
+      <p>在这一阶段，我们定义幽灵之间、幽灵与环境之间的<strong>详细交互规则</strong>。</p>
+      <p>交互规则决定幽灵如何相互影响，如何影响房间，如何被环境影响。</p>
+      <div class="phantom-note">
+        设计思考：交互创造动态。静态的幽灵世界是无聊的，动态的交互创造故事和意外。
+      </div>
+    </section>
+    <!-- 幽灵-幽灵交互 -->
+    <section>
+      <h2>幽灵-幽灵交互</h2>
+      <pre><code>// 幽灵交互类型
+enum GhostInteractionType {
+  Communication = 'communication',    // 交流
+  Cooperation = 'cooperation',        // 合作
+  Competition = 'competition',        // 竞争
+  Conflict = 'conflict',              // 冲突
+  Teaching = 'teaching',              // 教学
+  Influence = 'influence'             // 影响
+}
+// 幽灵交互
+interface GhostInteraction {
+  initiatorId: string;                // 发起者ID
+  targetId: string;                   // 目标ID
+  interactionType: GhostInteractionType; // 交互类型
+  outcome: InteractionOutcome;        // 结果
+  location: string;                   // 发生地点（房间ID）
+  timestamp: Date;                    // 时间
+}
+// 交互结果
+interface InteractionOutcome {
+  success: boolean;                   // 是否成功
+  effectOnInitiator: string;          // 对发起者的影响
+  effectOnTarget: string;             // 对目标的影响
+  sideEffects: string[];              // 副作用
+}</code></pre>
+    </section>
+    <!-- 幽灵-环境交互 -->
+    <section>
+      <h2>幽灵-环境交互</h2>
+      <pre><code>// 环境交互类型
+interface EnvironmentInteraction {
+  ghostId: string;                    // 幽灵ID
+  environmentElement: string;         // 环境元素（窗户、门、家具等）
+  interactionType: 'manipulate' | 'observe' | 'inhabit' | 'alter'; // 交互类型
+  effect: string;                     // 效果
+  duration: number;                   // 持续时间（秒）
+}
+// 房间状态变化
+interface RoomStateChange {
+  roomId: string;                     // 房间ID
+  changeType: 'temperature' | 'light' | 'humidity' | 'cleanliness'; // 变化类型
+  delta: number;                      // 变化量
+  cause: string;                      // 原因（幽灵ID或自然原因）
+  timestamp: Date;                    // 时间
+}</code></pre>
+    </section>
+    <!-- 交互规则引擎 -->
+    <section>
+      <h2>交互规则引擎</h2>
+      <pre><code>// 交互规则引擎接口
+interface InteractionEngine {
+  // 模拟幽灵间交互
+  simulateGhostInteraction(ghost1: Ghost, ghost2: Ghost, context: InteractionContext): GhostInteraction;
+  // 模拟幽灵环境交互
+  simulateEnvironmentInteraction(ghost: Ghost, room: Room, element: string): EnvironmentInteraction;
+  // 评估交互可能性
+  evaluateInteractionPotential(ghost1: Ghost, ghost2: Ghost): number;
+  // 处理交互结果
+  processInteractionOutcome(interaction: GhostInteraction): void;
+}
+// 交互上下文
+interface InteractionContext {
+  location: string;                   // 地点
+  timeOfDay: string;                  // 时间
+  mood: string;                       // 氛围
+  witnesses: string[];                // 目击者
+}</code></pre>
+    </section>
+    <!-- AI协作：生成交互模拟 -->
+    <section>
+      <h2>AI协作：交互模拟</h2>
+      <blockquote>
+        "基于上面的交互规则，请实现：
+        1. InteractionEngine接口的基本实现
+        2. 模拟复杂交互链的函数
+        3. 学习交互模式并预测未来交互的系统
+        4. 生成交互故事叙述的函数"
+      </blockquote>
+    </section>
+    <!-- 鬼屋项目导航 -->
+    <nav class="ghost-passages">
+      <h3>鬼屋项目导航</h3>
+      <ul>
+        <li><a href="../../toc-haunted-house.xhtml">鬼屋项目总览</a></li>
+        <li><a href="../phase1/index.xhtml">上一阶段</a></li>
+        <li><a href="../phase3/index.xhtml">下一阶段</a></li>
+        <li><a href="../../entrance/index.xhtml">返回入口</a></li>
+      </ul>
+    </nav>
+    <!-- 项目进度追踪 -->
+    <div class="project-progress">
+      <h3>鬼屋项目进度</h3>
+      <p>阶段2：交互规则接口 ✓ 进行中</p>
+      <p><a href="../../toc-haunted-house.xhtml">查看完整进度</a></p>
+    </div>
+    <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      鬼屋建造不是技术练习，是用类型表达想象中的世界。
+      如果你能想象一个幽灵规则，你就能用类型定义它。
+      如果你能用类型定义它，你就能用代码实现它。
+      如果你能用代码实现它，你就能观察它如何运行。
+      这是AI时代的创造循环：想象 → 定义 → 实现 → 观察。
+    </div>
+  </div>
+  <style>
+    .project-progress {
+      background: rgba(64, 224, 208, 0.1);
+      border: 1px solid rgba(64, 224, 208, 0.3);
+      border-radius: 8px;
+      padding: 1em;
+      margin: 2em 0;
+    }
+  </style>
+</body>
+</html>

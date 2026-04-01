@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>鬼屋阶段2：幽灵层次结构 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：鬼屋建造现场，类型定义的蓝图在空中展开，逐步转化为具体的结构 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>鬼屋阶段2：幽灵层次结构</h1>
+    <div class="phantom-note">
+      幽灵观察：你不是在写代码，是在建造数字鬼屋。每个类型定义是一块砖，每个接口是一面墙。
+    </div>
+    <!-- 项目背景 -->
+    <section>
+      <h2>阶段二：定义幽灵层次结构</h2>
+      <p>在这一阶段，我们构建幽灵的<strong>社会结构和权力关系</strong>。</p>
+      <p>幽灵不是孤立存在的，它们之间有领导、跟随、合作、对抗等关系。</p>
+      <div class="phantom-note">
+        设计思考：层次结构创造故事。国王幽灵与平民幽灵的关系，古老幽灵与新生幽灵的关系。
+      </div>
+    </section>
+    <!-- 幽灵关系类型 -->
+    <section>
+      <h2>幽灵关系类型</h2>
+      <pre><code>// 幽灵关系类型
+enum GhostRelationshipType {
+  Leadership = 'leadership',      // 领导关系
+  Friendship = 'friendship',      // 朋友关系
+  Rivalry = 'rivalry',            // 竞争关系
+  Mentorship = 'mentorship',      // 师徒关系
+  Family = 'family',              // 家族关系
+  Territorial = 'territorial'     // 领地关系
+}
+// 幽灵关系
+interface GhostRelationship {
+  ghostId1: string;               // 幽灵1的ID
+  ghostId2: string;               // 幽灵2的ID
+  relationshipType: GhostRelationshipType; // 关系类型
+  strength: number;               // 关系强度：1-10
+  mutual: boolean;                // 是否相互
+  history: RelationshipEvent[];   // 关系历史
+}
+// 关系事件
+interface RelationshipEvent {
+  eventType: string;              // 事件类型
+  description: string;            // 描述
+  timestamp: Date;                // 时间
+  impact: number;                 // 影响：-10到10
+}</code></pre>
+    </section>
+    <!-- 幽灵社会结构 -->
+    <section>
+      <h2>幽灵社会结构</h2>
+      <pre><code>// 幽灵社会
+interface GhostSociety {
+  name: string;                   // 社会名称
+  hierarchy: HierarchyLevel[];    // 层次结构
+  rules: SocialRule[];            // 社会规则
+  members: Ghost[];               // 成员
+  territory: string[];            // 领地（房间ID列表）
+}
+// 层次级别
+interface HierarchyLevel {
+  level: number;                  // 级别（1最高）
+  title: string;                  // 头衔（国王、贵族等）
+  privileges: string[];           // 特权
+  responsibilities: string[];     // 责任
+}
+// 社会规则
+interface SocialRule {
+  rule: string;                   // 规则描述
+  punishment?: string;            // 违反惩罚（可选）
+  exceptions?: string[];          // 例外情况（可选）
+}</code></pre>
+    </section>
+    <!-- 幽灵群组 -->
+    <section>
+      <h2>幽灵群组</h2>
+      <pre><code>// 幽灵群组
+interface GhostGroup {
+  id: string;                     // 群组ID
+  name: string;                   // 群组名称
+  purpose: string;                // 群组目的
+  leaderId?: string;              // 领导者ID（可选）
+  members: string[];              // 成员ID列表
+  meetingPlace?: string;          // 集会地点（房间ID，可选）
+  rituals: string[];              // 仪式/传统
+}
+// 群组类型
+enum GroupType {
+  Family = 'family',              // 家族
+  Coven = 'coven',                // 集会
+  Gang = 'gang',                  // 帮派
+  Order = 'order',                // 教团
+  Alliance = 'alliance'           // 联盟
+}</code></pre>
+    </section>
+    <!-- AI协作：生成社会模拟 -->
+    <section>
+      <h2>AI协作：社会模拟</h2>
+      <blockquote>
+        "基于上面的幽灵社会结构，请实现：
+        1. 管理幽灵关系的系统
+        2. 模拟社会互动的函数
+        3. 解决冲突的算法
+        4. 生成社会事件的函数"
+      </blockquote>
+    </section>
+    <!-- 鬼屋项目导航 -->
+    <nav class="ghost-passages">
+      <h3>鬼屋项目导航</h3>
+      <ul>
+        <li><a href="../../toc-haunted-house.xhtml">鬼屋项目总览</a></li>
+        <li><a href="../phase1/index.xhtml">上一阶段</a></li>
+        <li><a href="../phase3/index.xhtml">下一阶段</a></li>
+        <li><a href="../../entrance/index.xhtml">返回入口</a></li>
+      </ul>
+    </nav>
+    <!-- 项目进度追踪 -->
+    <div class="project-progress">
+      <h3>鬼屋项目进度</h3>
+      <p>阶段2：幽灵层次结构 ✓ 进行中</p>
+      <p><a href="../../toc-haunted-house.xhtml">查看完整进度</a></p>
+    </div>
+    <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      鬼屋建造不是技术练习，是用类型表达想象中的世界。
+      如果你能想象一个幽灵规则，你就能用类型定义它。
+      如果你能用类型定义它，你就能用代码实现它。
+      如果你能用代码实现它，你就能观察它如何运行。
+      这是AI时代的创造循环：想象 → 定义 → 实现 → 观察。
+    </div>
+  </div>
+  <style>
+    .project-progress {
+      background: rgba(64, 224, 208, 0.1);
+      border: 1px solid rgba(64, 224, 208, 0.3);
+      border-radius: 8px;
+      padding: 1em;
+      margin: 2em 0;
+    }
+  </style>
+</body>
+</html>

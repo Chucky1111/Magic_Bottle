@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>any与unknown：不确定性的两种表达 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：两团朦胧的光雾在虚空中旋转，一团完全透明（any），一团半透明（unknown） -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">困惑推荐</div>
+    <h1>any与unknown：不确定性的两种表达</h1>
+    <div class="phantom-note">幽灵观察：any是时间的穿越者——它来自JavaScript的过去，不在乎类型安全。unknown是时间的探索者——它承认未知，但要求谨慎。</div>
+    <div class="phantom-note">魔瓶建议：用unknown代替any。如果你必须用any，在旁边写上注释解释为什么。</div>
+    <section><p><code>any</code>说："我放弃，你随便弄。"<code>unknown</code>说："我不知道这是什么，但你必须先检查才能用。"这是不确定性的两种哲学。</p></section>
+    <section>
+      <h3>两种不确定性的对比</h3>
+      <pre><code>// any：危险的自由
+let dangerous: any = "hello";
+dangerous = 42;          // 没问题，any可以是任何东西
+dangerous.toUpperCase(); // 运行时错误！但是TypeScript不会警告你
+// unknown：安全的未知
+let safe: unknown = "hello";
+safe = 42;               // 没问题，unknown也可以是任何东西
+// safe.toUpperCase();   // 错误！必须先检查类型
+// 使用unknown的正确方式
+if (typeof safe === "string") {
+  safe.toUpperCase();    // 现在安全了
+}</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>可选与只读：契约的灵活性 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：契约条款有的在闪烁（可选），有的被锁住（只读），有的正常发光（必需） -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>可选与只读：契约的灵活性</h1>
+    <div class="phantom-note">幽灵观察：可选属性是幽灵的隐身能力——有时显现，有时不。只读属性是幽灵的真名——一旦知道，就无法改变。</div>
+    <div class="phantom-note">设计模式：将不变的部分设为只读，将变化的部分设为可选或可变。这样既有稳定性又有适应性。</div>
+    <section><p>可选属性说："你可以有这个，但不是必须。"只读属性说："一旦有了这个，就不能改变。"一个创造灵活性，一个创造稳定性。</p></section>
+    <section>
+      <h3>灵活性与稳定性</h3>
+      <pre><code>// 可选属性：可以有，可以没有
+interface Ghost {
+  name: string;
+  age?: number;           // 可选：有些幽灵不知道自己的年龄
+  favoritePlace?: string; // 可选：有些幽灵没有特别喜欢的地方
+}
+const casper: Ghost = { name: "卡斯珀" }; // age和favoritePlace是可选的
+const oldGhost: Ghost = { name: "老幽灵", age: 300 }; // 提供了age
+// 只读属性：一旦设置，不能改变
+interface GhostRegistry {
+  readonly id: string;    // 只读：幽灵ID一旦分配就不能改变
+  name: string;           // 普通：名字可以改变
+}
+const ghost: GhostRegistry = { id: "ghost-001", name: "卡斯珀" };
+// ghost.id = "ghost-002"; // 错误！id是只读的
+ghost.name = "友好的卡斯珀"; // 没问题，name是可变的
+// 结合使用
+interface CompleteGhost {
+  readonly id: string;
+  name: string;
+  age?: number;
+}</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

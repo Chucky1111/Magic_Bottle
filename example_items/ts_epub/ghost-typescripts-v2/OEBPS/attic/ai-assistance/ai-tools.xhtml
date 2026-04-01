@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>AI工具介绍 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：多个AI助手像不同颜色的光球漂浮在空中，每个有独特的沟通方式和能力 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>AI工具介绍</h1>
+    <div class="phantom-note">幽灵观察：AI是新的幽灵种类——数据幽灵。它们不是真正的智能，而是模式的反射器。理解这一点，你就能更好地与它们协作。</div>
+    <div class="phantom-note">协作心态：不要问AI"写代码"，问AI"帮我理解"、"帮我重构"、"帮我测试"。让AI做辅助工作，你做决策工作。</div>
+    <section><p>AI不是要取代程序员，而是要成为程序员的协作伙伴。好的AI协作就像有一个不知疲倦、知识渊博的初级伙伴。</p></section>
+    <section>
+      <h3>AI编程助手介绍</h3>
+      <pre><code>// AI辅助编程的典型场景
+// 1. 解释代码
+// 你的提示："解释这个TypeScript接口的作用："
+interface GhostRegistry {
+  readonly id: string;
+  name: string;
+  age?: number;
+  haunt(location: string): void;
+}
+// AI可能回答：
+// 这个接口定义了一个幽灵注册表条目的结构：
+// - id: 只读字符串，唯一标识符，创建后不能修改
+// - name: 字符串，幽灵的名字，可以修改
+// - age: 可选数字，幽灵的年龄（可能未知）
+// - haunt: 方法，幽灵出没在指定位置
+// 2. 生成代码
+// 你的提示："创建一个TypeScript类实现上面的GhostRegistry接口"
+// AI可能生成：
+class BasicGhost implements GhostRegistry {
+  readonly id: string;
+  name: string;
+  age?: number;
+  constructor(id: string, name: string, age?: number) {
+    this.id = id;
+    this.name = name;
+    this.age = age;
+  }
+  haunt(location: string) {
+    console.log(`Ghost ${this.name} haunts ${location}`);
+  }
+}
+// 3. 重构代码
+// 你的代码：
+function processGhosts(ghosts: any[]) {
+  let result = [];
+  for (let i = 0; i &lt; ghosts.length; i++) {
+    if (ghosts[i].age &gt; 100) {
+      result.push(ghosts[i].name);
+    }
+  }
+  return result;
+}
+// 你的提示："用现代TypeScript重构这个函数，添加适当的类型"
+// AI可能生成：
+function processGhosts(ghosts: Array&lt;{name: string; age?: number}&gt;): string[] {
+  return ghosts
+    .filter((ghost): ghost is {name: string; age: number} =&gt; 
+      ghost.age !== undefined &amp;&amp; ghost.age &gt; 100
+    )
+    .map(ghost =&gt; ghost.name);
+}
+// 4. 调试代码
+// 你的错误：
+// Error: Property 'name' does not exist on type 'Ghost | undefined'
+// 你的提示："解释这个TypeScript错误，并给出修复建议"
+// AI可能回答：
+// 这个错误表示你正在尝试访问可能是undefined的值的属性。
+// 修复方法1: 添加类型守卫
+// 修复方法2: 使用可选链操作符 ghost?.name
+// 修复方法3: 提供默认值 ghost?.name ?? 'Unknown'
+// 5. 学习概念
+// 你的提示："用简单例子解释TypeScript中的条件类型"
+// AI可能生成：
+type IsString&lt;T&gt; = T extends string ? true : false;
+type Test1 = IsString&lt;"hello"&gt;;  // true
+type Test2 = IsString&lt;number&gt;;   // false
+// 常用AI工具：
+// - GitHub Copilot: 代码补全和生成
+// - ChatGPT: 对话和解释
+// - Claude: 长文本分析和推理
+// - Cursor: 集成AI的IDE
+// - Tabnine: 另一个代码补全工具
+// 工作流程建议：
+// 1. 自己先尝试写代码框架
+// 2. 用AI填充细节
+// 3. 理解AI生成的代码
+// 4. 修改和优化
+// 5. 让AI解释复杂的部分</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

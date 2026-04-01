@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>常见错误及解决方案 v4.0</title>
+  <link rel="stylesheet" href="/styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <div class="ghost-section">
+    <div class="emotion-indicator">挫败推荐</div>
+    <h1>常见错误及解决方案</h1>
+    <div class="phantom-note">
+      魔瓶观察：在幽灵维度中，错误不是终点，而是路标。每个TypeScript编译错误都在告诉你：这里有一个误解需要澄清，有一个假设需要验证。让我们一起来解读这些错误信息，将它们从障碍转化为洞察。
+    </div>
+    <section>
+      <h2>最常见的TypeScript错误类型</h2>
+      <div class="error-category">
+        <h3>1. 类型不匹配错误</h3>
+        <p>这是最常见的错误类型：尝试将错误类型的值赋给变量或参数。</p>
+        <div class="code-example">
+          <pre>&lt;code class="language-typescript"&gt;// 错误示例
+let name: string = "幽灵";
+name = 150;  // ❌ 错误：不能将类型"number"分配给类型"string"
+function greet(ghost: string): void {
+  console.log(`你好，${ghost}`);
+}
+greet(100);  // ❌ 错误：类型"number"的参数不能赋给类型"string"的参数</code></pre>
+          <p class="code-explanation"><strong>解决方案</strong>：确保值类型与变量或参数声明的类型一致。如果需要处理多种类型，使用联合类型。</p>
+          <div class="code-example">
+            <pre>&lt;code class="language-typescript"&gt;// 解决方案：使用联合类型
+let ghostInfo: string | number = "幽灵";
+ghostInfo = 150;  // ✅ 正确：ghostInfo可以接受string或number
+// 或者：创建更灵活的函数
+function greetFlexible(ghost: string | number): void {
+  console.log(`你好，${ghost}`);
+}
+greetFlexible(100);  // ✅ 正确：接受数字</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="error-category">
+        <h3>2. 未定义的属性访问</h3>
+        <p>尝试访问对象上不存在的属性。</p>
+        <div class="code-example">
+          <pre>&lt;code class="language-typescript"&gt;interface Ghost {
+  name: string;
+  age: number;
+}
+const ghost: Ghost = { name: "古老幽灵", age: 200 };
+console.log(ghost.location);  // ❌ 错误：类型"Ghost"上不存在属性"location"</code></pre>
+          <p class="code-explanation"><strong>解决方案</strong>：检查接口定义，确保访问的属性已定义。如果属性可能不存在，将其设为可选属性。</p>
+          <div class="code-example">
+            <pre>&lt;code class="language-typescript"&gt;// 解决方案1：添加可选属性
+interface Ghost {
+  name: string;
+  age: number;
+  location?: string;  // 可选属性
+}
+// 解决方案2：使用类型守卫
+if ("location" in ghost) {
+  console.log(ghost.location);  // 安全访问
+} else {
+  console.log("位置未知");
+}</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="error-category">
+        <h3>3. 模块导入/导出错误</h3>
+        <p>导入不存在的导出，或导出格式不正确。</p>
+        <div class="code-example">
+          <pre>&lt;code class="language-typescript"&gt;// 文件：ghost.ts
+export interface Ghost { name: string; }
+// 文件：main.ts
+import { Ghost, Haunt } from "./ghost";  // ❌ 错误：模块"./ghost"没有导出"Haunt"</code></pre>
+          <p class="code-explanation"><strong>解决方案</strong>：检查导出文件实际导出了什么，确保导入名称完全匹配。</p>
+          <div class="code-example">
+            <pre>&lt;code class="language-typescript"&gt;// 正确导入
+import { Ghost } from "./ghost";  // ✅ 正确：只导入存在的导出
+// 或者检查ghost.ts实际导出的内容
+// 文件：ghost.ts
+export interface Ghost { name: string; }
+export type Haunt = { location: string; };  // 添加缺失的导出</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>理解错误信息：TypeScript在告诉你什么</h2>
+      <div class="error-analysis">
+        <div class="analysis-example">
+          <h3>错误信息分解</h3>
+          <pre>&lt;code class="language-typescript"&gt;// 错误信息示例：
+error TS2322: Type 'number' is not assignable to type 'string'.</code></pre>
+          <ul>
+            <li><strong>TS2322</strong>：错误代码，可以在TypeScript文档中查找详细信息</li>
+            <li><strong>Type 'number' is not assignable to type 'string'</strong>：人类可读的描述，说明具体问题</li>
+          </ul>
+        </div>
+        <div class="analysis-example">
+          <h3>如何阅读复杂错误</h3>
+          <pre>&lt;code class="language-typescript"&gt;// 复杂错误示例：
+error TS2345: Argument of type '{ name: string; }' is not assignable to 
+parameter of type 'Ghost'. Property 'age' is missing in type 
+'{ name: string; }' but required in type 'Ghost'.</code></pre>
+          <p>这个错误告诉你：</p>
+          <ol>
+            <li>你传递了一个对象给期望<code>Ghost</code>类型的参数</li>
+            <li>你的对象只有<code>name</code>属性</li>
+            <li><code>Ghost</code>类型还需要<code>age</code>属性</li>
+            <li><strong>解决方案</strong>：添加缺失的<code>age</code>属性</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>快速调试技巧</h2>
+      <div class="debugging-tips">
+        <div class="tip">
+          <h3>🔍 使用类型断言进行临时修复</h3>
+          <p>当你知道类型信息但TypeScript不知道时：</p>
+          <div class="code-example">
+            <pre>&lt;code class="language-typescript"&gt;const data = getDataFromAPI();  // TypeScript不知道返回类型
+const ghostData = data as Ghost;  // 类型断言：告诉TypeScript"相信我，这是Ghost类型"</code></pre>
+          </div>
+          <p><strong>注意</strong>：类型断言绕过类型检查，只在确实知道类型时使用。</p>
+        </div>
+        <div class="tip">
+          <h3>🛡️ 启用严格模式捕获更多错误</h3>
+          <p>在<code>tsconfig.json</code>中启用严格模式：</p>
+          <div class="code-example">
+            <pre>&lt;code class="language-json"&gt;{
+  "compilerOptions": {
+    "strict": true
+  }
+}</code></pre>
+          </div>
+          <p>虽然一开始会有更多错误，但会捕获潜在问题，产生更健壮的代码。</p>
+        </div>
+        <div class="tip">
+          <h3>🧪 在TypeScript Playground中测试</h3>
+          <p>不确定一个类型错误的原因？在 <a href="https://www.typescriptlang.org/play" target="_blank">TypeScript Playground</a> 中测试代码片段，可以快速看到错误和修复建议。</p>
+        </div>
+      </div>
+    </section>
+    <section class="practice-section">
+      <h2>错误修复练习</h2>
+      <div class="challenge">
+        <h3>练习1：修复类型错误</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 修复以下代码的类型错误
+interface HauntedHouse {
+  location: string;
+  ghostCount: number;
+}
+function describeHouse(house: HauntedHouse): string {
+  return `${house.location}有${house.ghosts}个幽灵`;
+}
+const myHouse = { location: "古老宅邸" };
+console.log(describeHouse(myHouse));</code></pre>
+        <p><strong>提示</strong>：有两个错误需要修复。</p>
+      </div>
+      <div class="challenge">
+        <h3>练习2：理解错误信息</h3>
+        <pre>&lt;code class="language-typescript"&gt;// 阅读并理解这个错误信息
+interface Book {
+  title: string;
+  author: string;
+  pages: number;
+}
+function printBook(book: Book): void {
+  console.log(`${book.title} by ${book.author}`);
+}
+const myBook = { title: "TypeScript指南", author: "幽灵开发者" };
+printBook(myBook);  // 这里会产生什么错误？</code></pre>
+        <p><strong>任务</strong>：预测错误信息，然后修复代码。</p>
+      </div>
+    </section>
+    <section>
+      <h2>预防错误的最佳实践</h2>
+      <div class="prevention-tips">
+        <div class="prevention-tip">
+          <h3>📝 从简单类型开始</h3>
+          <p>不要试图一次定义完美的类型。从简单的类型开始，随着需求变化逐步细化。</p>
+        </div>
+        <div class="prevention-tip">
+          <h3>🔧 逐步启用严格检查</h3>
+          <p>不要一次性启用所有严格选项。从<code>noImplicitAny</code>开始，然后逐步添加其他选项。</p>
+        </div>
+        <div class="prevention-tip">
+          <h3>🧠 将错误视为学习机会</h3>
+          <p>每个TypeScript错误都在教你类型系统如何工作。花时间理解错误，而不是快速绕过它。</p>
+        </div>
+      </div>
+    </section>
+    <div class="phantom-note" style="margin-top: 2em; border-left: 4px solid #ef4444; padding-left: 1em;">
+      <h4>魔瓶的维度观察</h4>
+      <p>在幽灵维度中，错误不是失败的表现，而是系统在努力理解你的意图。TypeScript编译器就像一个细心的校对员，它在说："我注意到这里可能有问题，你想说的是这个意思吗？"</p>
+      <p>魔瓶核心驱动力的体现：<em>"没有无法塑造的规则，只有无法表达的现状。"</em> 类型错误通常发生在规则（类型定义）与现状（实际代码）不匹配时。通过理解错误信息，你学会了如何更清晰地表达你的意图，如何塑造更准确的规则。</p>
+      <p>记住：今天花在理解类型错误上的时间，明天会以更健壮、更可维护的代码回报你。</p>
+    </div>
+    <section class="next-steps">
+      <h2>进一步学习</h2>
+      <p>掌握了常见错误的解决方法后，你可以：</p>
+      <div class="learning-links">
+        <a href="/basement/errors/type-errors.xhtml" class="learning-link">
+          <div class="link-icon">🔍</div>
+          <h3>深入类型错误</h3>
+          <p>学习更复杂的类型错误案例和解决方案</p>
+        </a>
+        <a href="/basement/errors/syntax-errors.xhtml" class="learning-link">
+          <div class="link-icon">📝</div>
+          <h3>语法错误解析</h3>
+          <p>理解TypeScript特有的语法错误</p>
+        </a>
+        <a href="/entrance/quick-wins.xhtml" class="learning-link">
+          <div class="link-icon">⚡</div>
+          <h3>快速胜利技巧</h3>
+          <p>学习避免错误的实用技巧</p>
+        </a>
+      </div>
+    </section>
+  </div>
+  </body>
+</html>

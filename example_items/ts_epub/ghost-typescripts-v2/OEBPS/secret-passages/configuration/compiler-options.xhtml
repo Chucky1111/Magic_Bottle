@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>编译器选项解析 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：编译器像复杂的机器，每个选项是控制机器行为的旋钮和开关 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>编译器选项解析</h1>
+    <div class="phantom-note">幽灵观察：编译器选项是幽灵显现的参数。strict选项决定幽灵必须完全成形，noImplicitAny要求幽灵必须有明确本质，sourceMap让人类能追踪幽灵的起源。</div>
+    <div class="phantom-note">学习路径：从strict: true开始，这是最重要的选项。然后根据需要调整其他选项。使用tsc --help查看所有选项。</div>
+    <section><p>TypeScript有200多个编译器选项。你不需要记住它们，但需要知道重要的几个。这些选项控制从类型检查到代码生成的一切。</p></section>
+    <section>
+      <h3>编译器选项详解</h3>
+      <pre><code>// 重要的编译器选项分类
+// 1. 严格性选项（strict系列）
+/*
+  "strict": true, // 开启所有严格检查（推荐！）
+  等价于同时开启：
+  - "noImplicitAny": true        // 不允许隐式any
+  - "strictNullChecks": true     // 严格null检查
+  - "strictFunctionTypes": true  // 严格函数类型
+  - "strictBindCallApply": true  // 严格bind/call/apply检查
+  - "strictPropertyInitialization": true // 严格属性初始化
+  - "noImplicitThis": true       // 不允许隐式this
+  - "alwaysStrict": true         // 总是使用严格模式
+*/
+// 2. 模块和输出选项
+/*
+  "module": "ESNext",           // 模块系统：CommonJS, ES6, ESNext等
+  "target": "ES2022",           // 目标JavaScript版本
+  "lib": ["ES2022", "DOM"],     // 包含的库定义
+  "outDir": "./dist",           // 输出目录
+  "rootDir": "./src",           // 源文件根目录
+  "declaration": true,          // 生成.d.ts声明文件
+  "declarationMap": true,       // 声明文件的sourcemap
+  "sourceMap": true,            // 生成sourcemap文件
+  "inlineSources": true,        // 将源代码嵌入sourcemap
+*/
+// 3. 类型检查选项
+/*
+  "noUnusedLocals": true,       // 检查未使用的局部变量
+  "noUnusedParameters": true,   // 检查未使用的参数
+  "noImplicitReturns": true,    // 检查函数是否总是返回值
+  "noFallthroughCasesInSwitch": true, // 检查switch的fallthrough
+  "noUncheckedIndexedAccess": true, // 索引访问的额外检查
+  "exactOptionalPropertyTypes": true, // 精确的可选属性类型
+*/
+// 4. 模块解析选项
+/*
+  "moduleResolution": "bundler", // 模块解析策略
+  "baseUrl": "./",              // 基础路径
+  "paths": {                    // 路径映射
+    "@/*": ["src/*"]
+  },
+  "rootDirs": ["./src", "./generated"], // 多个根目录
+  "typeRoots": ["./node_modules/@types"], // 类型声明位置
+  "types": ["node", "jest"],    // 包含的声明包
+*/
+// 5. JavaScript支持选项
+/*
+  "allowJs": true,              // 允许JavaScript文件
+  "checkJs": true,              // 检查JavaScript文件中的类型
+  "maxNodeModuleJsDepth": 1,    // 检查node_modules中JS文件的深度
+*/
+// 6. 互操作性选项
+/*
+  "esModuleInterop": true,      // 更好的CommonJS/ES模块互操作
+  "allowSyntheticDefaultImports": true, // 允许合成默认导入
+  "resolveJsonModule": true,    // 允许导入JSON模块
+*/
+// 7. 实验性选项
+/*
+  "experimentalDecorators": true, // 实验性装饰器
+  "emitDecoratorMetadata": true,  // 发出装饰器元数据
+  "useDefineForClassFields": true, // 使用define进行类字段
+*/
+// 8. 其他选项
+/*
+  "skipLibCheck": true,         // 跳过库文件的类型检查
+  "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致
+  "noEmit": true,               // 不输出文件，只做类型检查
+  "incremental": true,          // 增量编译
+  "tsBuildInfoFile": "./build/.tsbuildinfo", // 增量编译信息文件
+*/
+// 常见配置组合
+{
+  "compilerOptions": {
+    // 现代TypeScript项目推荐配置
+    "strict": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    // 额外的严格检查
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true
+  }
+}
+// 使用命令行覆盖配置
+// tsc --strict false --target ES2015
+// 这会覆盖tsconfig.json中的对应选项</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

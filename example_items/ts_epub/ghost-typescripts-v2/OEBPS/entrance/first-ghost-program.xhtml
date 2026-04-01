@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>第一个幽灵程序 v4.0</title>
+  <link rel="stylesheet" href="/styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>第一个幽灵程序</h1>
+    <div class="phantom-note">
+      魔瓶观察：每个幽灵的第一次显现都是一个重要时刻。在这个断面中，你将召唤你的第一个TypeScript幽灵程序，让它从无形的想法变为有形的代码实体。
+    </div>
+    <section>
+      <h2>准备仪式：设置TypeScript环境</h2>
+      <p>在召唤幽灵之前，你需要准备合适的仪式场地（开发环境）：</p>
+      <div class="setup-step">
+        <h3>1. 安装Node.js：建立能量连接</h3>
+        <p>TypeScript需要Node.js作为运行环境。前往 <a href="https://nodejs.org/" target="_blank">nodejs.org</a> 下载并安装最新LTS版本。</p>
+        <div class="code-example">
+          <pre>&lt;code class="language-bash"&gt;# 验证Node.js安装成功
+node --version
+npm --version</code></pre>
+          <p class="code-explanation">Node.js是JavaScript的运行环境，npm是包管理器。它们为TypeScript提供了基础能量。</p>
+        </div>
+      </div>
+      <div class="setup-step">
+        <h3>2. 安装TypeScript：召唤编译器幽灵</h3>
+        <p>使用npm全局安装TypeScript编译器：</p>
+        <div class="code-example">
+          <pre>&lt;code class="language-bash"&gt;# 全局安装TypeScript编译器
+npm install -g typescript
+# 验证安装成功
+tsc --version</code></pre>
+          <p class="code-explanation"><code>tsc</code> 是TypeScript编译器，它负责将TypeScript代码转换为JavaScript代码。</p>
+        </div>
+      </div>
+      <div class="setup-step">
+        <h3>3. 创建项目目录：划定幽灵领地</h3>
+        <p>创建一个专门的项目目录，作为你的幽灵实验室：</p>
+        <div class="code-example">
+          <pre>&lt;code class="language-bash"&gt;# 创建项目目录
+mkdir my-first-ghost-program
+cd my-first-ghost-program</code></pre>
+          <p class="code-explanation">保持代码组织有序是很重要的。每个项目都应该有自己的专属目录。</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>召唤仪式：创建第一个幽灵程序</h2>
+      <p>现在开始真正的召唤仪式。我们将创建一个简单的幽灵问候程序：</p>
+      <div class="ritual-step">
+        <h3>1. 创建TypeScript文件：绘制幽灵轮廓</h3>
+        <p>创建一个名为 <code>ghost-greeting.ts</code> 的文件：</p>
+        <div class="code-example">
+          <pre>&lt;code class="language-typescript"&gt;// ghost-greeting.ts
+// 这是你的第一个TypeScript幽灵程序
+// 定义幽灵接口：幽灵的轮廓
+interface Ghost {
+  name: string;
+  age: number;
+  hauntingLocation: string;
+  isFriendly: boolean;
+}
+// 创建幽灵实例：召唤具体的幽灵
+const myGhost: Ghost = {
+  name: "忧郁的走廊幽灵",
+  age: 150,
+  hauntingLocation: "古老宅邸的二楼走廊",
+  isFriendly: true
+};
+// 定义问候函数：幽灵的行为
+function greetGhost(ghost: Ghost): string {
+  if (ghost.isFriendly) {
+    return `你好，我是${ghost.name}，已经在${ghost.hauntingLocation}游荡了${ghost.age}年。`;
+  } else {
+    return `${ghost.name}用冷漠的眼神看着你...最好保持距离。`;
+  }
+}
+// 执行问候：让幽灵说话
+const greeting = greetGhost(myGhost);
+console.log(greeting);
+// 额外的幽灵信息展示
+console.log("=== 幽灵档案 ===");
+console.log(`姓名: ${myGhost.name}`);
+console.log(`年龄: ${myGhost.age}年`);
+console.log(`出没地点: ${myGhost.hauntingLocation}`);
+console.log(`友好程度: ${myGhost.isFriendly ? "友好" : "危险"}`);</code></pre>
+          <p class="code-explanation">这个程序展示了TypeScript的核心概念：接口定义、对象创建、函数定义和类型注解。</p>
+        </div>
+      </div>
+      <div class="ritual-step">
+        <h3>2. 编译TypeScript：让幽灵显形</h3>
+        <p>使用TypeScript编译器将.ts文件编译为.js文件：</p>
+        <div class="code-example">
+          <pre>&lt;code class="language-bash"&gt;# 编译TypeScript文件
+tsc ghost-greeting.ts</code></pre>
+          <p class="code-explanation">这个命令会生成 <code>ghost-greeting.js</code> 文件，这是可以在任何JavaScript环境中运行的代码。</p>
+        </div>
+        <p>编译成功后，你会看到生成的 <code>ghost-greeting.js</code> 文件。打开它看看：</p>
+        <div class="code-example">
+          <pre>&lt;code class="language-javascript"&gt;// ghost-greeting.js (编译后的JavaScript)
+var myGhost = {
+  name: "忧郁的走廊幽灵",
+  age: 150,
+  hauntingLocation: "古老宅邸的二楼走廊",
+  isFriendly: true
+};
+function greetGhost(ghost) {
+  if (ghost.isFriendly) {
+    return "\u4F60\u597D\uFF0C\u6211\u662F".concat(ghost.name, "\uFF0C\u5DF2\u7ECF\u5728").concat(ghost.hauntingLocation, "\u6E38\u8361\u4E86").concat(ghost.age, "\u5E74\u3002");
+  }
+  else {
+    return "".concat(ghost.name, "\u7528\u51B7\u6F20\u7684\u773C\u795E\u770B\u7740\u4F60...\u6700\u597D\u4FDD\u6301\u8DDD\u79BB\u3002");
+  }
+}
+var greeting = greetGhost(myGhost);
+console.log(greeting);
+console.log("=== \u5E7D\u7075\u6863\u6848 ===");
+console.log("\u59D3\u540D: ".concat(myGhost.name));
+console.log("\u5E74\u9F84: ".concat(myGhost.age, "\u5E74"));
+console.log("\u51FA\u6CA1\u5730\u70B9: ".concat(myGhost.hauntingLocation));
+console.log("\u53CB\u597D\u7A0B\u5EA6: ".concat(myGhost.isFriendly ? "\u53CB\u597D" : "\u5371\u9669"));</code></pre>
+          <p class="code-explanation">注意：类型注解（如 <code>: Ghost</code>, <code>: string</code>）在编译后被移除，只保留纯JavaScript代码。</p>
+        </div>
+      </div>
+      <div class="ritual-step">
+        <h3>3. 运行程序：见证幽灵显现</h3>
+        <p>使用Node.js运行编译后的JavaScript文件：</p>
+        <div class="code-example">
+          <pre>&lt;code class="language-bash"&gt;# 运行JavaScript程序
+node ghost-greeting.js</code></pre>
+        </div>
+        <p>你应该看到输出：</p>
+        <div class="code-example">
+          <pre><code>你好，我是忧郁的走廊幽灵，已经在古老宅邸的二楼走廊游荡了150年。
+=== 幽灵档案 ===
+姓名: 忧郁的走廊幽灵
+年龄: 150年
+出没地点: 古老宅邸的二楼走廊
+友好程度: 友好</code></pre>
+          <p class="code-explanation">恭喜！你的第一个TypeScript幽灵程序成功运行了！</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>深入理解：代码的幽灵维度解读</h2>
+      <div class="concept-breakdown">
+        <div class="concept-item">
+          <h3>接口（Interface）：幽灵的轮廓定义</h3>
+          <p>接口定义了对象的形状，就像是为幽灵绘制了精确的轮廓：</p>
+          <div class="code-snippet">
+            <pre>&lt;code class="language-typescript"&gt;interface Ghost {
+  name: string;           // 幽灵必须有名字（字符串）
+  age: number;            // 幽灵必须有年龄（数字）
+  hauntingLocation: string; // 幽灵必须有出没地点（字符串）
+  isFriendly: boolean;    // 幽灵必须有友好标志（布尔值）
+}</code></pre>
+          </div>
+          <p>这个接口规定：任何 <code>Ghost</code> 类型的对象都必须有这四个属性，且类型必须匹配。</p>
+        </div>
+        <div class="concept-item">
+          <h3>类型注解：明确的契约</h3>
+          <p>类型注解告诉TypeScript每个变量和参数应有的类型：</p>
+          <div class="code-snippet">
+            <pre>&lt;code class="language-typescript"&gt;const myGhost: Ghost = { ... };  // myGhost必须是Ghost类型
+function greetGhost(ghost: Ghost): string { ... }  // 参数是Ghost，返回值是字符串</code></pre>
+          </div>
+          <p>这些注解是开发者和TypeScript编译器之间的契约。</p>
+        </div>
+        <div class="concept-item">
+          <h3>类型安全：防止幽灵失控</h3>
+          <p>尝试违反类型规则会导致编译错误：</p>
+          <div class="code-example">
+            <pre>&lt;code class="language-typescript"&gt;// 错误示例：类型不匹配
+const wrongGhost: Ghost = {
+  name: "错误的幽灵",
+  age: "一百岁",  // ❌ 错误：应该是number，不是string
+  hauntingLocation: "阁楼",
+  isFriendly: "是的"  // ❌ 错误：应该是boolean，不是string
+};</code></pre>
+          </div>
+          <p>TypeScript会在编译时捕获这些错误，防止运行时出现问题。</p>
+        </div>
+      </div>
+    </section>
+    <section class="practice-section">
+      <h2>魔瓶的实践挑战</h2>
+      <p>现在轮到你了。尝试修改和扩展第一个幽灵程序：</p>
+      <div class="challenge">
+        <h3>挑战1：添加更多幽灵属性</h3>
+        <p>扩展 <code>Ghost</code> 接口，添加以下可选属性：</p>
+        <ul>
+          <li><code>abilities</code>: <code>string[]</code>（能力数组）</li>
+          <li><code>apparitionTime</code>: <code>"day" | "night" | "both"</code>（显形时间）</li>
+          <li><code>fearLevel</code>: <code>number</code>（恐怖等级，1-10）</li>
+        </ul>
+        <p>然后更新 <code>myGhost</code> 对象包含这些新属性。</p>
+      </div>
+      <div class="challenge">
+        <h3>挑战2：创建幽灵家族</h3>
+        <p>创建一个幽灵数组，包含至少3个不同的幽灵：</p>
+        <pre>&lt;code class="language-typescript"&gt;const ghostFamily: Ghost[] = [
+  { /* 幽灵1 */ },
+  { /* 幽灵2 */ },
+  { /* 幽灵3 */ }
+];</code></pre>
+        <p>编写函数计算幽灵家族的平均年龄。</p>
+      </div>
+      <div class="challenge">
+        <h3>挑战3：幽灵互动系统</h3>
+        <p>创建一个更复杂的系统：</p>
+        <ul>
+          <li>定义 <code>GhostInteraction</code> 接口，包含 <code>type</code>（互动类型）、<code>successRate</code>（成功率）等属性</li>
+          <li>编写函数模拟幽灵与人的互动</li>
+          <li>根据幽灵的友好程度和恐怖等级决定互动结果</li>
+        </ul>
+      </div>
+      <div class="phantom-note" style="margin-top: 1em;">
+        <p>💡 提示：如果遇到困难，可以在 <a href="/entrance/simple-examples.xhtml">简单示例集合</a> 页面寻找灵感。</p>
+      </div>
+    </section>
+    <section>
+      <h2>常见问题与解决方案</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>❓ 编译时出现错误怎么办？</h4>
+          <p>仔细阅读错误信息。TypeScript的错误信息通常很详细，会告诉你哪里出了问题以及如何修复。</p>
+        </div>
+        <div class="faq-item">
+          <h4>❓ 为什么需要编译步骤？</h4>
+          <p>浏览器和Node.js不能直接运行TypeScript代码。编译步骤将TypeScript转换为它们能理解的JavaScript。</p>
+        </div>
+        <div class="faq-item">
+          <h4>❓ 可以跳过类型注解吗？</h4>
+          <p>可以，TypeScript会尝试推断类型。但显式注解能让代码更清晰，并帮助捕获更多错误。</p>
+        </div>
+        <div class="faq-item">
+          <h4>❓ 如何加快开发流程？</h4>
+          <p>使用 <code>tsc --watch</code> 命令可以监听文件变化并自动编译：</p>
+          <pre>&lt;code class="language-bash"&gt;tsc ghost-greeting.ts --watch</code></pre>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>下一步探索</h2>
+      <p>成功召唤第一个幽灵程序后，你可以继续深入：</p>
+      <div class="next-steps-grid">
+        <div class="next-step">
+          <h3>📚 学习更多类型</h3>
+          <p>掌握TypeScript的类型系统，包括泛型、联合类型、条件类型等高级特性。</p>
+          <a href="/hallways/types/basic-types.xhtml">学习基本类型 →</a>
+        </div>
+        <div class="next-step">
+          <h3>🏗️ 开始实际项目</h3>
+          <p>应用所学知识，开始构建完整的鬼屋项目。</p>
+          <a href="/toc-haunted-house.xhtml">开始鬼屋项目 →</a>
+        </div>
+        <div class="next-step">
+          <h3>🤖 与AI协作</h3>
+          <p>学习如何利用AI辅助TypeScript开发，提高编码效率。</p>
+          <a href="/attic/ai-assistance/ai-collaboration.xhtml">AI协作流程 →</a>
+        </div>
+        <div class="next-step">
+          <h3>🐛 调试与错误处理</h3>
+          <p>学习TypeScript常见的错误类型和调试技巧。</p>
+          <a href="/basement/errors/index.xhtml">访问错误地下室 →</a>
+        </div>
+      </div>
+    </section>
+    <div class="phantom-note" style="margin-top: 2em; border-left: 4px solid #8b5cf6; padding-left: 1em;">
+      <h4>魔瓶的维度观察</h4>
+      <p>你刚刚完成了在代码维度中的第一次幽灵召唤。记住这个时刻：</p>
+      <ul>
+        <li><strong>类型是幽灵的轮廓</strong>：接口为无形的数据定义了清晰的边界</li>
+        <li><strong>编译是显形仪式</strong>：<code>tsc</code> 命令将类型化的思想转化为可执行的现实</li>
+        <li><strong>运行是幽灵显现</strong>：<code>node</code> 命令让代码中的幽灵真正"活"起来</li>
+      </ul>
+      <p>魔瓶核心驱动力的体现：<em>"没有无法塑造的规则，只有无法表达的现状。"</em> 通过TypeScript的类型系统，你学会了如何用精确的规则塑造代码的现状，让模糊的想法变为清晰可执行的结构。</p>
+      <p>准备好继续你的幽灵维度之旅了吗？前方还有更多TypeScript的神秘等待探索。</p>
+    </div>
+  </div>
+  </body>
+</html>

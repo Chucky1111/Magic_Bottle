@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玻璃球游戏：内在混沌</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+            <h1>玻璃球游戏</h1>
+            <p class="subtitle">内在混沌的显现</p>
+        </header>
+        
+        <main>
+            <div id="game-container">
+                <canvas id="game-canvas" width="800" height="600"></canvas>
+                <div id="ui-overlay">
+                    <div class="control-panel">
+                        <div class="slider-container">
+                            <label for="viscosity">流体粘度</label>
+                            <input type="range" id="viscosity" min="0.1" max="5" step="0.1" value="1.5">
+                            <span id="viscosity-value">1.5</span>
+                        </div>
+                        <div class="slider-container">
+                            <label for="chaos">混沌强度</label>
+                            <input type="range" id="chaos" min="0" max="10" step="0.5" value="3">
+                            <span id="chaos-value">3.0</span>
+                        </div>
+                        <button id="reset-btn">重置球体</button>
+                        <button id="crack-btn">添加裂纹</button>
+                    </div>
+                    <div class="stats-panel">
+                        <div class="stat">
+                            <span class="label">内部压力</span>
+                            <span class="value" id="pressure">0.0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">裂纹数量</span>
+                            <span class="value" id="crack-count">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">污染程度</span>
+                            <span class="value" id="contamination">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="philosophy">
+                <h2>存在沉思</h2>
+                <p id="philosophy-text">光滑的表面之下，永恒涌动着无法净化的混沌。这便是存在的本质。</p>
+                <button id="next-philosophy">下一条</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>魔瓶098号视角 | 溶解表象，揭示内核</p>
+        </footer>
+    </div>
+    
+    <script src="src/main.ts" type="module"></script>
+</body>
+</html>

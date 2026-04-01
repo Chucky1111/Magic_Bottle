@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>AI协作流程 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：程序员和AI像舞蹈伙伴，程序员引导，AI跟随和执行，两者协同创造 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>AI协作流程</h1>
+    <div class="phantom-note">幽灵观察：AI协作是召唤数据幽灵的仪式。清晰的意图召唤清晰的幽灵，混乱的意图召唤混乱的幽灵。仪式（流程）决定结果的质量。</div>
+    <div class="phantom-note">协作心态：你是架构师，AI是建造者。你设计蓝图，AI执行细节。你检查质量，AI进行调整。</div>
+    <section><p>AI协作不是一次性的代码生成，是持续的对话和迭代。像指导初级开发者一样指导AI：明确、耐心、反馈。</p></section>
+    <section>
+      <h3>完整的AI协作流程</h3>
+      <pre><code>// 完整的AI协作工作流程示例
+// 阶段1: 需求分析
+"""
+我计划创建一个幽灵管理系统。
+系统需要：
+1. 管理幽灵的基本信息（名称、年龄、类型）
+2. 追踪幽灵的位置
+3. 记录幽灵的活动
+4. 生成报告
+请帮我设计类型定义。
+"""
+// AI响应：创建基础类型
+type GhostType = 'FRIENDLY' | 'NEUTRAL' | 'HOSTILE';
+interface Ghost {
+  id: string;
+  name: string;
+  age?: number;
+  type: GhostType;
+  location: string;
+  lastSeen: Date;
+}
+// 阶段2: 核心功能
+"""
+基于上面的类型定义，请创建：
+1. GhostManager类，用于管理幽灵集合
+2. 添加、删除、查找幽灵的方法
+3. 按类型或位置过滤幽灵的方法
+"""
+// AI响应：创建核心类
+class GhostManager {
+  private ghosts: Map&lt;string, Ghost&gt; = new Map();
+  addGhost(ghost: Ghost): void {
+    this.ghosts.set(ghost.id, ghost);
+  }
+  // ... 其他方法
+}
+// 阶段3: 功能扩展
+"""
+现在添加：
+1. 活动日志功能，记录幽灵的每次显现
+2. 报告生成功能，生成每日活动报告
+3. 数据持久化接口
+"""
+// AI响应：扩展功能
+interface ActivityLog {
+  ghostId: string;
+  action: string;
+  timestamp: Date;
+  location: string;
+}
+class EnhancedGhostManager extends GhostManager {
+  private activityLogs: ActivityLog[] = [];
+  logActivity(ghostId: string, action: string, location: string): void {
+    this.activityLogs.push({
+      ghostId,
+      action,
+      timestamp: new Date(),
+      location
+    });
+  }
+  generateDailyReport(date: Date): string {
+    // ... 生成报告
+  }
+}
+// 阶段4: 错误处理和测试
+"""
+为上面的代码添加：
+1. 错误处理（重复ID、无效数据等）
+2. 单元测试示例
+3. 边界情况处理
+"""
+// AI响应：添加健壮性
+class RobustGhostManager extends EnhancedGhostManager {
+  addGhost(ghost: Ghost): void {
+    if (this.ghosts.has(ghost.id)) {
+      throw new Error(`Ghost with id ${ghost.id} already exists`);
+    }
+    if (ghost.age &amp;&amp; ghost.age &lt; 0) {
+      throw new Error('Age cannot be negative');
+    }
+    super.addGhost(ghost);
+  }
+}
+// 测试示例
+describe('GhostManager', () =&gt; {
+  it('should add a ghost', () =&gt; {
+    const manager = new RobustGhostManager();
+    const ghost: Ghost = {
+      id: '1',
+      name: '卡斯珀',
+      type: 'FRIENDLY',
+      location: '阁楼',
+      lastSeen: new Date()
+    };
+    expect(() =&gt; manager.addGhost(ghost)).not.toThrow();
+  });
+});
+// 阶段5: 优化和重构
+"""
+审查代码，优化以下方面：
+1. 性能（大数据量下的表现）
+2. 内存使用
+3. 代码可读性
+4. 类型安全性
+"""
+// AI响应：优化建议
+/*
+优化建议：
+1. 使用Map而不是对象存储幽灵，提高查找速度
+2. 活动日志可能很大，考虑分页或流式处理
+3. 添加更多类型守卫和类型谓词
+4. 考虑使用不可变数据结构
+*/
+// 阶段6: 文档和示例
+"""
+为最终代码创建：
+1. API文档
+2. 使用示例
+3. 常见问题解答
+"""
+// AI协作的最佳实践清单：
+// 1. 分阶段开发
+//   - 阶段1: 类型定义
+//   - 阶段2: 核心逻辑
+//   - 阶段3: 扩展功能
+//   - 阶段4: 错误处理
+//   - 阶段5: 测试
+//   - 阶段6: 优化
+//   - 阶段7: 文档
+// 2. 保持对话上下文
+//   - 每次提示引用之前的对话
+//   - 明确说明这是对话的延续
+//   - 要求AI记住之前的决定
+// 3. 验证和理解
+//   - 要求AI解释复杂代码
+//   - 要求AI提供替代方案
+//   - 自己运行和测试代码
+//   - 理解每一行代码的作用
+// 4. 反馈循环
+//   - 指出AI的错误
+//   - 要求AI纠正错误
+//   - 提供具体的改进方向
+//   - 感谢AI的有用建议
+// 5. 工具集成
+//   - 在IDE中使用AI（如Cursor）
+//   - 使用AI进行代码审查
+//   - 使用AI生成测试
+//   - 使用AI编写文档
+// 记住：AI是工具，不是替代品。
+// 你的思考和决策仍然是最重要的。</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

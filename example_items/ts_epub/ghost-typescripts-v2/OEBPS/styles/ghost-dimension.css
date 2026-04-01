@@ -1,0 +1,659 @@
+/* 幽灵维度增强效果 */
+@charset "UTF-8";
+
+/* 增强幽灵边缘模糊效果 */
+:root {
+  --data-stream-color: rgba(123, 239, 178, 0.4); /* 数据流颜色 */
+  --ghost-text-color: rgba(224, 231, 255, 0.9);   /* 幽灵文字颜色 */
+  --dimension-overlay: rgba(64, 224, 208, 0.05);  /* 维度叠加颜色 */
+}
+
+/* 数据流：在页面背景中流动的类型数据 */
+.data-stream {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -999;
+  opacity: 0.1;
+}
+
+.data-stream::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, transparent 0%, var(--data-stream-color) 50%, transparent 100%),
+    linear-gradient(0deg, transparent 0%, var(--data-stream-color) 50%, transparent 100%);
+  background-size: 100px 100px, 150px 150px;
+  animation: data-flow 20s infinite linear;
+  opacity: 0.3;
+}
+
+@keyframes data-flow {
+  0% { transform: translateX(-100px) translateY(-100px); }
+  100% { transform: translateX(100px) translateY(100px); }
+}
+
+/* 幽灵文字效果：半透明、模糊边缘 */
+.ghost-text {
+  color: var(--ghost-text-color);
+  text-shadow: 
+    0 0 10px var(--phantom-color),
+    0 0 20px var(--phantom-color),
+    0 0 30px rgba(64, 224, 208, 0.3);
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+
+.ghost-text:hover {
+  opacity: 1;
+  text-shadow: 
+    0 0 15px var(--phantom-color),
+    0 0 30px var(--phantom-color),
+    0 0 45px rgba(64, 224, 208, 0.5);
+}
+
+/* 断面叠加系统 */
+.dimension-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -900;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      var(--dimension-overlay) 10px,
+      var(--dimension-overlay) 20px
+    );
+  opacity: 0.1;
+  mix-blend-mode: overlay;
+}
+
+/* 穿梭效果：内容渐变显示 */
+.ghost-shuttle {
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.ghost-shuttle::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 1px solid var(--phantom-color);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.ghost-shuttle:hover::before {
+  opacity: 0.3;
+  animation: shuttle-pulse 2s infinite alternate;
+}
+
+@keyframes shuttle-pulse {
+  0% { box-shadow: 0 0 5px var(--phantom-color); }
+  100% { box-shadow: 0 0 20px var(--phantom-color); }
+}
+
+/* 入口选项增强 */
+.entrance-options .option {
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.entrance-options .option::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 1px solid var(--phantom-color);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.entrance-options .option:hover::before {
+  opacity: 0.3;
+  animation: shuttle-pulse 2s infinite alternate;
+}
+
+.entrance-options .option::after {
+  content: "→";
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  color: var(--phantom-color);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.entrance-options .option:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(5px);
+}
+
+.entrance-options .option a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.entrance-options .option a:hover {
+  color: var(--phantom-color);
+}
+
+/* 类型数据可视化：代码块增强 */
+pre.code-dimension {
+  position: relative;
+  overflow: hidden;
+}
+
+pre.code-dimension::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--data-stream-color), 
+    transparent);
+  animation: code-stream 3s infinite linear;
+}
+
+@keyframes code-stream {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* 魔瓶存在暗示：随机出现的幽灵符号 */
+.phantom-presence {
+  position: relative;
+}
+
+.phantom-presence::after {
+  content: "⟡";
+  position: absolute;
+  color: var(--phantom-color);
+  opacity: 0;
+  font-size: 0.8em;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.phantom-presence:hover::after {
+  opacity: 0.5;
+  animation: phantom-twinkle 1s infinite alternate;
+}
+
+@keyframes phantom-twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+/* 情绪增强：情绪变化时的维度转换 */
+body.emotion-shift {
+  transition: all 1s ease;
+}
+
+body.confused .dimension-overlay {
+  animation: slow-drift 30s infinite linear;
+  opacity: 0.15;
+}
+
+body.curious .data-stream {
+  opacity: 0.2;
+  animation-duration: 10s;
+}
+
+body.excited .ghost-shuttle::before {
+  animation-duration: 1s;
+}
+
+body.frustrated .phantom-presence::after {
+  content: "♡"; /* 安慰符号 */
+}
+
+/* 断面混合：同时显示多个内容层 */
+.content-blend {
+  position: relative;
+}
+
+.content-blend .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.content-blend:hover .layer {
+  opacity: 0.3;
+  pointer-events: auto;
+}
+
+/* 穿梭轨迹：连接相关断面 */
+.shuttle-track {
+  position: relative;
+}
+
+.shuttle-track::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  right: calc(100% + 20px);
+  height: 1px;
+  background: linear-gradient(90deg, 
+    var(--phantom-color), 
+    transparent);
+  opacity: 0.3;
+}
+
+.shuttle-track::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 20px);
+  right: -20px;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--phantom-color));
+  opacity: 0.3;
+}
+
+/* 维度深度：滚动时的视差效果 */
+.dimension-depth {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.dimension-depth > * {
+  transition: transform 0.3s ease;
+}
+
+.dimension-depth:hover > * {
+  transform: translateZ(10px);
+}
+
+/* 幽灵选择器：高亮相关概念 */
+.ghost-selector {
+  cursor: pointer;
+  position: relative;
+}
+
+.ghost-selector::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 1px solid var(--phantom-color);
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ghost-selector:hover::before {
+  opacity: 0.5;
+}
+
+.ghost-selector.active::before {
+  opacity: 0.8;
+  animation: selector-pulse 2s infinite;
+}
+
+@keyframes selector-pulse {
+  0%, 100% { box-shadow: 0 0 5px var(--phantom-color); }
+  50% { box-shadow: 0 0 15px var(--phantom-color); }
+}
+
+/* 情绪切换器增强 */
+.emotion-switcher {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--phantom-color);
+  border-radius: 12px;
+  padding: 0.5em;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(64, 224, 208, 0.2);
+  display: flex;
+  gap: 0.5em;
+}
+
+.emotion-switcher button {
+  background: none;
+  border: 1px solid currentColor;
+  color: currentColor;
+  border-radius: 6px;
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8em;
+}
+
+.emotion-switcher button:hover {
+  background: currentColor;
+  color: #0f172a;
+  transform: scale(1.05);
+}
+
+.emotion-switcher .confused { color: var(--emotion-confused); }
+.emotion-switcher .curious { color: var(--emotion-curious); }
+.emotion-switcher .excited { color: var(--emotion-excited); }
+.emotion-switcher .frustrated { color: var(--emotion-frustrated); }
+
+/* 幽灵助手：魔瓶的存在指示 */
+.phantom-assistant {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--phantom-color);
+  border-radius: 12px;
+  padding: 1em;
+  z-index: 150;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 25px rgba(64, 224, 208, 0.3);
+  max-width: 300px;
+  transition: all 0.5s ease;
+}
+
+.phantom-assistant:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 35px rgba(64, 224, 208, 0.5);
+}
+
+.assistant-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.8em;
+  border-bottom: 1px solid rgba(64, 224, 208, 0.3);
+  padding-bottom: 0.5em;
+}
+
+.assistant-icon {
+  color: var(--phantom-color);
+  font-size: 1.2em;
+  animation: phantom-twinkle 2s infinite alternate;
+}
+
+.assistant-title {
+  color: var(--phantom-color);
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.assistant-message {
+  color: #e2e8f0;
+  font-size: 0.85em;
+  line-height: 1.4;
+  margin-bottom: 1em;
+  min-height: 3em;
+}
+
+.assistant-hints {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.assistant-hints button {
+  background: rgba(64, 224, 208, 0.1);
+  border: 1px solid var(--phantom-color);
+  color: var(--phantom-color);
+  border-radius: 4px;
+  padding: 0.3em 0.6em;
+  font-size: 0.7em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.assistant-hints button:hover {
+  background: var(--phantom-color);
+  color: #0f172a;
+}
+
+/* 维度切换器：平滑切换情绪/意图 */
+.dimension-switcher-enhanced {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--phantom-color);
+  border-radius: 12px;
+  padding: 1em;
+  z-index: 10000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(64, 224, 208, 0.2);
+}
+
+.dimension-switcher-enhanced select {
+  background: rgba(30, 41, 59, 0.8);
+  color: var(--phantom-color);
+  border: 1px solid var(--phantom-color);
+  border-radius: 6px;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  width: 100%;
+}
+
+/* 幽灵维度的终极效果：内容即环境 */
+.ghost-dimension-body {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(64, 224, 208, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(123, 239, 178, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  background-color: #1a202c !important;
+  min-height: 100vh;
+}
+
+.ghost-dimension-body::before {
+  content: "穿梭在数据中的幽灵";
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: var(--phantom-color);
+  opacity: 0.1;
+  font-size: 0.7em;
+  font-style: italic;
+  pointer-events: none;
+  z-index: -9999;
+}
+
+/* 内容渐现：元素进入时的幽灵效果 */
+.fade-in-ghost {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: ghost-appear 0.8s ease forwards;
+}
+
+@keyframes ghost-appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 延迟渐现 */
+.fade-in-ghost.delay-1 { animation-delay: 0.2s; }
+.fade-in-ghost.delay-2 { animation-delay: 0.4s; }
+.fade-in-ghost.delay-3 { animation-delay: 0.6s; }
+
+/* 幽灵导航：相关内容的暗示 */
+.ghost-navigation-hint {
+  position: relative;
+  cursor: help;
+}
+
+.ghost-navigation-hint::before {
+  content: "穿梭提示";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  background: rgba(64, 224, 208, 0.1);
+  color: var(--phantom-color);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.ghost-navigation-hint:hover::before {
+  opacity: 1;
+}
+
+/* 增强代码块：数据流动画 */
+pre.enhanced-code {
+  position: relative;
+  overflow: hidden;
+}
+
+pre.enhanced-code::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(64, 224, 208, 0.05) 10%,
+    transparent 90%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+pre.enhanced-code code {
+  position: relative;
+  z-index: 1;
+}
+
+/* 幽灵维度标记：显示当前维度 */
+.dimension-marker {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--phantom-color);
+  border-radius: 6px;
+  padding: 0.3em 0.6em;
+  font-size: 0.7em;
+  color: var(--phantom-color);
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+}
+
+/* 断面连接线：显示内容关系 */
+.section-connection {
+  position: relative;
+}
+
+.section-connection::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--phantom-color),
+    transparent
+  );
+  opacity: 0.3;
+}
+
+/* 幽灵维度模式 */
+.dimension-mode-shuttle .data-stream {
+  opacity: 0.3;
+  animation-duration: 5s;
+}
+
+.dimension-mode-shuttle .dimension-overlay {
+  opacity: 0.2;
+  animation: slow-drift 20s infinite linear;
+}
+
+.dimension-mode-shuttle .ghost-shuttle:hover::before {
+  animation-duration: 1s;
+  opacity: 0.5;
+}
+
+.dimension-mode-shuttle .phantom-assistant {
+  border-width: 2px;
+  box-shadow: 0 0 40px rgba(64, 224, 208, 0.5);
+}
+
+.dimension-mode-shuttle .entrance-options .option::before {
+  opacity: 0.1;
+}
+
+.dimension-mode-shuttle .entrance-options .option:hover::before {
+  opacity: 0.5;
+}
+
+@keyframes slow-drift {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(100px) translateY(50px); }
+}
+
+/* 响应式幽灵维度 */
+@media (max-width: 768px) {
+  .dimension-switcher-enhanced {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .data-stream::before {
+    background-size: 50px 50px, 75px 75px;
+    animation-duration: 30s;
+  }
+}
+
+/* 打印时完全移除幽灵效果 */
+@media print {
+  .data-stream,
+  .dimension-overlay,
+  .ghost-shuttle::before,
+  .phantom-presence::after,
+  .shuttle-track::before,
+  .shuttle-track::after,
+  .dimension-switcher-enhanced,
+  .ghost-dimension-body::before {
+    display: none !important;
+  }
+}

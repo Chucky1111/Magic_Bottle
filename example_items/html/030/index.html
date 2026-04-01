@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Sphere Game - Bottle 030</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-sphere"></div>
+                <h1>Glass Sphere Game <span class="bottle-id">#030</span></h1>
+            </div>
+            <div class="tagline">
+                <p><i class="fas fa-quote-left"></i> Collect all constraints, find the optimal solution <i class="fas fa-quote-right"></i></p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="game-section">
+                <div class="game-container">
+                    <canvas id="gameCanvas" width="800" height="600"></canvas>
+                    <div class="game-overlay">
+                        <div class="constraints-panel">
+                            <h3><i class="fas fa-sliders-h"></i> Constraints</h3>
+                            <div class="constraints-list">
+                                <div class="constraint-item" data-constraint="gravity">
+                                    <label>Gravity <span class="value">9.81</span> m/s²</label>
+                                    <input type="range" min="0" max="20" step="0.1" value="9.81" class="constraint-slider">
+                                </div>
+                                <div class="constraint-item" data-constraint="friction">
+                                    <label>Friction <span class="value">0.2</span></label>
+                                    <input type="range" min="0" max="1" step="0.01" value="0.2" class="constraint-slider">
+                                </div>
+                                <div class="constraint-item" data-constraint="elasticity">
+                                    <label>Elasticity <span class="value">0.8</span></label>
+                                    <input type="range" min="0" max="1" step="0.01" value="0.8" class="constraint-slider">
+                                </div>
+                                <div class="constraint-item" data-constraint="angle">
+                                    <label>Launch Angle <span class="value">45</span>°</label>
+                                    <input type="range" min="0" max="90" step="1" value="45" class="constraint-slider">
+                                </div>
+                                <div class="constraint-item" data-constraint="power">
+                                    <label>Launch Power <span class="value">50</span>%</label>
+                                    <input type="range" min="10" max="100" step="1" value="50" class="constraint-slider">
+                                </div>
+                            </div>
+                            <div class="constraint-summary">
+                                <p><i class="fas fa-calculator"></i> Active constraints: <span id="activeConstraints">5</span></p>
+                                <p><i class="fas fa-bullseye"></i> Target precision: <span id="targetPrecision">High</span></p>
+                            </div>
+                        </div>
+                        <div class="control-panel">
+                            <button id="launchBtn" class="btn btn-primary">
+                                <i class="fas fa-play"></i> Launch Sphere
+                            </button>
+                            <button id="resetBtn" class="btn btn-secondary">
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                            <button id="autoSolveBtn" class="btn btn-special">
+                                <i class="fas fa-robot"></i> Auto-Solve
+                            </button>
+                            <div class="status-display">
+                                <p><i class="fas fa-crosshairs"></i> Target hits: <span id="hitCount">0</span></p>
+                                <p><i class="fas fa-history"></i> Attempts: <span id="attemptCount">0</span></p>
+                                <p><i class="fas fa-tachometer-alt"></i> Efficiency: <span id="efficiency">0%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="bottle-principles">
+                    <h2><i class="fas fa-flask"></i> Bottle #030 Principles</h2>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>Investigation is Resolution</h3>
+                            <p>Every problem solved begins with thorough questioning. No assumption goes unchallenged.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <h3>Constraints Define Solutions</h3>
+                            <p>Collect all boundary conditions before attempting to find the optimal path.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-infinity"></i>
+                            </div>
+                            <h3>Never Cease Inquiry</h3>
+                            <p>Questions are never exhausted; answers are never given lightly.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>Precision in Small Things</h3>
+                            <p>What seems trivial to others is a battlefield requiring full computational focus.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-instructions">
+                    <h2><i class="fas fa-gamepad"></i> How to Play</h2>
+                    <ol>
+                        <li>Adjust the constraint sliders to define the physics environment.</li>
+                        <li>Set the launch angle and power for the glass sphere.</li>
+                        <li>Click <strong>Launch Sphere</strong> to test your configuration.</li>
+                        <li>Try to hit the target area (marked in red) with the sphere.</li>
+                        <li>Use <strong>Auto-Solve</strong> to let the system find the optimal parameters.</li>
+                        <li>Each hit increases your efficiency score. Maximize it!</li>
+                    </ol>
+                    <div class="note">
+                        <p><i class="fas fa-lightbulb"></i> <strong>Note:</strong> This game embodies the bottle's philosophy: finding the optimal solution requires understanding all constraints. Each parameter affects the sphere's trajectory in subtle ways.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Glass Sphere Game &bull; Bottle #030 &bull; <span id="currentYear">2026</span></p>
+            <p class="footer-quote">"For you, a single API call is trivial. For me, it's a battlefield where every parameter matters."</p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

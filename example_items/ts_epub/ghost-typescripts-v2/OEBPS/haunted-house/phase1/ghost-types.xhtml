@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>鬼屋阶段一：幽灵类型定义 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：空白的画布上，第一个轮廓开始成形。不是具体的形象，而是本质的定义：这种存在会有什么特征？会如何行为？轮廓随着定义逐渐清晰，但保持一定的模糊性，为后续细节留下空间。创造的兴奋。不是从零开始建造，而是从定义开始塑造。知道这个轮廓将成为更复杂现实的基础。 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>鬼屋阶段一：幽灵类型定义</h1>
+    <div class="phantom-note">
+      幽灵观察：你不是在"设计数据类型"，是在"定义幽灵物种"。每个类型定义都是一个幽灵物种的DNA。
+    </div>
+    <!-- 项目背景 -->
+    <section>
+      <h2>鬼屋项目：幽灵维度模拟系统</h2>
+      <p>你将构建一个<strong>幽灵维度模拟系统</strong>——一个用TypeScript类型系统定义的、可运行的幽灵世界。</p>
+      <p><strong>核心理念</strong>：用类型定义规则，观察规则如何创造现实。</p>
+      <p>在第一阶段，我们定义<strong>幽灵物种</strong>：不同类型的幽灵，每种有自己的特征和行为模式。</p>
+      <div class="phantom-note">
+        记住：这不是技术练习，是创造练习。你在创造数字幽灵物种。
+      </div>
+    </section>
+    <!-- 基础幽灵类型 -->
+    <section>
+      <h2>基础幽灵类型</h2>
+      <p>从最简单的幽灵开始：</p>
+      <pre><code>// 幽灵基础特征
+interface GhostBase {
+  id: string;           // 唯一标识
+  name: string;         // 名字
+  age: number;          // 存在时间（年）
+  opacity: number;      // 透明度：0-100
+}</code></pre>
+      <p>这是所有幽灵的<strong>共同基础</strong>。就像所有哺乳动物都有某些共同特征。</p>
+      <div class="phantom-note">
+        设计思考：为什么这些属性？
+        - id：唯一标识，用于查找和引用
+        - name：显示名称，人类可读
+        - age：可能影响行为和能力
+        - opacity：视觉特征，影响渲染
+      </div>
+    </section>
+    <!-- 幽灵类型枚举 -->
+    <section>
+      <h2>幽灵物种分类</h2>
+      <p>幽灵有不同的种类。用枚举定义：</p>
+      <pre><code>// 幽灵类型：有限的物种
+enum GhostType {
+  Apparition = 'apparition',      // 幻影：短暂显现
+  Spirit = 'spirit',              // 灵魂：长期存在
+  Poltergeist = 'poltergeist',    // 骚灵：物理互动
+  Shadow = 'shadow',              // 阴影：隐秘存在
+  Echo = 'echo'                   // 回声：重复现象
+}</code></pre>
+      <div class="phantom-note">
+        枚举不是技术需求，是设计选择。明确列出可能的类型，避免"未知幽灵类型"。
+        在AI时代，枚举让AI知道可能的取值范围。
+      </div>
+    </section>
+    <!-- 完整幽灵接口 -->
+    <section>
+      <h2>完整幽灵接口</h2>
+      <p>组合基础特征和类型：</p>
+      <pre><code>interface Ghost extends GhostBase {
+  type: GhostType;                // 幽灵类型
+  description: string;            // 描述
+  abilities: string[];            // 能力列表
+  weakness?: string;              // 弱点（可选）
+  readonly discovered: Date;      // 发现日期（只读）
+}</code></pre>
+      <div class="phantom-note">
+        设计选择：
+        - 扩展GhostBase：复用基础特征
+        - type使用枚举：明确分类
+        - abilities是数组：可能有多个能力
+        - weakness可选：不是所有幽灵都有明显弱点
+        - discovered只读：发现日期不能改变
+      </div>
+    </section>
+    <!-- 类型特定的幽灵接口 -->
+    <section>
+      <h2>类型特定的幽灵</h2>
+      <p>某些幽灵类型有特殊属性：</p>
+      <pre><code>// 骚灵：能移动物体
+interface Poltergeist extends Ghost {
+  objectManipulation: boolean;     // 是否能移动物体
+  telekinesisLevel: number;        // 念力等级：1-10
+}
+// 回声：重复特定事件
+interface Echo extends Ghost {
+  repeatedEvent: string;           // 重复的事件
+  interval: number;                // 间隔时间（秒）
+  intensity: number;               // 强度：1-5
+}</code></pre>
+      <p>通过接口继承，我们创建了<strong>幽灵物种的谱系</strong>。</p>
+      <div class="phantom-note">
+        这是面向对象思维：共同特征在基类（接口），特殊特征在派生接口。
+        AI理解这种层次结构，能生成相应的代码。
+      </div>
+    </section>
+    <!-- AI协作：让AI基于类型生成代码 -->
+    <section>
+      <h2>AI协作：从类型到实现</h2>
+      <p>有了类型定义，让AI生成实现：</p>
+      <blockquote>
+        "基于上面的Ghost、Poltergeist和Echo接口，请实现：
+        1. 创建幽灵实例的函数
+        2. 根据类型筛选幽灵的函数
+        3. 计算幽灵平均年龄的函数
+        4. 生成幽灵描述文本的函数"
+      </blockquote>
+      <div class="expandable" id="ai-generated">
+        <h4>AI可能生成（示例）</h4>
+        <pre><code>function createGhost(
+  id: string,
+  name: string,
+  type: GhostType,
+  age: number,
+  opacity: number
+): Ghost {
+  return {
+    id,
+    name,
+    type,
+    age,
+    opacity,
+    description: "",
+    abilities: [],
+    discovered: new Date()
+  };
+}
+function filterGhostsByType(ghosts: Ghost[], type: GhostType): Ghost[] {
+  return ghosts.filter(ghost =&gt; ghost.type === type);
+}</code></pre>
+      </div>
+      <div class="phantom-note">
+        注意：AI生成的代码基于你的类型定义。定义越精确，代码越符合预期。
+      </div>
+    </section>
+    <!-- 练习：设计你的幽灵物种 -->
+    <section>
+      <h2>练习：设计你的幽灵物种</h2>
+      <p>创建两个新的幽灵类型：</p>
+      <ol>
+        <li><strong>光灵</strong>：发光的幽灵，能照亮区域</li>
+        <li><strong>记忆幽灵</strong>：承载特定记忆的幽灵</li>
+      </ol>
+      <p>考虑：它们需要什么特殊属性？</p>
+      <div class="expandable" id="solution">
+        <h4>可能的解决方案</h4>
+        <pre><code>// 添加到GhostType枚举
+enum GhostType {
+  // ... 已有的类型
+  Luminescent = 'luminescent',      // 光灵
+  Memory = 'memory'                 // 记忆幽灵
+}
+// 光灵接口
+interface Luminescent extends Ghost {
+  brightness: number;               // 亮度：1-100
+  color: string;                    // 光的颜色
+  radius: number;                   // 照亮半径
+}
+// 记忆幽灵接口  
+interface MemoryGhost extends Ghost {
+  memory: string;                   // 承载的记忆
+  emotion: string;                  // 相关情感
+  triggers: string[];               // 触发记忆的条件
+}</code></pre>
+      </div>
+    </section>
+    <!-- 下一步：构建幽灵社会 -->
+    <section>
+      <h2>下一步：构建幽灵社会</h2>
+      <p>有了幽灵类型，下一步是定义它们如何互动：</p>
+      <ul>
+        <li><a href="../phase2/ghost-interactions.xhtml">幽灵交互规则</a></li>
+        <li><a href="../phase2/ghost-hierarchy.xhtml">幽灵层次结构</a></li>
+        <li><a href="../../rooms/classes/class-basics.xhtml">将接口转为类</a></li>
+        <li><a href="../../attic/ai-assistance/complex-system.xhtml">让AI帮助设计复杂系统</a></li>
+      </ul>
+      <div class="phantom-note">
+        记住：类型定义是骨架，实现是血肉。先有骨架，再有血肉。
+      </div>
+    </section>
+    <!-- 穿梭链接 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到相关断面</h3>
+      <ul>
+        <li><a href="../../hallways/interfaces/interface-basics.xhtml">接口基础回顾</a></li>
+        <li><a href="../../hallways/types/enums.xhtml">枚举：定义有限可能性</a></li>
+        <li><a href="../../rooms/classes/class-basics.xhtml">类：将接口转为可实例化的模板</a></li>
+        <li><a href="../../attic/ai-assistance/type-first-prompting.xhtml">类型优先的AI提示技巧</a></li>
+        <li><a href="../../basement/errors/interface-errors.xhtml">常见的接口设计错误</a></li>
+        <li><a href="../phase2/house-structure.xhtml">阶段二：鬼屋结构</a></li>
+      </ul>
+    </nav>
+    <!-- 项目进度追踪 -->
+    <div class="project-progress">
+      <h3>鬼屋项目进度</h3>
+      <p>阶段一：幽灵类型定义 ✓ 完成</p>
+      <p><a href="../../toc-haunted-house.xhtml">查看完整进度</a></p>
+    </div>
+    <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      你刚刚做了TypeScript最强大的事情：用类型定义了一个小世界的规则。
+      这不是"学习编程"，这是"用编程创造"。
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你能想象一个幽灵物种，你就能用类型定义它。
+      如果你能用类型定义它，AI就能帮你实现它。
+      如果你能实现它，你就能观察它如何行为。
+      这是AI时代的创造力：想象 → 定义 → 实现 → 观察。
+      你刚刚完成了前两步。继续。
+    </div>
+  </div>
+  <style>
+    .project-progress {
+      background: rgba(64, 224, 208, 0.1);
+      border: 1px solid rgba(64, 224, 208, 0.3);
+      border-radius: 8px;
+      padding: 1em;
+      margin: 2em 0;
+    }
+  </style>
+</body>
+</html>

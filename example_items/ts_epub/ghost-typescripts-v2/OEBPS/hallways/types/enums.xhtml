@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>枚举：命名的可能性 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：一组发光的选项像旋转的星系中的星星，每个都有独特的颜色和标签 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>枚举：命名的可能性</h1>
+    <div class="phantom-note">幽灵观察：枚举是给不确定性的确定性命名。与其记住"0=友好，1=中性，2=敌对"，不如用GhostDisposition.FRIENDLY。</div>
+    <div class="phantom-note">魔瓶建议：使用字符串枚举（enum GhostType {FRIENDLY = "FRIENDLY"}）避免数字枚举的陷阱。</div>
+    <section><p>枚举不是魔法，只是给一组相关的值起名字的方式。"红色"比0更有意义，"周一"比1更清晰。</p></section>
+    <section>
+      <h3>命名可能性</h3>
+      <pre><code>// 数字枚举（传统但有问题）
+enum GhostType {
+  FRIENDLY,    // 0
+  NEUTRAL,     // 1  
+  HOSTILE      // 2
+}
+// 字符串枚举（推荐）
+enum GhostDisposition {
+  FRIENDLY = "FRIENDLY",
+  NEUTRAL = "NEUTRAL",
+  HOSTILE = "HOSTILE"
+}
+// 使用枚举
+function handleGhost(ghostType: GhostDisposition) {
+  if (ghostType === GhostDisposition.FRIENDLY) {
+    console.log("Hello friendly ghost!");
+  }
+}</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

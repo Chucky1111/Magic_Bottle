@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>数组与元组：集合与序列 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：数组像一列相同的幽灵在排队，元组像一组各不相同的幽灵站成特定顺序 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>数组与元组：集合与序列</h1>
+    <div class="phantom-note">幽灵观察：数组是合唱团——所有成员唱同样的部分。元组是重奏组——每个成员有特定的角色和顺序。</div>
+    <div class="phantom-note">提示：使用元组处理固定结构的数据，如坐标[x, y]、RGB颜色[r, g, b]、或数据库记录[id, name, age]。</div>
+    <section><p>数组是"许多相同的东西"，元组是"几个特定的东西，按特定顺序"。一个关注重复，一个关注结构。</p></section>
+    <section>
+      <h3>集合与序列的对比</h3>
+      <pre><code>// 数组：同质集合
+const ghostNames: string[] = ["卡斯珀", "维克多", "伊丽莎白"];
+const ghostAges: number[] = [150, 230, 75];
+// 元组：固定结构的序列
+const ghostPosition: [number, number] = [23.5, 45.2];  // x, y坐标
+const ghostColor: [number, number, number] = [255, 0, 0];  // RGB
+// 带有标签的元组（TypeScript 4.0+）
+const ghostData: [name: string, age: number, isFriendly: boolean] = 
+  ["卡斯珀", 150, true];</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

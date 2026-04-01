@@ -1,0 +1,1170 @@
+OEBPS/appendix.xhtml:77: parser error : Opening and ending tag mismatch: pre line 73 and code
+interface Ghost { name: string; age?: number; }</code></pre>
+                                                      ^
+OEBPS/appendix.xhtml:77: parser error : Opening and ending tag mismatch: div line 69 and pre
+interface Ghost { name: string; age?: number; }</code></pre>
+                                                            ^
+OEBPS/appendix.xhtml:87: parser error : Opening and ending tag mismatch: pre line 83 and code
+let tempStr: string = "23.5"; // 字符串显示</code></pre>
+                                                       ^
+OEBPS/appendix.xhtml:87: parser error : Opening and ending tag mismatch: div line 79 and pre
+let tempStr: string = "23.5"; // 字符串显示</code></pre>
+                                                             ^
+OEBPS/appendix.xhtml:88: parser error : Opening and ending tag mismatch: section line 66 and div
+        </div>
+              ^
+OEBPS/appendix.xhtml:97: parser error : Opening and ending tag mismatch: pre line 93 and code
+console.log(ghostName);</code></pre>
+                              ^
+OEBPS/appendix.xhtml:97: parser error : Opening and ending tag mismatch: div line 89 and pre
+console.log(ghostName);</code></pre>
+                                    ^
+OEBPS/appendix.xhtml:111: parser error : Opening and ending tag mismatch: pre line 103 and code
+}</code></pre>
+        ^
+OEBPS/appendix.xhtml:111: parser error : Opening and ending tag mismatch: div line 99 and pre
+}</code></pre>
+              ^
+OEBPS/appendix.xhtml:112: parser error : Opening and ending tag mismatch: body line 12 and div
+        </div>
+              ^
+OEBPS/appendix.xhtml:113: parser error : Opening and ending tag mismatch: html line 2 and div
+      </div>
+            ^
+OEBPS/attic/ai-assistance/ai-collaboration.xhtml:171: parser error : Opening and ending tag mismatch: pre line 22 and code
+// 你的思考和决策仍然是最重要的。</code></pre>
+                                                       ^
+OEBPS/attic/ai-assistance/ai-collaboration.xhtml:171: parser error : Opening and ending tag mismatch: section line 20 and pre
+// 你的思考和决策仍然是最重要的。</code></pre>
+                                                             ^
+OEBPS/attic/ai-assistance/ai-collaboration.xhtml:172: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/attic/ai-assistance/ai-collaboration.xhtml:187: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/attic/ai-assistance/ai-collaboration.xhtml:188: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/attic/ai-assistance/ai-tools.xhtml:99: parser error : Opening and ending tag mismatch: pre line 22 and code
+// 5. 让AI解释复杂的部分</code></pre>
+                                       ^
+OEBPS/attic/ai-assistance/ai-tools.xhtml:99: parser error : Opening and ending tag mismatch: section line 20 and pre
+// 5. 让AI解释复杂的部分</code></pre>
+                                             ^
+OEBPS/attic/ai-assistance/ai-tools.xhtml:100: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/attic/ai-assistance/ai-tools.xhtml:115: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/attic/ai-assistance/ai-tools.xhtml:116: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/attic/ai-assistance/prompt-engineering.xhtml:128: parser error : Opening and ending tag mismatch: pre line 22 and code
+// 5. 保存好的提示作为模板</code></pre>
+                                           ^
+OEBPS/attic/ai-assistance/prompt-engineering.xhtml:128: parser error : Opening and ending tag mismatch: section line 20 and pre
+// 5. 保存好的提示作为模板</code></pre>
+                                                 ^
+OEBPS/attic/ai-assistance/prompt-engineering.xhtml:129: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/attic/ai-assistance/prompt-engineering.xhtml:144: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/attic/ai-assistance/prompt-engineering.xhtml:145: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/basement/errors/common-mistakes.xhtml:31: parser error : Opening and ending tag mismatch: pre line 25 and code
+/ ❌ 错误：类型"number"的参数不能赋给类型"string"的参数</code>
+                                                                               ^
+OEBPS/basement/errors/common-mistakes.xhtml:31: parser error : Opening and ending tag mismatch: div line 24 and pre
+ 错误：类型"number"的参数不能赋给类型"string"的参数</code></pre
+                                                                               ^
+OEBPS/basement/errors/common-mistakes.xhtml:41: parser error : Opening and ending tag mismatch: pre line 34 and code
+greetFlexible(100);  // ✅ 正确：接受数字</code></pre>
+                                                        ^
+OEBPS/basement/errors/common-mistakes.xhtml:41: parser error : Opening and ending tag mismatch: div line 33 and pre
+greetFlexible(100);  // ✅ 正确：接受数字</code></pre>
+                                                              ^
+OEBPS/basement/errors/common-mistakes.xhtml:43: parser error : Opening and ending tag mismatch: section line 19 and div
+        </div>
+              ^
+OEBPS/basement/errors/common-mistakes.xhtml:50: parser error : Opening and ending tag mismatch: pre line 49 and code
+ost.location);  // ❌ 错误：类型"Ghost"上不存在属性"location"</code>
+                                                                               ^
+OEBPS/basement/errors/common-mistakes.xhtml:50: parser error : Opening and ending tag mismatch: div line 48 and pre
+ocation);  // ❌ 错误：类型"Ghost"上不存在属性"location"</code></pre
+                                                                               ^
+OEBPS/basement/errors/common-mistakes.xhtml:64: parser error : Opening and ending tag mismatch: pre line 53 and code
+}</code></pre>
+        ^
+OEBPS/basement/errors/common-mistakes.xhtml:64: parser error : Opening and ending tag mismatch: div line 52 and pre
+}</code></pre>
+              ^
+OEBPS/basement/errors/common-mistakes.xhtml:66: parser error : Opening and ending tag mismatch: body line 12 and div
+        </div>
+              ^
+OEBPS/basement/errors/common-mistakes.xhtml:67: parser error : Opening and ending tag mismatch: html line 2 and div
+      </div>
+            ^
+OEBPS/basement/errors/index.xhtml:34: parser error : Opening and ending tag mismatch: pre line 33 and code
+// Type 'string' is not assignable to type 'number'.</code></pre>
+                                                           ^
+OEBPS/basement/errors/index.xhtml:34: parser error : Opening and ending tag mismatch: section line 30 and pre
+// Type 'string' is not assignable to type 'number'.</code></pre>
+                                                                 ^
+OEBPS/basement/errors/index.xhtml:40: parser error : Opening and ending tag mismatch: pre line 39 and code
+// Property 'age' is missing in type...</code></pre>
+                                              ^
+OEBPS/basement/errors/index.xhtml:40: parser error : Opening and ending tag mismatch: div line 13 and pre
+// Property 'age' is missing in type...</code></pre>
+                                                    ^
+OEBPS/basement/errors/index.xhtml:48: parser error : Opening and ending tag mismatch: pre line 45 and code
+// Object literal may only specify known properties...</code></pre>
+                                                             ^
+OEBPS/basement/errors/index.xhtml:48: parser error : Opening and ending tag mismatch: body line 12 and pre
+// Object literal may only specify known properties...</code></pre>
+                                                                   ^
+OEBPS/basement/errors/index.xhtml:52: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/conclusion.xhtml:112: parser error : Opening and ending tag mismatch: pre line 99 and code
+}</code></pre>
+        ^
+OEBPS/conclusion.xhtml:112: parser error : Opening and ending tag mismatch: section line 97 and pre
+}</code></pre>
+              ^
+OEBPS/conclusion.xhtml:116: parser error : Opening and ending tag mismatch: div line 13 and section
+    </section>
+              ^
+OEBPS/conclusion.xhtml:138: parser error : Opening and ending tag mismatch: pre line 120 and code
+};</code></pre>
+         ^
+OEBPS/conclusion.xhtml:138: parser error : Opening and ending tag mismatch: section line 118 and pre
+};</code></pre>
+               ^
+OEBPS/conclusion.xhtml:143: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/conclusion.xhtml:166: parser error : Opening and ending tag mismatch: html line 2 and div
+  </div>
+        ^
+OEBPS/entrance/comfort-messages.xhtml:61: parser error : Opening and ending tag mismatch: pre line 52 and code
+}</code></pre>
+        ^
+OEBPS/entrance/comfort-messages.xhtml:61: parser error : Opening and ending tag mismatch: div line 51 and pre
+}</code></pre>
+              ^
+OEBPS/entrance/comfort-messages.xhtml:64: parser error : Opening and ending tag mismatch: section line 46 and div
+      </div>
+            ^
+OEBPS/entrance/comfort-messages.xhtml:74: parser error : Opening and ending tag mismatch: pre line 72 and code
+    at customerSite.com/user-profile</code></pre>
+                                           ^
+OEBPS/entrance/comfort-messages.xhtml:74: parser error : Opening and ending tag mismatch: div line 69 and pre
+    at customerSite.com/user-profile</code></pre>
+                                                 ^
+OEBPS/entrance/comfort-messages.xhtml:83: parser error : Opening and ending tag mismatch: pre line 80 and code
+// 错误：类型'User | undefined'上不存在属性'profile'</code></pre>
+                                                                      ^
+OEBPS/entrance/comfort-messages.xhtml:83: parser error : Opening and ending tag mismatch: div line 77 and pre
+// 错误：类型'User | undefined'上不存在属性'profile'</code></pre>
+                                                                            ^
+OEBPS/entrance/comfort-messages.xhtml:87: parser error : Opening and ending tag mismatch: body line 12 and div
+      </div>
+            ^
+OEBPS/entrance/comfort-messages.xhtml:88: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/entrance/first-ghost-program.xhtml:28: parser error : Opening and ending tag mismatch: pre line 26 and code
+npm --version</code></pre>
+                    ^
+OEBPS/entrance/first-ghost-program.xhtml:28: parser error : Opening and ending tag mismatch: div line 25 and pre
+npm --version</code></pre>
+                          ^
+OEBPS/entrance/first-ghost-program.xhtml:31: parser error : Opening and ending tag mismatch: section line 19 and div
+      </div>
+            ^
+OEBPS/entrance/first-ghost-program.xhtml:39: parser error : Opening and ending tag mismatch: pre line 36 and code
+tsc --version</code></pre>
+                    ^
+OEBPS/entrance/first-ghost-program.xhtml:39: parser error : Opening and ending tag mismatch: div line 35 and pre
+tsc --version</code></pre>
+                          ^
+OEBPS/entrance/first-ghost-program.xhtml:49: parser error : Opening and ending tag mismatch: pre line 47 and code
+cd my-first-ghost-program</code></pre>
+                                ^
+OEBPS/entrance/first-ghost-program.xhtml:49: parser error : Opening and ending tag mismatch: div line 46 and pre
+cd my-first-ghost-program</code></pre>
+                                      ^
+OEBPS/entrance/first-ghost-program.xhtml:52: parser error : Opening and ending tag mismatch: body line 12 and div
+      </div>
+            ^
+OEBPS/entrance/first-ghost-program.xhtml:53: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/entrance/index-backup.xhtml:66: parser error : Opening and ending tag mismatch: pre line 55 and code
+aunted-house/phase1/ghost-types.xhtml"&gt;应用到鬼屋项目&lt;/a&gt;</code>
+                                                                               ^
+OEBPS/entrance/index-backup.xhtml:66: parser error : Opening and ending tag mismatch: section line 52 and pre
+d-house/phase1/ghost-types.xhtml"&gt;应用到鬼屋项目&lt;/a&gt;</code></pre
+                                                                               ^
+OEBPS/entrance/index-backup.xhtml:69: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/entrance/index-backup.xhtml:108: parser error : Opening and ending tag mismatch: html line 2 and div
+  </div>
+        ^
+OEBPS/entrance/index.xhtml:68: parser error : Opening and ending tag mismatch: pre line 57 and code
+aunted-house/phase1/ghost-types.xhtml"&gt;应用到鬼屋项目&lt;/a&gt;</code>
+                                                                               ^
+OEBPS/entrance/index.xhtml:68: parser error : Opening and ending tag mismatch: section line 54 and pre
+d-house/phase1/ghost-types.xhtml"&gt;应用到鬼屋项目&lt;/a&gt;</code></pre
+                                                                               ^
+OEBPS/entrance/index.xhtml:71: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/entrance/index.xhtml:112: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div> <!-- 原ghost-section，ghost-dimension-body已移除 -->
+        ^
+OEBPS/entrance/index.xhtml:115: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/entrance/quick-wins.xhtml:33: parser error : Opening and ending tag mismatch: pre line 26 and code
+const isFriendly = true;    // TypeScript知道这是boolean</code></pre>
+                                                                   ^
+OEBPS/entrance/quick-wins.xhtml:33: parser error : Opening and ending tag mismatch: div line 25 and pre
+const isFriendly = true;    // TypeScript知道这是boolean</code></pre>
+                                                                         ^
+OEBPS/entrance/quick-wins.xhtml:36: parser error : Opening and ending tag mismatch: section line 19 and div
+      </div>
+            ^
+OEBPS/entrance/quick-wins.xhtml:51: parser error : Opening and ending tag mismatch: pre line 41 and code
+幽灵", "一百五十");  // ❌ 错误：第二个参数应该是number</code>
+                                                                               ^
+OEBPS/entrance/quick-wins.xhtml:51: parser error : Opening and ending tag mismatch: div line 40 and pre
+", "一百五十");  // ❌ 错误：第二个参数应该是number</code></pre>
+                                                                               ^
+OEBPS/entrance/quick-wins.xhtml:79: parser error : Opening and ending tag mismatch: pre line 59 and code
+}</code></pre>
+        ^
+OEBPS/entrance/quick-wins.xhtml:79: parser error : Opening and ending tag mismatch: div line 58 and pre
+}</code></pre>
+              ^
+OEBPS/entrance/quick-wins.xhtml:82: parser error : Opening and ending tag mismatch: body line 12 and div
+      </div>
+            ^
+OEBPS/entrance/quick-wins.xhtml:83: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/entrance/simple-examples.xhtml:27: parser error : Opening and ending tag mismatch: pre line 24 and code
+let whisper: string = `嘘...你能听到${ghostName}的低语吗？`;</code></p
+                                                                             ^
+OEBPS/entrance/simple-examples.xhtml:27: parser error : Opening and ending tag mismatch: div line 22 and pre
+t whisper: string = `嘘...你能听到${ghostName}的低语吗？`;</code></pre
+                                                                               ^
+OEBPS/entrance/simple-examples.xhtml:29: parser error : Opening and ending tag mismatch: section line 19 and div
+      </div>
+            ^
+OEBPS/entrance/simple-examples.xhtml:35: parser error : Opening and ending tag mismatch: pre line 32 and code
+let temperatureDrop: number = -15.7; // 幽灵出现时的温度下降</code></p
+                                                                             ^
+OEBPS/entrance/simple-examples.xhtml:35: parser error : Opening and ending tag mismatch: div line 30 and pre
+t temperatureDrop: number = -15.7; // 幽灵出现时的温度下降</code></pre
+                                                                               ^
+OEBPS/entrance/simple-examples.xhtml:43: parser error : Opening and ending tag mismatch: pre line 40 and code
+let isFriendly: boolean = true;</code></pre>
+                                      ^
+OEBPS/entrance/simple-examples.xhtml:43: parser error : Opening and ending tag mismatch: div line 38 and pre
+let isFriendly: boolean = true;</code></pre>
+                                            ^
+OEBPS/entrance/simple-examples.xhtml:45: parser error : Opening and ending tag mismatch: body line 12 and div
+      </div>
+            ^
+OEBPS/entrance/simple-examples.xhtml:51: parser error : Opening and ending tag mismatch: pre line 48 and code
+an[] = [true, false, true]; // 能否穿墙、能否飞行、能否隐形</code>
+                                                                               ^
+OEBPS/entrance/simple-examples.xhtml:51: parser error : Opening and ending tag mismatch: div line 46 and pre
+= [true, false, true]; // 能否穿墙、能否飞行、能否隐形</code></pre
+                                                                               ^
+OEBPS/entrance/simple-examples.xhtml:53: parser error : Opening and ending tag mismatch: html line 2 and div
+      </div>
+            ^
+OEBPS/entrance/what-is-typescript.xhtml:36: parser error : Opening and ending tag mismatch: pre line 31 and code
+// 这种灵活性可能导致意外行为</code></pre>
+                                                 ^
+OEBPS/entrance/what-is-typescript.xhtml:36: parser error : Opening and ending tag mismatch: div line 30 and pre
+// 这种灵活性可能导致意外行为</code></pre>
+                                                       ^
+OEBPS/entrance/what-is-typescript.xhtml:38: parser error : Opening and ending tag mismatch: section line 19 and div
+      </div>
+            ^
+OEBPS/entrance/what-is-typescript.xhtml:54: parser error : Opening and ending tag mismatch: pre line 49 and code
+t = `古老的${ghost}`;         // ✅ 正确：依然是字符串类型</code>
+                                                                               ^
+OEBPS/entrance/what-is-typescript.xhtml:54: parser error : Opening and ending tag mismatch: div line 48 and pre
+古老的${ghost}`;         // ✅ 正确：依然是字符串类型</code></pre
+                                                                               ^
+OEBPS/entrance/what-is-typescript.xhtml:57: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/entrance/what-is-typescript.xhtml:80: parser error : Opening and ending tag mismatch: pre line 74 and code
+tring = 100;            // ❌ 错误：不能将数字赋值给字符串</code>
+                                                                               ^
+OEBPS/entrance/what-is-typescript.xhtml:80: parser error : Opening and ending tag mismatch: div line 73 and pre
+ = 100;            // ❌ 错误：不能将数字赋值给字符串</code></pre
+                                                                               ^
+OEBPS/entrance/what-is-typescript.xhtml:82: parser error : Opening and ending tag mismatch: section line 58 and div
+      </div>
+            ^
+OEBPS/entrance/what-is-typescript.xhtml:97: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/entrance/why-types-matter.xhtml:54: parser error : Opening and ending tag mismatch: pre line 45 and code
+// AI只能猜测意图，容易生成错误的代码</code></pre>
+                                                            ^
+OEBPS/entrance/why-types-matter.xhtml:54: parser error : Opening and ending tag mismatch: div line 43 and pre
+// AI只能猜测意图，容易生成错误的代码</code></pre>
+                                                                  ^
+OEBPS/entrance/why-types-matter.xhtml:67: parser error : Opening and ending tag mismatch: pre line 59 and code
+// AI可以准确理解并生成相关代码</code></pre>
+                                                   ^
+OEBPS/entrance/why-types-matter.xhtml:67: parser error : Opening and ending tag mismatch: div line 57 and pre
+// AI可以准确理解并生成相关代码</code></pre>
+                                                         ^
+OEBPS/entrance/why-types-matter.xhtml:69: parser error : Opening and ending tag mismatch: section line 40 and div
+        </div>
+              ^
+OEBPS/entrance/why-types-matter.xhtml:71: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/entrance/why-types-matter.xhtml:79: parser error : Opening and ending tag mismatch: pre line 79 and code
+user. // AI知道可以补全.name或.age</code></pre>
+                                                ^
+OEBPS/entrance/why-types-matter.xhtml:79: parser error : Opening and ending tag mismatch: div line 78 and pre
+user. // AI知道可以补全.name或.age</code></pre>
+                                                      ^
+OEBPS/entrance/why-types-matter.xhtml:90: parser error : Opening and ending tag mismatch: pre line 86 and code
+}</code></pre>
+        ^
+OEBPS/entrance/why-types-matter.xhtml:90: parser error : Opening and ending tag mismatch: div line 85 and pre
+}</code></pre>
+              ^
+OEBPS/entrance/why-types-matter.xhtml:92: parser error : Opening and ending tag mismatch: section line 72 and div
+        </div>
+              ^
+OEBPS/entrance/why-types-matter.xhtml:102: parser error : Opening and ending tag mismatch: pre line 97 and code
+ */</code></pre>
+          ^
+OEBPS/entrance/why-types-matter.xhtml:102: parser error : Opening and ending tag mismatch: div line 96 and pre
+ */</code></pre>
+                ^
+OEBPS/entrance/why-types-matter.xhtml:104: parser error : Opening and ending tag mismatch: html line 2 and div
+        </div>
+              ^
+OEBPS/hallways/interfaces/extends-implements.xhtml:63: parser error : Opening and ending tag mismatch: pre line 22 and code
+}</code></pre>
+        ^
+OEBPS/hallways/interfaces/extends-implements.xhtml:63: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/hallways/interfaces/extends-implements.xhtml:64: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/hallways/interfaces/extends-implements.xhtml:79: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/hallways/interfaces/extends-implements.xhtml:80: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/hallways/interfaces/interface-basics.xhtml:45: parser error : Opening and ending tag mismatch: pre line 22 and code
+}</code></pre>
+        ^
+OEBPS/hallways/interfaces/interface-basics.xhtml:45: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/hallways/interfaces/interface-basics.xhtml:46: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/hallways/interfaces/interface-basics.xhtml:61: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/hallways/interfaces/interface-basics.xhtml:62: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/hallways/interfaces/optional-readonly.xhtml:43: parser error : Opening and ending tag mismatch: pre line 22 and code
+}</code></pre>
+        ^
+OEBPS/hallways/interfaces/optional-readonly.xhtml:43: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/hallways/interfaces/optional-readonly.xhtml:44: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/hallways/interfaces/optional-readonly.xhtml:59: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/hallways/interfaces/optional-readonly.xhtml:60: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/hallways/interfaces/type-aliases.xhtml:40: parser error : Opening and ending tag mismatch: pre line 22 and code
+};</code></pre>
+         ^
+OEBPS/hallways/interfaces/type-aliases.xhtml:40: parser error : Opening and ending tag mismatch: section line 20 and pre
+};</code></pre>
+               ^
+OEBPS/hallways/interfaces/type-aliases.xhtml:41: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/hallways/interfaces/type-aliases.xhtml:56: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/hallways/interfaces/type-aliases.xhtml:57: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/hallways/types/any-unknown.xhtml:33: parser error : Opening and ending tag mismatch: pre line 22 and code
+}</code></pre>
+        ^
+OEBPS/hallways/types/any-unknown.xhtml:33: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/hallways/types/any-unknown.xhtml:34: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/hallways/types/any-unknown.xhtml:49: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/hallways/types/any-unknown.xhtml:50: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/hallways/types/arrays-tuples.xhtml:30: parser error : Opening and ending tag mismatch: pre line 22 and code
+  ["卡斯珀", 150, true];</code></pre>
+                                  ^
+OEBPS/hallways/types/arrays-tuples.xhtml:30: parser error : Opening and ending tag mismatch: section line 20 and pre
+  ["卡斯珀", 150, true];</code></pre>
+                                        ^
+OEBPS/hallways/types/arrays-tuples.xhtml:31: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/hallways/types/arrays-tuples.xhtml:46: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/hallways/types/arrays-tuples.xhtml:47: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/hallways/types/basic-types.xhtml:27: parser error : Opening and ending tag mismatch: pre line 22 and code
+// AI看到': number'就知道："哦，这里需要数值计算"</code></pre>
+                                                                        ^
+OEBPS/hallways/types/basic-types.xhtml:27: parser error : Opening and ending tag mismatch: section line 20 and pre
+// AI看到': number'就知道："哦，这里需要数值计算"</code></pre>
+                                                                              ^
+OEBPS/hallways/types/basic-types.xhtml:28: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/hallways/types/basic-types.xhtml:43: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/hallways/types/basic-types.xhtml:44: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/hallways/types/enums.xhtml:39: parser error : Opening and ending tag mismatch: pre line 22 and code
+}</code></pre>
+        ^
+OEBPS/hallways/types/enums.xhtml:39: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/hallways/types/enums.xhtml:40: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/hallways/types/enums.xhtml:55: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/hallways/types/enums.xhtml:56: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/hallways/types/type-inference.xhtml:32: parser error : Opening and ending tag mismatch: pre line 22 and code
+TypeScript知道这个函数的返回类型是{name: string, age: number}</code>
+                                                                               ^
+OEBPS/hallways/types/type-inference.xhtml:32: parser error : Opening and ending tag mismatch: section line 20 and pre
+cript知道这个函数的返回类型是{name: string, age: number}</code></pre
+                                                                               ^
+OEBPS/hallways/types/type-inference.xhtml:33: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/hallways/types/type-inference.xhtml:48: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/hallways/types/type-inference.xhtml:49: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:45: parser error : Opening and ending tag mismatch: pre line 32 and code
+};</code></pre>
+         ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:45: parser error : Opening and ending tag mismatch: section line 30 and pre
+};</code></pre>
+               ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:46: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:63: parser error : Opening and ending tag mismatch: pre line 50 and code
+};</code></pre>
+         ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:63: parser error : Opening and ending tag mismatch: section line 48 and pre
+};</code></pre>
+               ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:64: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:79: parser error : Opening and ending tag mismatch: pre line 68 and code
+};</code></pre>
+         ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:79: parser error : Opening and ending tag mismatch: section line 66 and pre
+};</code></pre>
+               ^
+OEBPS/haunted-house/phase1/basic-rules.xhtml:80: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/ghost-types.xhtml:40: parser error : Opening and ending tag mismatch: pre line 34 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase1/ghost-types.xhtml:40: parser error : Opening and ending tag mismatch: section line 31 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase1/ghost-types.xhtml:48: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/ghost-types.xhtml:60: parser error : Opening and ending tag mismatch: pre line 53 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase1/ghost-types.xhtml:60: parser error : Opening and ending tag mismatch: section line 50 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase1/ghost-types.xhtml:64: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/ghost-types.xhtml:74: parser error : Opening and ending tag mismatch: pre line 69 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase1/ghost-types.xhtml:74: parser error : Opening and ending tag mismatch: section line 66 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase1/ghost-types.xhtml:82: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/phenomena-types.xhtml:39: parser error : Opening and ending tag mismatch: pre line 32 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase1/phenomena-types.xhtml:39: parser error : Opening and ending tag mismatch: section line 30 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase1/phenomena-types.xhtml:41: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/phenomena-types.xhtml:53: parser error : Opening and ending tag mismatch: pre line 45 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase1/phenomena-types.xhtml:53: parser error : Opening and ending tag mismatch: section line 43 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase1/phenomena-types.xhtml:54: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/phenomena-types.xhtml:63: parser error : Opening and ending tag mismatch: pre line 58 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase1/phenomena-types.xhtml:63: parser error : Opening and ending tag mismatch: section line 56 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase1/phenomena-types.xhtml:64: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/room-types.xhtml:39: parser error : Opening and ending tag mismatch: pre line 32 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase1/room-types.xhtml:39: parser error : Opening and ending tag mismatch: section line 30 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase1/room-types.xhtml:41: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/room-types.xhtml:55: parser error : Opening and ending tag mismatch: pre line 45 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase1/room-types.xhtml:55: parser error : Opening and ending tag mismatch: section line 43 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase1/room-types.xhtml:58: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase1/room-types.xhtml:66: parser error : Opening and ending tag mismatch: pre line 62 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase1/room-types.xhtml:66: parser error : Opening and ending tag mismatch: section line 60 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase1/room-types.xhtml:68: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase2/ghost-hierarchy.xhtml:56: parser error : Opening and ending tag mismatch: pre line 32 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase2/ghost-hierarchy.xhtml:56: parser error : Opening and ending tag mismatch: section line 30 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase2/ghost-hierarchy.xhtml:57: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase2/ghost-hierarchy.xhtml:81: parser error : Opening and ending tag mismatch: pre line 61 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase2/ghost-hierarchy.xhtml:81: parser error : Opening and ending tag mismatch: section line 59 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase2/ghost-hierarchy.xhtml:82: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase2/ghost-hierarchy.xhtml:103: parser error : Opening and ending tag mismatch: pre line 86 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase2/ghost-hierarchy.xhtml:103: parser error : Opening and ending tag mismatch: section line 84 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase2/ghost-hierarchy.xhtml:104: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase2/house-structure.xhtml:49: parser error : Opening and ending tag mismatch: pre line 32 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase2/house-structure.xhtml:49: parser error : Opening and ending tag mismatch: section line 30 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase2/house-structure.xhtml:50: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase2/house-structure.xhtml:79: parser error : Opening and ending tag mismatch: pre line 54 and code
+};</code></pre>
+         ^
+OEBPS/haunted-house/phase2/house-structure.xhtml:79: parser error : Opening and ending tag mismatch: section line 52 and pre
+};</code></pre>
+               ^
+OEBPS/haunted-house/phase2/house-structure.xhtml:80: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase2/house-structure.xhtml:98: parser error : Opening and ending tag mismatch: pre line 84 and code
+  | { type: 'remove-connection'; fromRoomId: string; toRoomId: string };</code><
+                                                                               ^
+OEBPS/haunted-house/phase2/house-structure.xhtml:98: parser error : Opening and ending tag mismatch: section line 82 and pre
+{ type: 'remove-connection'; fromRoomId: string; toRoomId: string };</code></pre
+                                                                               ^
+OEBPS/haunted-house/phase2/house-structure.xhtml:99: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase2/interaction-rules.xhtml:56: parser error : Opening and ending tag mismatch: pre line 32 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase2/interaction-rules.xhtml:56: parser error : Opening and ending tag mismatch: section line 30 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase2/interaction-rules.xhtml:57: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase2/interaction-rules.xhtml:76: parser error : Opening and ending tag mismatch: pre line 61 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase2/interaction-rules.xhtml:76: parser error : Opening and ending tag mismatch: section line 59 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase2/interaction-rules.xhtml:77: parser error : Opening and ending tag mismatch: body line 12 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase2/interaction-rules.xhtml:98: parser error : Opening and ending tag mismatch: pre line 81 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase2/interaction-rules.xhtml:98: parser error : Opening and ending tag mismatch: section line 79 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase2/interaction-rules.xhtml:99: parser error : Opening and ending tag mismatch: html line 2 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase3/conditional-rules.xhtml:23: parser error : Opening and ending tag mismatch: pre line 23 and code
+pe Behavior&lt;T&gt; = T extends 'angry' ? AttackBehavior : CalmBehavior;</code>
+                                                                               ^
+OEBPS/haunted-house/phase3/conditional-rules.xhtml:23: parser error : Opening and ending tag mismatch: section line 20 and pre
+havior&lt;T&gt; = T extends 'angry' ? AttackBehavior : CalmBehavior;</code></pre
+                                                                               ^
+OEBPS/haunted-house/phase3/conditional-rules.xhtml:24: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase3/conditional-rules.xhtml:49: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase3/conditional-rules.xhtml:59: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase3/event-system.xhtml:27: parser error : Opening and ending tag mismatch: pre line 23 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase3/event-system.xhtml:27: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase3/event-system.xhtml:28: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase3/event-system.xhtml:53: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase3/event-system.xhtml:63: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase3/generic-phenomena.xhtml:27: parser error : Opening and ending tag mismatch: pre line 23 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase3/generic-phenomena.xhtml:27: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase3/generic-phenomena.xhtml:28: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase3/generic-phenomena.xhtml:53: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase3/generic-phenomena.xhtml:63: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase3/utility-types.xhtml:23: parser error : Opening and ending tag mismatch: pre line 23 and code
+   <pre>&lt;code&gt;type HauntedRoom = Room &amp; { ghostCount: number };</code>
+                                                                               ^
+OEBPS/haunted-house/phase3/utility-types.xhtml:23: parser error : Opening and ending tag mismatch: section line 20 and pre
+re>&lt;code&gt;type HauntedRoom = Room &amp; { ghostCount: number };</code></pre
+                                                                               ^
+OEBPS/haunted-house/phase3/utility-types.xhtml:24: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase3/utility-types.xhtml:49: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase3/utility-types.xhtml:59: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase4/ai-integration.xhtml:24: parser error : Opening and ending tag mismatch: pre line 23 and code
+const ghostPrompt = "Create a TypeScript class for a ghost...";</code></pre>
+                                                                      ^
+OEBPS/haunted-house/phase4/ai-integration.xhtml:24: parser error : Opening and ending tag mismatch: section line 20 and pre
+const ghostPrompt = "Create a TypeScript class for a ghost...";</code></pre>
+                                                                            ^
+OEBPS/haunted-house/phase4/ai-integration.xhtml:25: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase4/ai-integration.xhtml:50: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase4/ai-integration.xhtml:60: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase4/module-structure.xhtml:25: parser error : Opening and ending tag mismatch: pre line 23 and code
+// src/phenomena/</code></pre>
+                        ^
+OEBPS/haunted-house/phase4/module-structure.xhtml:25: parser error : Opening and ending tag mismatch: section line 20 and pre
+// src/phenomena/</code></pre>
+                              ^
+OEBPS/haunted-house/phase4/module-structure.xhtml:26: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase4/module-structure.xhtml:51: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase4/module-structure.xhtml:61: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase4/testing-setup.xhtml:25: parser error : Opening and ending tag mismatch: pre line 23 and code
+});</code></pre>
+          ^
+OEBPS/haunted-house/phase4/testing-setup.xhtml:25: parser error : Opening and ending tag mismatch: section line 20 and pre
+});</code></pre>
+                ^
+OEBPS/haunted-house/phase4/testing-setup.xhtml:26: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase4/testing-setup.xhtml:51: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase4/testing-setup.xhtml:61: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase4/tsconfig.xhtml:27: parser error : Opening and ending tag mismatch: pre line 23 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase4/tsconfig.xhtml:27: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase4/tsconfig.xhtml:28: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase4/tsconfig.xhtml:53: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase4/tsconfig.xhtml:63: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase5/ai-prompting.xhtml:23: parser error : Opening and ending tag mismatch: pre line 23 and code
+t;code&gt;"请创建一个TypeScript类型系统，描述一个幽灵..."</code>
+                                                                               ^
+OEBPS/haunted-house/phase5/ai-prompting.xhtml:23: parser error : Opening and ending tag mismatch: section line 20 and pre
+e&gt;"请创建一个TypeScript类型系统，描述一个幽灵..."</code></pre
+                                                                               ^
+OEBPS/haunted-house/phase5/ai-prompting.xhtml:24: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase5/ai-prompting.xhtml:49: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase5/ai-prompting.xhtml:59: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase5/code-generation.xhtml:24: parser error : Opening and ending tag mismatch: pre line 23 and code
+class Ghost implements IGhost { ... }</code></pre>
+                                            ^
+OEBPS/haunted-house/phase5/code-generation.xhtml:24: parser error : Opening and ending tag mismatch: section line 20 and pre
+class Ghost implements IGhost { ... }</code></pre>
+                                                  ^
+OEBPS/haunted-house/phase5/code-generation.xhtml:25: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase5/code-generation.xhtml:50: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase5/code-generation.xhtml:60: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase5/error-handling.xhtml:27: parser error : Opening and ending tag mismatch: pre line 23 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase5/error-handling.xhtml:27: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase5/error-handling.xhtml:28: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase5/error-handling.xhtml:53: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase5/error-handling.xhtml:63: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase5/testing.xhtml:25: parser error : Opening and ending tag mismatch: pre line 23 and code
+});</code></pre>
+          ^
+OEBPS/haunted-house/phase5/testing.xhtml:25: parser error : Opening and ending tag mismatch: section line 20 and pre
+});</code></pre>
+                ^
+OEBPS/haunted-house/phase5/testing.xhtml:26: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase5/testing.xhtml:51: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase5/testing.xhtml:61: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase6/advanced-patterns.xhtml:24: parser error : Opening and ending tag mismatch: pre line 23 and code
+interface Observer { update(): void; }</code></pre>
+                                             ^
+OEBPS/haunted-house/phase6/advanced-patterns.xhtml:24: parser error : Opening and ending tag mismatch: section line 20 and pre
+interface Observer { update(): void; }</code></pre>
+                                                   ^
+OEBPS/haunted-house/phase6/advanced-patterns.xhtml:25: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase6/advanced-patterns.xhtml:49: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase6/advanced-patterns.xhtml:59: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase6/deployment.xhtml:24: parser error : Opening and ending tag mismatch: pre line 23 and code
+npm publish</code></pre>
+                  ^
+OEBPS/haunted-house/phase6/deployment.xhtml:24: parser error : Opening and ending tag mismatch: section line 20 and pre
+npm publish</code></pre>
+                        ^
+OEBPS/haunted-house/phase6/deployment.xhtml:25: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase6/deployment.xhtml:49: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase6/deployment.xhtml:59: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase6/extensibility.xhtml:25: parser error : Opening and ending tag mismatch: pre line 23 and code
+}</code></pre>
+        ^
+OEBPS/haunted-house/phase6/extensibility.xhtml:25: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/haunted-house/phase6/extensibility.xhtml:26: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase6/extensibility.xhtml:50: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase6/extensibility.xhtml:60: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/haunted-house/phase6/performance-optimization.xhtml:24: parser error : Opening and ending tag mismatch: pre line 23 and code
+const ghostCache = new Map&lt;string, Ghost&gt;();</code></pre>
+                                                         ^
+OEBPS/haunted-house/phase6/performance-optimization.xhtml:24: parser error : Opening and ending tag mismatch: section line 20 and pre
+const ghostCache = new Map&lt;string, Ghost&gt;();</code></pre>
+                                                               ^
+OEBPS/haunted-house/phase6/performance-optimization.xhtml:25: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/haunted-house/phase6/performance-optimization.xhtml:49: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/haunted-house/phase6/performance-optimization.xhtml:59: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/rooms/classes/abstract-interfaces.xhtml:95: parser error : Opening and ending tag mismatch: pre line 22 and code
+t.haunt("客厅");  // "卡斯珀 haunts 客厅." (实现的接口方法)</code>
+                                                                               ^
+OEBPS/rooms/classes/abstract-interfaces.xhtml:95: parser error : Opening and ending tag mismatch: section line 20 and pre
+nt("客厅");  // "卡斯珀 haunts 客厅." (实现的接口方法)</code></pre
+                                                                               ^
+OEBPS/rooms/classes/abstract-interfaces.xhtml:96: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/classes/abstract-interfaces.xhtml:111: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/classes/abstract-interfaces.xhtml:112: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/classes/access-modifiers.xhtml:67: parser error : Opening and ending tag mismatch: pre line 22 and code
+friendly.introduce(); // "I'm 友好的幽灵, 100 years old"</code></pre>
+                                                                    ^
+OEBPS/rooms/classes/access-modifiers.xhtml:67: parser error : Opening and ending tag mismatch: section line 20 and pre
+friendly.introduce(); // "I'm 友好的幽灵, 100 years old"</code></pre>
+                                                                          ^
+OEBPS/rooms/classes/access-modifiers.xhtml:68: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/classes/access-modifiers.xhtml:83: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/classes/access-modifiers.xhtml:84: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/classes/class-basics.xhtml:67: parser error : Opening and ending tag mismatch: pre line 22 and code
+friendly.help();   // "友好的幽灵 helps someone." (新方法)</code></pre>
+                                                                         ^
+OEBPS/rooms/classes/class-basics.xhtml:67: parser error : Opening and ending tag mismatch: section line 20 and pre
+friendly.help();   // "友好的幽灵 helps someone." (新方法)</code></pre>
+                                                                               ^
+OEBPS/rooms/classes/class-basics.xhtml:68: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/classes/class-basics.xhtml:83: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/classes/class-basics.xhtml:84: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/classes/inheritance.xhtml:83: parser error : Opening and ending tag mismatch: pre line 22 and code
+forEach(ghost =&gt; ghost.appear()); // 每个幽灵以自己方式显现</code>
+                                                                               ^
+OEBPS/rooms/classes/inheritance.xhtml:83: parser error : Opening and ending tag mismatch: section line 20 and pre
+ch(ghost =&gt; ghost.appear()); // 每个幽灵以自己方式显现</code></pre
+                                                                               ^
+OEBPS/rooms/classes/inheritance.xhtml:84: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/classes/inheritance.xhtml:99: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/classes/inheritance.xhtml:100: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/generics/conditional-types.xhtml:54: parser error : Opening and ending tag mismatch: pre line 22 and code
+type DefinitelyString = NonNullable&lt;MaybeString&gt;; // string</code></pre>
+                                                                        ^
+OEBPS/rooms/generics/conditional-types.xhtml:54: parser error : Opening and ending tag mismatch: section line 20 and pre
+type DefinitelyString = NonNullable&lt;MaybeString&gt;; // string</code></pre>
+                                                                              ^
+OEBPS/rooms/generics/conditional-types.xhtml:55: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/generics/conditional-types.xhtml:70: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/generics/conditional-types.xhtml:71: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/generics/generic-basics.xhtml:52: parser error : Opening and ending tag mismatch: pre line 22 and code
+};</code></pre>
+         ^
+OEBPS/rooms/generics/generic-basics.xhtml:52: parser error : Opening and ending tag mismatch: section line 20 and pre
+};</code></pre>
+               ^
+OEBPS/rooms/generics/generic-basics.xhtml:53: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/generics/generic-basics.xhtml:68: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/generics/generic-basics.xhtml:69: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/generics/generic-constraints.xhtml:45: parser error : Opening and ending tag mismatch: pre line 22 and code
+// getProperty(ghost, "color"); // 错误！ghost没有color属性</code></pre>
+                                                                         ^
+OEBPS/rooms/generics/generic-constraints.xhtml:45: parser error : Opening and ending tag mismatch: section line 20 and pre
+// getProperty(ghost, "color"); // 错误！ghost没有color属性</code></pre>
+                                                                               ^
+OEBPS/rooms/generics/generic-constraints.xhtml:46: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/generics/generic-constraints.xhtml:61: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/generics/generic-constraints.xhtml:62: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/generics/utility-types.xhtml:51: parser error : Opening and ending tag mismatch: pre line 22 and code
+// 所有属性可选且只读，适合配置对象</code></pre>
+                                                          ^
+OEBPS/rooms/generics/utility-types.xhtml:51: parser error : Opening and ending tag mismatch: section line 20 and pre
+// 所有属性可选且只读，适合配置对象</code></pre>
+                                                                ^
+OEBPS/rooms/generics/utility-types.xhtml:52: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/generics/utility-types.xhtml:67: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/generics/utility-types.xhtml:68: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/modules/import-export.xhtml:63: parser error : Opening and ending tag mismatch: pre line 22 and code
+import './side-effects';</code></pre>
+                               ^
+OEBPS/rooms/modules/import-export.xhtml:63: parser error : Opening and ending tag mismatch: section line 20 and pre
+import './side-effects';</code></pre>
+                                     ^
+OEBPS/rooms/modules/import-export.xhtml:64: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/modules/import-export.xhtml:79: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/modules/import-export.xhtml:80: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/modules/module-basics.xhtml:61: parser error : Opening and ending tag mismatch: pre line 22 and code
+manager.addGhost(casper);</code></pre>
+                                ^
+OEBPS/rooms/modules/module-basics.xhtml:61: parser error : Opening and ending tag mismatch: section line 20 and pre
+manager.addGhost(casper);</code></pre>
+                                      ^
+OEBPS/rooms/modules/module-basics.xhtml:62: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/modules/module-basics.xhtml:77: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/modules/module-basics.xhtml:78: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/modules/module-resolution.xhtml:71: parser error : Opening and ending tag mismatch: pre line 22 and code
+// 不加./ - 从node_modules或baseUrl查找</code></pre>
+                                                    ^
+OEBPS/rooms/modules/module-resolution.xhtml:71: parser error : Opening and ending tag mismatch: section line 20 and pre
+// 不加./ - 从node_modules或baseUrl查找</code></pre>
+                                                          ^
+OEBPS/rooms/modules/module-resolution.xhtml:72: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/modules/module-resolution.xhtml:87: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/modules/module-resolution.xhtml:88: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/rooms/modules/namespace.xhtml:74: parser error : Opening and ending tag mismatch: pre line 22 and code
+import { Ghost, FriendlyGhost } from './ghosts';</code></pre>
+                                                       ^
+OEBPS/rooms/modules/namespace.xhtml:74: parser error : Opening and ending tag mismatch: section line 20 and pre
+import { Ghost, FriendlyGhost } from './ghosts';</code></pre>
+                                                             ^
+OEBPS/rooms/modules/namespace.xhtml:75: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/rooms/modules/namespace.xhtml:90: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/rooms/modules/namespace.xhtml:91: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/secret-passages/configuration/compiler-options.xhtml:117: parser error : Opening and ending tag mismatch: pre line 22 and code
+// 这会覆盖tsconfig.json中的对应选项</code></pre>
+                                                     ^
+OEBPS/secret-passages/configuration/compiler-options.xhtml:117: parser error : Opening and ending tag mismatch: section line 20 and pre
+// 这会覆盖tsconfig.json中的对应选项</code></pre>
+                                                           ^
+OEBPS/secret-passages/configuration/compiler-options.xhtml:118: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/secret-passages/configuration/compiler-options.xhtml:133: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/secret-passages/configuration/compiler-options.xhtml:134: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/secret-passages/configuration/eslint-prettier.xhtml:139: parser error : Opening and ending tag mismatch: pre line 22 and code
+// 5. 提交前运行所有检查</code></pre>
+                                        ^
+OEBPS/secret-passages/configuration/eslint-prettier.xhtml:139: parser error : Opening and ending tag mismatch: section line 20 and pre
+// 5. 提交前运行所有检查</code></pre>
+                                              ^
+OEBPS/secret-passages/configuration/eslint-prettier.xhtml:140: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/secret-passages/configuration/eslint-prettier.xhtml:155: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/secret-passages/configuration/eslint-prettier.xhtml:156: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^
+OEBPS/secret-passages/configuration/index.xhtml:78: parser error : Opening and ending tag mismatch: pre line 65 and code
+}</code></pre>
+        ^
+OEBPS/secret-passages/configuration/index.xhtml:78: parser error : Opening and ending tag mismatch: section line 63 and pre
+}</code></pre>
+              ^
+OEBPS/secret-passages/configuration/index.xhtml:79: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/secret-passages/configuration/index.xhtml:90: parser error : Opening and ending tag mismatch: body line 12 and div
+    </div>
+          ^
+OEBPS/secret-passages/configuration/index.xhtml:91: parser error : Opening and ending tag mismatch: html line 2 and body
+</body>
+       ^
+OEBPS/secret-passages/configuration/tsconfig-basics.xhtml:103: parser error : Opening and ending tag mismatch: pre line 22 and code
+}</code></pre>
+        ^
+OEBPS/secret-passages/configuration/tsconfig-basics.xhtml:103: parser error : Opening and ending tag mismatch: section line 20 and pre
+}</code></pre>
+              ^
+OEBPS/secret-passages/configuration/tsconfig-basics.xhtml:104: parser error : Opening and ending tag mismatch: div line 14 and section
+    </section>
+              ^
+OEBPS/secret-passages/configuration/tsconfig-basics.xhtml:119: parser error : Opening and ending tag mismatch: body line 12 and div
+  </div>
+        ^
+OEBPS/secret-passages/configuration/tsconfig-basics.xhtml:120: parser error : Opening and ending tag mismatch: html line 2 and body
+  </body>
+         ^

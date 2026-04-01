@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>鬼屋阶段1：房间类型定义 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：鬼屋建造现场，类型定义的蓝图在空中展开，逐步转化为具体的结构 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>鬼屋阶段1：房间类型定义</h1>
+    <div class="phantom-note">
+      幽灵观察：你不是在写代码，是在建造数字鬼屋。每个类型定义是一块砖，每个接口是一面墙。
+    </div>
+    <!-- 项目背景 -->
+    <section>
+      <h2>阶段一：定义鬼屋的空间</h2>
+      <p>幽灵需要空间来存在。在这一阶段，我们定义鬼屋的<strong>房间和空间结构</strong>。</p>
+      <p>与幽灵定义类似，我们先定义房间的共同特征，然后创建特定类型的房间。</p>
+      <div class="phantom-note">
+        设计思考：房间不仅是容器，也是幽灵活动的舞台。房间的属性影响幽灵的行为。
+      </div>
+    </section>
+    <!-- 基础房间接口 -->
+    <section>
+      <h2>基础房间接口</h2>
+      <pre><code>// 房间基础特征
+interface RoomBase {
+  id: string;           // 唯一标识
+  name: string;         // 房间名称
+  description: string;  // 描述
+  size: number;         // 大小（平方米）
+  temperature: number;  // 温度（摄氏度）
+}</code></pre>
+      <p>所有房间共享这些基础特征。</p>
+    </section>
+    <!-- 房间类型枚举 -->
+    <section>
+      <h2>房间类型分类</h2>
+      <pre><code>// 房间类型
+enum RoomType {
+  LivingRoom = 'living-room',    // 客厅
+  Bedroom = 'bedroom',           // 卧室
+  Kitchen = 'kitchen',           // 厨房
+  Bathroom = 'bathroom',         // 浴室
+  Attic = 'attic',               // 阁楼
+  Basement = 'basement',         // 地下室
+  Hallway = 'hallway',           // 走廊
+  SecretRoom = 'secret-room'     // 密室
+}</code></pre>
+      <div class="phantom-note">
+        枚举让系统知道可能的房间类型，避免"未知房间类型"。
+      </div>
+    </section>
+    <!-- 完整房间接口 -->
+    <section>
+      <h2>完整房间接口</h2>
+      <pre><code>interface Room extends RoomBase {
+  type: RoomType;                // 房间类型
+  hauntedLevel: number;          // 闹鬼等级：0-10
+  connections: string[];         // 连接的其他房间ID
+  features: string[];            // 房间特征（窗户、壁炉等）
+}</code></pre>
+      <p><code>connections</code>定义房间如何连接，这是鬼屋导航的基础。</p>
+    </section>
+    <!-- 类型特定的房间 -->
+    <section>
+      <h2>类型特定的房间</h2>
+      <pre><code>// 阁楼：通常有特殊属性
+interface Attic extends Room {
+  hasWindows: boolean;           // 是否有窗户
+  insulation: number;            // 隔热等级：1-5
+  storageItems: string[];        // 存储的物品
+}
+// 地下室：潮湿阴暗
+interface Basement extends Room {
+  humidity: number;              // 湿度：0-100%
+  hasWater: boolean;             // 是否有积水
+  structuralIntegrity: number;   // 结构完整性：1-10
+}</code></pre>
+    </section>
+    <!-- AI协作：生成房间管理代码 -->
+    <section>
+      <h2>AI协作：房间管理</h2>
+      <blockquote>
+        "基于上面的Room、Attic和Basement接口，请实现：
+        1. 创建房间实例的函数
+        2. 连接两个房间的函数
+        3. 查找所有高闹鬼等级房间的函数
+        4. 计算鬼屋总面积的函数"
+      </blockquote>
+    </section>
+    <!-- 练习：设计你的房间 -->
+    <section>
+      <h2>练习：设计特殊房间</h2>
+      <p>创建两个新的房间类型：</p>
+      <ol>
+        <li><strong>钟楼</strong>：有钟的房间，时间相关事件</li>
+        <li><strong>图书馆</strong>：有书的房间，知识相关事件</li>
+      </ol>
+      <div class="expandable" id="solution">
+        <h4>可能的解决方案</h4>
+        <pre><code>// 添加到RoomType枚举
+enum RoomType {
+  // ... 已有的类型
+  ClockTower = 'clock-tower',      // 钟楼
+  Library = 'library'              // 图书馆
+}
+// 钟楼接口
+interface ClockTower extends Room {
+  clockCount: number;              // 钟的数量
+  chimeInterval: number;           // 报时间隔（小时）
+  isWorking: boolean;              // 钟是否正常工作
+}
+// 图书馆接口  
+interface Library extends Room {
+  bookCount: number;               // 书籍数量
+  oldestBook: number;              // 最老书籍的年代
+  hasGhostStories: boolean;        // 是否有鬼故事书
+}</code></pre>
+      </div>
+    </section>
+    <!-- 鬼屋项目导航 -->
+    <nav class="ghost-passages">
+      <h3>鬼屋项目导航</h3>
+      <ul>
+        <li><a href="../../toc-haunted-house.xhtml">鬼屋项目总览</a></li>
+        <li><a href="../phase2/index.xhtml">下一阶段</a></li>
+        <li><a href="../../entrance/index.xhtml">返回入口</a></li>
+      </ul>
+    </nav>
+    <!-- 项目进度追踪 -->
+    <div class="project-progress">
+      <h3>鬼屋项目进度</h3>
+      <p>阶段1：房间类型定义 ✓ 进行中</p>
+      <p><a href="../../toc-haunted-house.xhtml">查看完整进度</a></p>
+    </div>
+    <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      鬼屋建造不是技术练习，是用类型表达想象中的世界。
+      如果你能想象一个幽灵规则，你就能用类型定义它。
+      如果你能用类型定义它，你就能用代码实现它。
+      如果你能用代码实现它，你就能观察它如何运行。
+      这是AI时代的创造循环：想象 → 定义 → 实现 → 观察。
+    </div>
+  </div>
+  <style>
+    .project-progress {
+      background: rgba(64, 224, 208, 0.1);
+      border: 1px solid rgba(64, 224, 208, 0.3);
+      border-radius: 8px;
+      padding: 1em;
+      margin: 2em 0;
+    }
+  </style>
+</body>
+</html>

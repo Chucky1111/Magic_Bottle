@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>导入与导出：领地的通道 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：模块边界上有各种类型的进出口：标准通道（命名导出）、主大门（默认导出）、专用通道（重新导出） -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>导入与导出：领地的通道</h1>
+    <div class="phantom-note">幽灵观察：命名导出是幽灵世界的正规外交渠道，每个出口有明确标签。默认导出是主要贸易路线，最常用但也最容易被误用。</div>
+    <div class="phantom-note">使用建议：优先使用命名导出，让导入方明确知道得到什么。只有在模块确实只有一个主要功能时使用默认导出。</div>
+    <section><p>导出定义"什么可以离开这个模块"，导入定义"什么可以进入这个模块"。这是模块间通信的协议。</p></section>
+    <section>
+      <h3>多样的导入导出</h3>
+      <pre><code>// 多种导出方式
+// module.ts
+export const ghostName = "卡斯珀";            // 命名导出变量
+export function appear() {                    // 命名导出函数
+  console.log("A ghost appears!");
+}
+export class Ghost {                          // 命名导出类
+  constructor(public name: string) {}
+}
+export default class GhostManager {           // 默认导出
+  private ghosts: Ghost[] = [];
+}
+const secret = "这个不导出";                   // 私有，外部不能访问
+// 批量导出
+const ghostTypes = {
+  FRIENDLY: "友好",
+  HOSTILE: "敌对"
+};
+export { ghostTypes };
+// 导出别名
+export { Ghost as SupernaturalEntity };
+// 重新导出其他模块的内容
+export { Ghost } from './ghost-module';
+export { default as Manager } from './manager-module';
+// ---
+// 多种导入方式
+// app.ts
+import GhostManager from './module';          // 导入默认导出
+import { Ghost, ghostName } from './module';  // 导入命名导出
+import { Ghost as SupernaturalEntity } from './module'; // 导入别名
+import * as GhostModule from './module';      // 导入所有作为命名空间
+// 重新导出导入的内容
+export { Ghost } from './module';
+// 动态导入（按需加载）
+async function loadGhostModule() {
+  const module = await import('./module');
+  const ghost = new module.Ghost("卡斯珀");
+}
+// 只导入类型（TypeScript特有）
+import type { Ghost } from './module';
+// 副作用导入（只运行模块，不导入任何内容）
+import './side-effects';</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

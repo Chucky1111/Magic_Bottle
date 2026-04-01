@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万分寻常之瓶 - 玻璃球游戏</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+      color: #333;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    h1 {
+      font-family: 'Ma Shan Zheng', cursive;
+      font-size: 2.8rem;
+      color: #555;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #888;
+      font-style: italic;
+    }
+
+    main {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .game-area {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    canvas {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      display: block;
+      margin-bottom: 15px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .controls {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #e0e0e0;
+      color: #555;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    button:hover {
+      background-color: #d0d0d0;
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .emotion-display {
+      padding: 10px 20px;
+      background-color: #f8f9fa;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+
+    #currentEmotion {
+      font-weight: 500;
+      color: #666;
+    }
+
+    .sidebar {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .bottle-info, .emotion-potions, .instructions {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #e0e0e0;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: normal;
+    }
+
+    .bottle-info ul {
+      list-style-type: none;
+    }
+
+    .bottle-info li {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #e0e0e0;
+    }
+
+    .bottle-info li:last-child {
+      border-bottom: none;
+    }
+
+    .emotion-potions {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .potion {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px;
+      background-color: white;
+      border-radius: 6px;
+      border: 1px solid #e0e0e0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .potion:hover {
+      transform: translateX(5px);
+      border-color: #ccc;
+    }
+
+    .potion-color {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .instructions p {
+      margin-bottom: 10px;
+      color: #777;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      color: #888;
+      font-size: 1rem;
+    }
+
+    .signature {
+      font-family: 'Ma Shan Zheng', cursive;
+      font-size: 1.2rem;
+      margin-top: 5px;
+      color: #666;
+    }
+
+    #recliner {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 3rem;
+      color: #ddd;
+      z-index: 0;
+      animation: sway 8s infinite ease-in-out;
+    }
+
+    #fan {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 2.5rem;
+      color: #eee;
+      z-index: 0;
+      animation: spin 15s infinite linear;
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      75% { transform: rotate(-5deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* 情绪效果 */
+    .emotion-surprise {
+      background-color: rgba(255, 235, 59, 0.1) !important;
+      transition: background-color 0.5s ease;
+    }
+
+    .emotion-chase {
+      background-color: rgba(255, 152, 0, 0.1) !important;
+      transition: background-color 0.5s ease;
+    }
+
+    .emotion-mock {
+      background-color: rgba(156, 39, 176, 0.1) !important;
+      transition: background-color 0.5s ease;
+    }
+
+    .emotion-ending {
+      background-color: rgba(121, 85, 72, 0.1) !important;
+      transition: background-color 0.5s ease;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .game-area, .sidebar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-flask"></i> 万分寻常之瓶 #114</h1>
+      <p class="subtitle">七情六欲皆伤身，开心悲伤都无趣，打油一首躺椅睡</p>
+    </header>
+
+    <main>
+      <div class="game-area">
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        <div class="controls">
+          <button id="addBallBtn"><i class="fas fa-plus-circle"></i> 加个球</button>
+          <button id="clearBtn"><i class="fas fa-trash"></i> 清空</button>
+          <div class="emotion-display" id="emotionDisplay">
+            <span>当前情绪：<span id="currentEmotion">寻常</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="bottle-info">
+          <h2><i class="fas fa-wine-bottle"></i> 魔瓶特质</h2>
+          <ul>
+            <li><strong>类型：</strong>生活系</li>
+            <li><strong>编号：</strong>114</li>
+            <li><strong>核心驱动力：</strong>七情六欲皆伤身，开心悲伤都无趣</li>
+            <li><strong>行为惯性：</strong>躺躺椅，摇摇扇</li>
+          </ul>
+        </div>
+
+        <div class="emotion-potions">
+          <h2><i class="fas fa-vial"></i> 情绪魔药</h2>
+          <div class="potion" data-emotion="surprise">
+            <div class="potion-color" style="background-color: #ffeb3b;"></div>
+            <span>初生的惊喜</span>
+          </div>
+          <div class="potion" data-emotion="chase">
+            <div class="potion-color" style="background-color: #ff9800;"></div>
+            <span>如火焰一般追逐闪电</span>
+          </div>
+          <div class="potion" data-emotion="mock">
+            <div class="potion-color" style="background-color: #9c27b0;"></div>
+            <span>轻蔑的嘲弄</span>
+          </div>
+          <div class="potion" data-emotion="ending">
+            <div class="potion-color" style="background-color: #795548;"></div>
+            <span>竞技场的散场时刻</span>
+          </div>
+        </div>
+
+        <div class="instructions">
+          <h2><i class="fas fa-info-circle"></i> 玩法说明</h2>
+          <p>拖拽球体移动，让它们互相碰撞。</p>
+          <p>碰撞会触发情绪效果，但也就那样。</p>
+          <p>没什么特别的，看看就好。</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>暴风烈日不常有，常常都是寻常阴晴日。</p>
+      <p class="signature">—— 万分寻常之瓶</p>
+    </footer>
+  </div>
+
+  <div id="recliner">
+    <i class="fas fa-chair"></i>
+  </div>
+
+  <div id="fan">
+    <i class="fas fa-fan"></i>
+  </div>
+
+  <script>
+    // 万分寻常之瓶 - 玻璃球游戏
+    // 没什么特别的，就是几个球撞来撞去
+
+    class GlassBallGame {
+      constructor() {
+        this.canvas = document.getElementById('gameCanvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.balls = [];
+        this.nextBallId = 0;
+        this.isDragging = false;
+        this.dragBall = null;
+        this.dragOffsetX = 0;
+        this.dragOffsetY = 0;
+        this.currentEmotion = '寻常';
+        this.emotionDisplay = document.getElementById('currentEmotion');
+        this.emotionTimeout = null;
+        
+        this.emotionColors = {
+          surprise: '#ffeb3b',
+          chase: '#ff9800',
+          mock: '#9c27b0',
+          ending: '#795548',
+          normal: '#42a5f5'
+        };
+        
+        this.emotionNames = {
+          surprise: '初生的惊喜',
+          chase: '如火焰一般追逐闪电',
+          mock: '轻蔑的嘲弄',
+          ending: '竞技场的散场时刻',
+          normal: '寻常'
+        };
+
+        this.init();
+        this.setupEventListeners();
+        this.createInitialBalls();
+        this.animate();
+      }
+
+      init() {
+        this.canvas.width = 800;
+        this.canvas.height = 500;
+      }
+
+      setupEventListeners() {
+        this.canvas.addEventListener('mousedown', this.handleMouseDown.bind(this));
+        this.canvas.addEventListener('mousemove', this.handleMouseMove.bind(this));
+        this.canvas.addEventListener('mouseup', this.handleMouseUp.bind(this));
+        
+        this.canvas.addEventListener('touchstart', this.handleTouchStart.bind(this));
+        this.canvas.addEventListener('touchmove', this.handleTouchMove.bind(this));
+        this.canvas.addEventListener('touchend', this.handleTouchEnd.bind(this));
+        
+        document.getElementById('addBallBtn').addEventListener('click', () => this.addRandomBall());
+        document.getElementById('clearBtn').addEventListener('click', () => this.clearBalls());
+        
+        document.querySelectorAll('.potion').forEach(potion => {
+          potion.addEventListener('click', (e) => {
+            const emotion = e.currentTarget.dataset.emotion;
+            this.applyEmotionEffect(emotion);
+          });
+        });
+      }
+
+      createInitialBalls() {
+        this.addBall(200, 150, 30, this.emotionColors.normal, 'normal');
+        this.addBall(400, 250, 35, this.emotionColors.normal, 'normal');
+        this.addBall(600, 200, 25, this.emotionColors.normal, 'normal');
+      }
+
+      addBall(x, y, radius, color, emotion) {
+        this.balls.push({
+          x,
+          y,
+          radius,
+          color,
+          dx: (Math.random() - 0.5) * 2,
+          dy: (Math.random() - 0.5) * 2,
+          emotion,
+          id: this.nextBallId++
+        });
+      }
+
+      addRandomBall() {
+        const radius = 20 + Math.random() * 25;
+        const x = radius + Math.random() * (this.canvas.width - 2 * radius);
+        const y = radius + Math.random() * (this.canvas.height - 2 * radius);
+        const color = this.getRandomColor();
+        
+        this.addBall(x, y, radius, color, 'normal');
+        this.setEmotion('寻常', 1000);
+      }
+
+      clearBalls() {
+        this.balls = [];
+        this.setEmotion('空无', 2000);
+      }
+
+      getRandomColor() {
+        const colors = [
+          '#42a5f5', '#66bb6a', '#ffa726', '#ab47bc', 
+          '#26c6da', '#78909c', '#8d6e63', '#bdbdbd'
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      handleMouseDown(e) {
+        const rect = this.canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        this.startDrag(x, y);
+      }
+
+      handleMouseMove(e) {
+        if (!this.isDragging) return;
+        const rect = this.canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        this.dragBall.x = x - this.dragOffsetX;
+        this.dragBall.y = y - this.dragOffsetY;
+      }
+
+      handleMouseUp() {
+        this.isDragging = false;
+        this.dragBall = null;
+      }
+
+      handleTouchStart(e) {
+        e.preventDefault();
+        const rect = this.canvas.getBoundingClientRect();
+        const touch = e.touches[0];
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        this.startDrag(x, y);
+      }
+
+      handleTouchMove(e) {
+        if (!this.isDragging) return;
+        e.preventDefault();
+        const rect = this.canvas.getBoundingClientRect();
+        const touch = e.touches[0];
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        this.dragBall.x = x - this.dragOffsetX;
+        this.dragBall.y = y - this.dragOffsetY;
+      }
+
+      handleTouchEnd() {
+        this.isDragging = false;
+        this.dragBall = null;
+      }
+
+      startDrag(x, y) {
+        for (let i = this.balls.length - 1; i >= 0; i--) {
+          const ball = this.balls[i];
+          const distance = Math.sqrt((x - ball.x) ** 2 + (y - ball.y) ** 2);
+          
+          if (distance <= ball.radius) {
+            this.isDragging = true;
+            this.dragBall = ball;
+            this.dragOffsetX = x - ball.x;
+            this.dragOffsetY = y - ball.y;
+            ball.color = '#ff7043';
+            this.setEmotion('拖动中', 500);
+            break;
+          }
+        }
+      }
+
+      update() {
+        for (const ball of this.balls) {
+          if (this.isDragging && ball === this.dragBall) continue;
+          
+          if (ball.x - ball.radius < 0 || ball.x + ball.radius > this.canvas.width) {
+            ball.dx *= -0.95;
+            ball.x = Math.max(ball.radius, Math.min(this.canvas.width - ball.radius, ball.x));
+          }
+          
+          if (ball.y - ball.radius < 0 || ball.y + ball.radius > this.canvas.height) {
+            ball.dy *= -0.95;
+            ball.y = Math.max(ball.radius, Math.min(this.canvas.height - ball.radius, ball.y));
+          }
+          
+          ball.x += ball.dx;
+          ball.y += ball.dy;
+          ball.dx *= 0.995;
+          ball.dy *= 0.995;
+        }
+        
+        this.handleCollisions();
+      }
+
+      handleCollisions() {
+        for (let i = 0; i < this.balls.length; i++) {
+          for (let j = i + 1; j < this.balls.length; j++) {
+            const ball1 = this.balls[i];
+            const ball2 = this.balls[j];
+            const dx = ball2.x - ball1.x;
+            const dy = ball2.y - ball1.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < ball1.radius + ball2.radius) {
+              this.resolveCollision(ball1, ball2);
+              
+              if (Math.random() < 0.3) {
+                const emotions = ['surprise', 'chase', 'mock', 'ending'];
+                const emotion = emotions[Math.floor(Math.random() * emotions.length)];
+                this.applyEmotionEffect(emotion, 1500);
+              }
+            }
+          }
+        }
+      }
+
+      resolveCollision(ball1, ball2) {
+        const dx = ball2.x - ball1.x;
+        const dy = ball2.y - ball1.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance === 0) return;
+        
+        const nx = dx / distance;
+        const ny = dy / distance;
+        const dvx = ball2.dx - ball1.dx;
+        const dvy = ball2.dy - ball1.dy;
+        const speed = dvx * nx + dvy * ny;
+        if (speed > 0) return;
+        
+        const impulse = 2 * speed / 2;
+        ball1.dx += impulse * nx;
+        ball1.dy += impulse * ny;
+        ball2.dx -= impulse * nx;
+        ball2.dy -= impulse * ny;
+        
+        const overlap = ball1.radius + ball2.radius - distance;
+        const separateX = overlap * nx * 0.5;
+        const separateY = overlap * ny * 0.5;
+        ball1.x -= separateX;
+        ball1.y -= separateY;
+        ball2.x += separateX;
+        ball2.y += separateY;
+      }
+
+      applyEmotionEffect(emotion, duration = 2000) {
+        this.setEmotion(this.emotionNames[emotion], duration);
+        const emotionColor = this.emotionColors[emotion];
+        
+        for (const ball of this.balls) {
+          ball.color = emotionColor;
+          setTimeout(() => {
+            if (ball.color === emotionColor) ball.color = this.emotionColors.normal;
+          }, duration);
+        }
+        
+        document.body.classList.remove('emotion-surprise', 'emotion-chase', 'emotion-mock', 'emotion-ending');
+        document.body.classList.add(`emotion-${emotion}`);
+        setTimeout(() => {
+          document.body.classList.remove(`emotion-${emotion}`);
+        }, duration);
+      }
+
+      setEmotion(emotion, duration = 3000) {
+        this.currentEmotion = emotion;
+        this.emotionDisplay.textContent = emotion;
+        
+        if (this.emotionTimeout) clearTimeout(this.emotionTimeout);
+        this.emotionTimeout = setTimeout(() => {
+          this.currentEmotion = '寻常';
+          this.emotionDisplay.textContent = '寻常';
+        }, duration);
+      }
+
+      draw() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.drawGrid();
+        
+        for (const ball of this.balls) {
+          this.drawBall(ball);
+        }
+      }
+
+      drawGrid() {
+        this.ctx.strokeStyle = '#e0e0e0';
+        this.ctx.lineWidth = 0.5;
+        const gridSize = 40;
+        
+        for (let x = 0; x <= this.canvas.width; x += gridSize) {
+          this.ctx.beginPath();
+          this.ctx.moveTo(x, 0);
+          this.ctx.lineTo(x, this.canvas.height);
+          this.ctx.stroke();
+        }
+        
+        for (let y = 0; y <= this.canvas.height; y += gridSize) {
+          this.ctx.beginPath();
+          this.ctx.moveTo(0, y);
+          this.ctx.lineTo(this.canvas.width, y);
+          this.ctx.stroke();
+        }
+      }
+
+      drawBall(ball) {
+        this.ctx.beginPath();
+        this.ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+        this.ctx.fillStyle = ball.color;
+        this.ctx.fill();
+        
+        this.ctx.beginPath();
+        this.ctx.arc(ball.x - ball.radius * 0.3, ball.y - ball.radius * 0.3, ball.radius * 0.4, 0, Math.PI * 2);
+        this.ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        this.ctx.fill();
+        
+        this.ctx.beginPath();
+        this.ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+        this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+        this.ctx.lineWidth = 2;
+        this.ctx.stroke();
+        
+        if (ball.emotion !== 'normal') {
+          this.ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+          this.ctx.font = '12px Noto Sans SC';
+          this.ctx.textAlign = 'center';
+          this.ctx.fillText(ball.emotion.charAt(0).toUpperCase(), ball.x, ball.y + 4);
+        }
+      }
+
+      animate = () => {
+        this.update();
+        this.draw();
+        requestAnimationFrame(this.animate);
+      }
+    }
+
+    // 启动游戏
+    new GlassBallGame();
+  </script>
+</body>
+</html>

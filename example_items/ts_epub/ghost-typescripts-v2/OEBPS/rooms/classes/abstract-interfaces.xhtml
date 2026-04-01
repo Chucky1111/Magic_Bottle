@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>抽象类与接口实现 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：抽象概念像半成形的幽灵轮廓，必须由具体类填充完整；接口像发光的契约，类必须签字遵守 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>抽象类与接口实现</h1>
+    <div class="phantom-note">幽灵观察：抽象类是半成形的幽灵，有基本结构但缺少关键部分。具体类填充这些部分，让幽灵完全成形。接口是幽灵的行为准则，无论幽灵如何实现，必须遵守这些准则。</div>
+    <div class="phantom-note">使用场景：当多个相关类共享一些实现时使用抽象类。当只需要定义契约时使用接口。抽象类用于"是什么"的层次，接口用于"能做什么"的能力。</div>
+    <section><p>抽象类说："我有一些实现，但有些部分你必须自己完成。"接口说："你必须做到这些，但怎么做我不管。"一个是部分模板，一个是纯契约。</p></section>
+    <section>
+      <h3>抽象与契约</h3>
+      <pre><code>// 抽象类：部分实现的模板
+abstract class SupernaturalEntity {
+  // 抽象属性：必须在子类中实现
+  abstract name: string;
+  // 抽象方法：必须在子类中实现
+  abstract manifest(): void;
+  // 具体方法：已经有实现，子类可以继承
+  exists() {
+    console.log(`${this.name} exists in the supernatural realm.`);
+  }
+  // 具体方法：子类可以覆盖
+  getDescription(): string {
+    return `A supernatural entity named ${this.name}`;
+  }
+}
+// 接口：纯契约
+interface Hauntable {
+  haunt(location: string): void;
+  getHauntLevel(): number;
+}
+// 具体类继承抽象类并实现接口
+class Ghost extends SupernaturalEntity implements Hauntable {
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    super(); // 必须调用父类构造函数
+    this.name = name;
+    this.age = age;
+  }
+  // 实现抽象方法
+  manifest() {
+    console.log(`${this.name} manifests as a ghostly figure.`);
+  }
+  // 覆盖具体方法
+  getDescription(): string {
+    return `${super.getDescription()}, ${this.age} years old`;
+  }
+  // 实现接口方法
+  haunt(location: string) {
+    console.log(`${this.name} haunts ${location}.`);
+  }
+  getHauntLevel(): number {
+    return this.age &gt; 100 ? 5 : 2;
+  }
+}
+// 另一个具体类
+class Poltergeist extends SupernaturalEntity implements Hauntable {
+  name: string;
+  strength: number;
+  constructor(name: string, strength: number) {
+    super();
+    this.name = name;
+    this.strength = strength;
+  }
+  // 实现抽象方法（不同实现）
+  manifest() {
+    console.log(`${this.name} manifests by moving objects!`);
+  }
+  // 实现接口方法（不同实现）
+  haunt(location: string) {
+    console.log(`${this.name} violently haunts ${location} with strength ${this.strength}!`);
+  }
+  getHauntLevel(): number {
+    return this.strength * 2;
+  }
+}
+// 不能创建抽象类的实例
+// const entity = new SupernaturalEntity(); // 错误！抽象类不能实例化
+// 可以创建具体类的实例
+const ghost = new Ghost("卡斯珀", 150);
+const poltergeist = new Poltergeist("骚灵", 8);
+ghost.exists();       // "卡斯珀 exists in the supernatural realm." (继承的方法)
+ghost.manifest();     // "卡斯珀 manifests as a ghostly figure." (实现的抽象方法)
+ghost.haunt("客厅");  // "卡斯珀 haunts 客厅." (实现的接口方法)</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

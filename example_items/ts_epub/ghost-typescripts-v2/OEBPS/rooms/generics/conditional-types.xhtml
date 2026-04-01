@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>条件类型：类型逻辑 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：类型像发光的符号在逻辑门中流动，根据条件选择不同的路径，产生不同的结果类型 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">兴奋推荐</div>
+    <h1>条件类型：类型逻辑</h1>
+    <div class="phantom-note">幽灵观察：条件类型是幽灵的决策能力。根据输入的类型，幽灵选择不同的显现方式。这是类型系统的元认知。</div>
+    <div class="phantom-note">高级技巧：条件类型经常与infer关键字结合使用，从复杂类型中提取部分类型。</div>
+    <section><p>条件类型说："如果T是X类型，那么结果是Y类型，否则是Z类型。"这是类型层面的if-else语句。</p></section>
+    <section>
+      <h3>类型逻辑判断</h3>
+      <pre><code>// 基本的条件类型
+type IsString&lt;T&gt; = T extends string ? true : false;
+type Test1 = IsString&lt;"hello"&gt;;  // true
+type Test2 = IsString&lt;number&gt;;   // false
+type Test3 = IsString&lt;string | number&gt;; // boolean (分布式条件类型)
+// 提取数组元素类型
+type ExtractElementType&lt;T&gt; = T extends (infer U)[] ? U : never;
+type StringArrayElement = ExtractElementType&lt;string[]&gt;; // string
+type NumberArrayElement = ExtractElementType&lt;number[]&gt;; // number
+type NotArray = ExtractElementType&lt;string&gt;;             // never
+// 提取函数返回类型
+type ReturnType&lt;T&gt; = T extends (...args: any[]) =&gt; infer R ? R : never;
+type FuncReturn = ReturnType&lt;() =&gt; string&gt;;      // string
+type AsyncReturn = ReturnType&lt;() =&gt; Promise&lt;number&gt;&gt;; // Promise&lt;number&gt;
+// 条件类型与映射类型结合
+type Nullable&lt;T&gt; = {
+  [K in keyof T]: T[K] | null;
+};
+// 条件映射类型：只处理特定类型的属性
+type StringPropsOnly&lt;T&gt; = {
+  [K in keyof T as T[K] extends string ? K : never]: T[K]
+};
+interface Ghost {
+  name: string;      // string
+  age: number;       // number  
+  location: string;  // string
+}
+type GhostStringProps = StringPropsOnly&lt;Ghost&gt;;
+// 相当于 { name: string; location: string; }
+// 条件类型工具：NonNullable
+type NonNullable&lt;T&gt; = T extends null | undefined ? never : T;
+type MaybeString = string | null | undefined;
+type DefinitelyString = NonNullable&lt;MaybeString&gt;; // string</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

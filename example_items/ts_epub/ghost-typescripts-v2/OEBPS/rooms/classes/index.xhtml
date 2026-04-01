@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>篡夺叙事：类与面向对象 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：幽灵类像模板工厂，不断产生具有相同结构的实体幽灵，每个实例有自己的状态 -->
+  <div class="ghost-section">
+    <h1>篡夺叙事：类与面向对象</h1>
+    <div class="phantom-note">
+      幽灵观察：类是幽灵的出生证明，定义了幽灵如何被创造，具有什么属性，能做什么行为。
+    </div>
+    <!-- 介绍 -->
+    <section>
+      <p>类是将接口定义转化为<strong>可实例化的模板</strong>。接口说"必须有什么"，类说"如何有"和"如何做"。</p>
+      <p>面向对象编程（OOP）的核心概念——封装、继承、多态——在TypeScript中都有完整的支持。</p>
+      <div class="phantom-note">
+        魔瓶提醒：当你有多个相似对象时使用类。当只需要定义结构时使用接口。类用于创建，接口用于描述。
+      </div>
+    </section>
+    <!-- 入口 -->
+    <section>
+      <h2>类与面向对象入口</h2>
+      <div class="entrance-options">
+        <div class="option">
+          <h3><a href="class-basics.xhtml">类基础：幽灵的模板</a></h3>
+          <p>定义类、构造函数、方法和属性。</p>
+          <p class="hint">适合：第一次接触TypeScript类的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="access-modifiers.xhtml">访问修饰符：幽灵社会的边界</a></h3>
+          <p>public、private、protected，控制谁可以访问什么。</p>
+          <p class="hint">适合：需要封装和数据隐藏的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="inheritance.xhtml">继承：幽灵王朝的建立</a></h3>
+          <p>构建类型层次结构，复用代码。</p>
+          <p class="hint">适合：需要构建类型体系的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="abstract-interfaces.xhtml">抽象类与接口实现</a></h3>
+          <p>部分实现的模板和纯契约的结合。</p>
+          <p class="hint">适合：需要抽象和具体实现结合的人</p>
+        </div>
+      </div>
+    </section>
+    <!-- 类设计原则 -->
+    <section>
+      <h2>类设计原则</h2>
+      <ol>
+        <li><strong>单一职责原则</strong>：一个类应该只有一个改变的理由。</li>
+        <li><strong>开放封闭原则</strong>：对扩展开放，对修改封闭。</li>
+        <li><strong>里氏替换原则</strong>：子类应该能够替换父类。</li>
+        <li><strong>接口隔离原则</strong>：客户端不应该依赖它不需要的接口。</li>
+        <li><strong>依赖倒置原则</strong>：依赖抽象，不依赖具体实现。</li>
+      </ol>
+      <div class="phantom-note">
+        这些原则不是规则，是指导。违反它们有时是合理的，但要知道为什么违反。
+      </div>
+    </section>
+    <!-- 穿梭到其他区域 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到相关区域</h3>
+      <ul>
+        <li><a href="../../hallways/interfaces/index.xhtml">边缘地带：接口与类型别名</a> - 类实现的契约</li>
+        <li><a href="../generics/index.xhtml">时空穿梭：泛型与高级类型</a> - 泛型类</li>
+        <li><a href="../../toc-haunted-house.xhtml">鬼屋项目：完整实践</a> - 应用类构建幽灵世界</li>
+        <li><a href="../../attic/ai-assistance/index.xhtml">AI辅助开发：从类定义到AI实现</a> - 用类指导AI</li>
+      </ul>
+    </nav>
+    </div>
+</body>
+</html>

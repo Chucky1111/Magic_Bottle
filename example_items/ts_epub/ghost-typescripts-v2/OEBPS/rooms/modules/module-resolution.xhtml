@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>模块解析：路径的寻找 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：导入路径像发光的线索在文件系统中延伸，TypeScript编译器像侦探一样追踪这些线索找到模块 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>模块解析：路径的寻找</h1>
+    <div class="phantom-note">幽灵观察：模块解析是幽灵世界的寻路系统。相对路径是本地地图，绝对路径是全局坐标，node_modules是公共图书馆。</div>
+    <div class="phantom-note">常见问题：模块找不到错误通常由路径错误、缺少文件扩展名、或tsconfig.json配置问题引起。</div>
+    <section><p>当你说`import { Ghost } from "./ghosts"`时，TypeScript需要找到`ghosts`模块。模块解析就是TypeScript寻找模块的过程。</p></section>
+    <section>
+      <h3>模块查找机制</h3>
+      <pre><code>// 不同的导入路径类型
+import { Ghost } from './ghosts';           // 相对路径
+import { Ghost } from '../entities/ghosts'; // 相对路径（上级目录）
+import { Ghost } from '/src/ghosts';        // 绝对路径（根据baseUrl）
+import { Ghost } from 'ghost-library';      // node_modules中的包
+// TypeScript的模块解析策略
+// 1. Classic（传统）- 主要为了向后兼容
+// 2. Node（推荐）- 模仿Node.js的模块解析
+// tsconfig.json中的相关配置
+/*
+{
+  "compilerOptions": {
+    "moduleResolution": "node",  // 使用Node.js风格的模块解析
+    "baseUrl": "./src",          // 基础路径，用于绝对导入
+    "paths": {                   // 路径映射
+      "@entities/*": ["entities/*"],
+      "@utils/*": ["utils/*"]
+    },
+    "rootDirs": [                // 多个根目录
+      "./src",
+      "./generated"
+    ],
+    "typeRoots": [               // 类型声明文件的位置
+      "./node_modules/@types",
+      "./custom-types"
+    ],
+    "types": ["node", "jest"]    // 包含的类型声明包
+  }
+}
+*/
+// 路径映射示例
+// 配置了 "paths": { "@entities/*": ["src/entities/*"] }
+import { Ghost } from '@entities/ghosts'; // 解析为 src/entities/ghosts
+// Node.js模块解析过程（当导入'ghost-library'时）：
+// 1. 当前目录的node_modules/ghost-library
+// 2. 上级目录的node_modules/ghost-library
+// 3. 继续向上直到根目录
+// 4. 全局node_modules
+// 文件扩展名解析顺序：
+// .ts -&gt; .tsx -&gt; .d.ts -&gt; .js -&gt; .jsx -&gt; .json
+// 常见的模块解析错误和解决：
+// 错误: Cannot find module './ghosts'
+// 可能原因:
+// 1. 文件不存在或路径错误
+// 2. 需要添加文件扩展名: './ghosts.ts'
+// 3. 需要配置moduleResolution或baseUrl
+// 使用相对路径时的注意事项：
+// ./ - 当前目录
+// ../ - 上级目录
+// 不加./ - 从node_modules或baseUrl查找</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

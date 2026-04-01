@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>模块基础：代码的领地划分 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：代码像发光的领土被无形的边界划分，每个模块有自己的领域，边界上有进出口 -->
+  <div class="ghost-section">
+    <div class="emotion-indicator">好奇推荐</div>
+    <h1>模块基础：代码的领地划分</h1>
+    <div class="phantom-note">幽灵观察：模块是幽灵世界的国度划分。每个模块有自己的幽灵和规则。跨模块交互需要通过正式的进出口通道。</div>
+    <div class="phantom-note">最佳实践：一个文件一个模块，相关功能放在同一个模块，模块间通过清晰的接口交互。</div>
+    <section><p>模块说："这是我的领地。这里面的东西是我私有的，除非我明确说可以出口。如果你想用，必须从我的出口进口。"</p></section>
+    <section>
+      <h3>模块导入导出</h3>
+      <pre><code>// ghosts.ts - 幽灵模块
+export interface Ghost {
+  name: string;
+  age: number;
+}
+export class FriendlyGhost implements Ghost {
+  constructor(public name: string, public age: number) {}
+  appear() {
+    console.log(`${this.name} gently appears...`);
+  }
+}
+// 私有函数：模块外部不能访问
+function calculateGhostPower(age: number): number {
+  return age * 10;
+}
+// 默认导出
+export default class GhostManager {
+  private ghosts: Ghost[] = [];
+  addGhost(ghost: Ghost) {
+    this.ghosts.push(ghost);
+  }
+}
+// ---
+// haunt.ts - 出没模块
+import { Ghost, FriendlyGhost } from './ghosts';
+import GhostManager from './ghosts'; // 导入默认导出
+export function createHaunt(ghost: Ghost, location: string) {
+  console.log(`${ghost.name} haunts ${location}`);
+}
+// 重新导出
+export { Ghost } from './ghosts';
+// ---
+// main.ts - 主模块
+import { FriendlyGhost } from './ghosts';
+import { createHaunt } from './haunt';
+import GhostManager from './ghosts';
+const casper = new FriendlyGhost("卡斯珀", 150);
+createHaunt(casper, "老宅");
+const manager = new GhostManager();
+manager.addGhost(casper);</code></pre>
+    </section>
+    <!-- 幽灵通道 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到其他维度</h3>
+      <ul>
+        <li><a href="/toc-emotion.xhtml">情绪维度导航</a></li>
+        <li><a href="/toc-intent.xhtml">意图维度路径</a></li>
+        <li><a href="/toc-haunted-house.xhtml">鬼屋项目实践</a></li>
+        <li><a href="/toc-concepts.xhtml">返回概念维度</a></li>
+      </ul>
+    </nav>
+  <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      记住魔瓶的世界观："没有无法塑造的规则，只有无法表达的现状。"
+      如果你觉得某个类型无法表达你的意图，不是类型的限制，是你还没找到正确的表达方式。
+    </div>
+  </div>
+  </body>
+</html>

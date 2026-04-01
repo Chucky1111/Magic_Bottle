@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>错误地下室：编译错误解析 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <div class="ghost-section">
+    <div class="emotion-indicator">挫败推荐（但会变好奇）</div>
+    <h1>错误地下室：编译错误解析</h1>
+    <div class="phantom-note">
+      幽灵观察：编译错误不是失败通知，是TypeScript在低语："嘿，这里有些有趣的事情..."
+    </div>
+    <!-- 错误哲学 -->
+    <section>
+      <h2>错误是对话，不是惩罚</h2>
+      <p>在幽灵维度中，编译错误是<strong>边界标记</strong>。它们告诉你："这是类型系统的边缘，这里有些规则需要注意。"</p>
+      <p>每个错误都在教你关于类型系统的一课。问题是：你愿意听吗？</p>
+      <div class="comfort-message">
+        如果你感到挫败，正常。每个幽灵程序员都曾在这里待过。
+        深呼吸，阅读错误信息，像解读幽灵的低语一样解读它。
+      </div>
+    </section>
+    <!-- 常见错误类型 -->
+    <section>
+      <h2>常见错误模式</h2>
+      <h3>1. 类型不匹配</h3>
+      <pre class="error"><code>let temperature: number = "23.5"; // 错误！
+// Type 'string' is not assignable to type 'number'.</code></pre>
+      <div class="phantom-note">
+        TypeScript说："你承诺了number，但给了string。哪个是真的？"
+        解决方案：检查你的意图。你是要字符串"23.5"还是数字23.5？
+      </div>
+      <h3>2. 缺少必需属性</h3>
+      <pre class="error"><code>interface Ghost { name: string; age: number; }
+const myGhost: Ghost = { name: "卡斯珀" }; // 错误！
+// Property 'age' is missing in type...</code></pre>
+      <div class="phantom-note">
+        TypeScript说："你做出了契约（接口），但没有完全兑现。"
+        解决方案：要么添加age，要么让age变成可选属性（age?: number）。
+      </div>
+      <h3>3. 多余属性</h3>
+      <pre class="error"><code>const ghost: { name: string } = {
+  name: "卡斯珀",
+  age: 150  // 错误！
+};
+// Object literal may only specify known properties...</code></pre>
+      <div class="phantom-note">
+        TypeScript说："我只知道name属性，age是什么？"
+        解决方案：要么扩展接口包含age，要么使用类型断言（谨慎！）。
+      </div>
+    </section>
+    <!-- 错误解读练习 -->
+    <section>
+      <h2>错误解读练习</h2>
+      <p>阅读错误信息，理解它在说什么：</p>
+      <pre class="error"><code>function greet(name: string): string {
+  return "Hello, " + name;
+}
+greet(42); // 错误！
+// Argument of type 'number' is not assignable to parameter of type 'string'.</code></pre>
+      <div class="expandable" id="interpretation">
+        <h4>解读</h4>
+        <ol>
+          <li>函数<code>greet</code>期望一个<code>string</code>类型的参数</li>
+          <li>你传了一个<code>number</code>（42）</li>
+          <li>TypeScript说："这不行，字符串和数字是不同的类型"</li>
+          <li>解决方案：传字符串<code>greet("42")</code>或修改函数接受数字</li>
+        </ol>
+      </div>
+      <div class="phantom-note">
+        错误信息通常是精确的。逐词阅读，理解每个词的意思。
+      </div>
+    </section>
+    <!-- AI如何帮助 -->
+    <section>
+      <h2>让AI帮助解读错误</h2>
+      <p>当你卡住时，把错误信息复制给AI：</p>
+      <blockquote>
+        "我在TypeScript中遇到这个错误：
+        <code>Type '{ name: string; }' is missing the following properties from type 'Ghost': age, type</code>
+        这是什么意思？如何修复？"
+      </blockquote>
+      <p>AI会解释错误并提供解决方案。</p>
+      <div class="phantom-note">
+        AI是很好的错误翻译器。它可以把TypeScript的技术语言翻译成人类语言。
+      </div>
+    </section>
+    <!-- 幽默错误集锦 -->
+    <section class="expandable" id="humorous-errors">
+      <h3>幽默错误集锦</h3>
+      <p>有些错误信息很有诗意：</p>
+      <pre class="error"><code>// "这个表达式调用的签名无法解析"
+// 翻译：我不知道你想干嘛
+// "类型在循环中无限引用自身"
+// 翻译：你创建了一个类型黑洞
+// "无法找到名称'require'"
+// 翻译：你用了Node.js的语法，但配置不对</code></pre>
+      <div class="phantom-note">
+        笑对错误。它们是编程体验的一部分，就像幽灵的恶作剧。
+      </div>
+    </section>
+    <!-- 错误处理策略 -->
+    <section>
+      <h2>错误处理策略</h2>
+      <ol>
+        <li><strong>阅读错误信息</strong>：真的读，不要只是扫一眼</li>
+        <li><strong>理解类型</strong>：涉及哪些类型？它们应该是什么？</li>
+        <li><strong>检查契约</strong>：违反了哪个接口或类型定义？</li>
+        <li><strong>问为什么</strong>：为什么TypeScript认为这是错误？你的意图是什么？</li>
+        <li><strong>修复或重新思考</strong>：修复类型，或者重新思考你的设计</li>
+      </ol>
+      <div class="phantom-note">
+        策略5：有时错误在告诉你，你的设计有问题，而不仅仅是类型标注有问题。
+      </div>
+    </section>
+    <!-- 穿梭链接 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到相关断面</h3>
+      <ul>
+        <li><a href="type-errors.xhtml">类型错误详解</a></li>
+        <li><a href="syntax-errors.xhtml">语法错误详解</a></li>
+        <li><a href="common-mistakes.xhtml">常见错误及解决方案</a></li>
+        <li><a href="edge-cases.xhtml">边缘案例错误</a></li>
+        <li><a href="humorous-errors.xhtml">幽默错误集锦</a>（心情提升）</li>
+        <li><a href="../../attic/ai-assistance/debugging-help.xhtml">用AI帮助调试</a></li>
+        <li><a href="../../hallways/types/any-unknown.xhtml">any和unknown：绕过类型检查</a>（谨慎使用）</li>
+      </ul>
+    </nav>
+    <!-- 情绪特定内容 -->
+    <div class="frustrated-content">
+      <div class="comfort-message">
+        记住：每个专业程序员都曾面对这些错误。区别不是他们不犯错，而是他们学会了如何解读错误信息。
+        你也在学习这种技能。给自⼀点时间。
+      </div>
+    </div>
+    <div class="curious-content">
+      <p><strong>深入探索</strong>：为什么TypeScript要有这些严格的检查？</p>
+      <p>因为运行时错误比编译时错误代价更高。编译时错误只是信息，运行时错误会让程序崩溃。</p>
+      <p>TypeScript在保护你免受更痛苦的错误。</p>
+    </div>
+    <div class="excited-content">
+      <p><strong>挑战</strong>：故意写一些有类型错误的代码，看看TypeScript会生成什么错误信息。</p>
+      <p>实验是最好的学习方式。在安全的环境中故意犯错。</p>
+    </div>
+    <!-- 魔瓶的最后观察 -->
+    <div class="phantom-note" style="margin-top: 2em;">
+      错误地下室是幽灵维度中最常访问的地方之一。
+      不是因为你经常犯错，而是因为这里是学习发生的地方。
+      每个错误都是一个迷你课程，教你关于类型系统的一课。
+      在这里花时间不是浪费，是投资。
+      记住魔瓶的核心驱动力："穿梭在数据中的幽灵，能够抵达任何边缘地带。"
+      错误就是边缘地带。在这里，你学习如何穿梭。
+    </div>
+  </div>
+  <style>
+    .error {
+      border-color: rgba(239, 68, 68, 0.5);
+      background: rgba(239, 68, 68, 0.1);
+    }
+  </style>
+</body>
+</html>

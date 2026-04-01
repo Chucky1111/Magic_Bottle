@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>边缘地带：接口与类型别名 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：契约卷轴在空中漂浮，每个卷轴定义了一个幽灵物种或一个交互规则，发光的条款相互连接形成网络 -->
+  <div class="ghost-section">
+    <h1>边缘地带：接口与类型别名</h1>
+    <div class="phantom-note">
+      幽灵观察：接口是幽灵社会的法律，类型别名是幽灵的化名。一个定义规则，一个起名字。
+    </div>
+    <!-- 介绍 -->
+    <section>
+      <p>接口和类型别名是定义<strong>复杂结构</strong>的两种方式。它们让类型系统从原子思维进入分子思维。</p>
+      <p><strong>接口</strong>说："如果你想要成为X，你必须能做Y。"<br/>
+      <strong>类型别名</strong>说："这个东西也叫那个名字。"</p>
+      <div class="phantom-note">
+        魔瓶提醒：接口用于定义契约（必须有什么），类型别名用于创建别名（这个东西也叫那个）。用途不同，但经常可以互换。
+      </div>
+    </section>
+    <!-- 入口 -->
+    <section>
+      <h2>接口与类型别名入口</h2>
+      <div class="entrance-options">
+        <div class="option">
+          <h3><a href="interface-basics.xhtml">接口：幽灵的契约</a></h3>
+          <p>定义幽灵必须遵守的规则，不关心如何实现。</p>
+          <p class="hint">适合：需要定义对象结构的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="type-aliases.xhtml">类型别名：幽灵的化名</a></h3>
+          <p>给复杂类型起名字，让代码更清晰。</p>
+          <p class="hint">适合：处理复杂类型定义的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="optional-readonly.xhtml">可选与只读：契约的灵活性</a></h3>
+          <p>让契约既有规则又有灵活性。</p>
+          <p class="hint">适合：需要精细控制对象属性的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="extends-implements.xhtml">扩展与实现：契约的继承</a></h3>
+          <p>构建契约体系，复用和扩展定义。</p>
+          <p class="hint">适合：构建复杂类型层次的人</p>
+        </div>
+      </div>
+    </section>
+    <!-- 接口 vs 类型别名 -->
+    <section>
+      <h2>接口 vs 类型别名：何时使用什么</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>场景</th>
+            <th>使用接口</th>
+            <th>使用类型别名</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>定义对象形状</td>
+            <td>✅ 推荐</td>
+            <td>✅ 可以</td>
+          </tr>
+          <tr>
+            <td>定义函数类型</td>
+            <td>✅ 可以</td>
+            <td>✅ 推荐</td>
+          </tr>
+          <tr>
+            <td>扩展/继承</td>
+            <td>✅ 容易（extends）</td>
+            <td>❌ 复杂（需要交叉类型）</td>
+          </tr>
+          <tr>
+            <td>联合类型</td>
+            <td>❌ 不能</td>
+            <td>✅ 唯一方式</td>
+          </tr>
+          <tr>
+            <td>元组类型</td>
+            <td>❌ 不能</td>
+            <td>✅ 唯一方式</td>
+          </tr>
+          <tr>
+            <td>映射类型</td>
+            <td>❌ 不能</td>
+            <td>✅ 唯一方式</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="phantom-note">
+        实用建议：默认使用接口定义对象形状。当需要联合类型、元组或映射类型时，使用类型别名。
+      </div>
+    </section>
+    <!-- 设计原则 -->
+    <section>
+      <h2>接口设计原则</h2>
+      <ol>
+        <li><strong>单一职责</strong>：每个接口做一件事，做好一件事。</li>
+        <li><strong>明确命名</strong>：名字应该反映接口的用途。</li>
+        <li><strong>最小接口</strong>：只定义必要的属性和方法。</li>
+        <li><strong>稳定接口</strong>：接口一旦发布，尽量避免破坏性更改。</li>
+        <li><strong>文档化</strong>：用注释说明接口的用途和使用方式。</li>
+      </ol>
+    </section>
+    <!-- 穿梭到其他区域 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到相关区域</h3>
+      <ul>
+        <li><a href="../types/index.xhtml">幽灵法则：类型系统</a> - 基础类型知识</li>
+        <li><a href="../../rooms/classes/index.xhtml">篡夺叙事：类与面向对象</a> - 实现接口的类</li>
+        <li><a href="../../rooms/generics/index.xhtml">时空穿梭：泛型与高级类型</a> - 泛型接口</li>
+        <li><a href="../../toc-haunted-house.xhtml">鬼屋项目：完整实践</a> - 应用接口设计幽灵世界</li>
+        <li><a href="../../basement/errors/index.xhtml">错误地下室：接口相关错误</a> - 理解接口错误</li>
+      </ul>
+    </nav>
+    </div>
+</body>
+</html>

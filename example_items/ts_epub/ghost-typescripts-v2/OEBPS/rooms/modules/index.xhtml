@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>昏暗环境：模块与命名空间 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：代码被无形的边界划分成模块，每个模块有自己的领域，边界上有进出口通道 -->
+  <div class="ghost-section">
+    <h1>昏暗环境：模块与命名空间</h1>
+    <div class="phantom-note">
+      幽灵观察：模块是幽灵世界的国度划分，命名空间是古老王国制度。现代模块系统是联邦制。
+    </div>
+    <!-- 介绍 -->
+    <section>
+      <p>模块和命名空间是组织大型代码库的工具。它们帮助你将代码分成<strong>逻辑单元</strong>，管理依赖和可见性。</p>
+      <p><strong>ES模块</strong>是现代JavaScript的标准模块系统。<br/>
+      <strong>命名空间</strong>是TypeScript早期的模块系统，现在主要用于组织类型声明。</p>
+      <div class="phantom-note">
+        魔瓶提醒：在新项目中使用ES模块。命名空间主要用于处理遗留代码或组织第三方库的类型声明。
+      </div>
+    </section>
+    <!-- 入口 -->
+    <section>
+      <h2>模块与命名空间入口</h2>
+      <div class="entrance-options">
+        <div class="option">
+          <h3><a href="module-basics.xhtml">模块基础：代码的领地划分</a></h3>
+          <p>ES模块的基本概念，导出和导入。</p>
+          <p class="hint">适合：第一次接触ES模块的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="import-export.xhtml">导入与导出：领地的通道</a></h3>
+          <p>多种导入导出方式，默认导出 vs 命名导出。</p>
+          <p class="hint">适合：需要掌握模块间通信的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="namespace.xhtml">命名空间：历史的遗留</a></h3>
+          <p>TypeScript传统的模块组织方式。</p>
+          <p class="hint">适合：处理遗留代码或需要组织类型声明的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="module-resolution.xhtml">模块解析：路径的寻找</a></h3>
+          <p>TypeScript如何找到模块，解决模块找不到问题。</p>
+          <p class="hint">适合：遇到模块解析问题的人</p>
+        </div>
+      </div>
+    </section>
+    <!-- 模块设计原则 -->
+    <section>
+      <h2>模块设计原则</h2>
+      <ol>
+        <li><strong>高内聚</strong>：相关功能放在同一个模块。</li>
+        <li><strong>低耦合</strong>：模块间通过清晰的接口交互。</li>
+        <li><strong>明确依赖</strong>：明确声明模块依赖。</li>
+        <li><strong>稳定接口</strong>：模块的公共接口应该稳定。</li>
+        <li><strong>合理大小</strong>：模块不应太大（难维护）或太小（过度碎片化）。</li>
+      </ol>
+    </section>
+    <!-- 穿梭到其他区域 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到相关区域</h3>
+      <ul>
+        <li><a href="../../secret-passages/configuration/index.xhtml">守夜人：编译器配置</a> - 模块解析配置</li>
+        <li><a href="../../toc-haunted-house.xhtml">鬼屋项目：完整实践</a> - 模块化组织幽灵世界代码</li>
+        <li><a href="../../basement/errors/index.xhtml">错误地下室：模块相关错误</a> - 理解模块错误</li>
+        <li><a href="../../attic/ai-assistance/index.xhtml">AI辅助开发：模块化AI提示</a> - 用模块化思维指导AI</li>
+      </ul>
+    </nav>
+    </div>
+</body>
+</html>

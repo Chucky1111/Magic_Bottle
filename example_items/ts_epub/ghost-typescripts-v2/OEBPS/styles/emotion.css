@@ -1,0 +1,202 @@
+/* 情绪响应样式 */
+@charset "UTF-8";
+
+/* 情绪变量 */
+:root {
+  --emotion-confused: rgba(147, 51, 234, 0.7);    /* 困惑：紫色 */
+  --emotion-curious: rgba(59, 130, 246, 0.7);     /* 好奇：蓝色 */
+  --emotion-excited: rgba(34, 197, 94, 0.7);      /* 兴奋：绿色 */
+  --emotion-frustrated: rgba(239, 68, 68, 0.7);   /* 挫败：红色 */
+}
+
+/* 基础情绪类 */
+body.confused {
+  --phantom-color: var(--emotion-confused);
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+}
+
+body.curious {
+  --phantom-color: var(--emotion-curious);
+  background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%);
+}
+
+body.excited {
+  --phantom-color: var(--emotion-excited);
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+}
+
+body.frustrated {
+  --phantom-color: var(--emotion-frustrated);
+  background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+}
+
+/* 困惑状态：缓慢节奏，清晰解释 */
+body.confused .ghost-section {
+  border-width: 2px;
+  animation: gentle-pulse 3s infinite;
+}
+
+body.confused h1, body.confused h2, body.confused h3 {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+body.confused .phantom-note {
+  opacity: 1;
+  font-size: 1em;
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+}
+
+/* 好奇状态：深度探索，密集内容 */
+body.curious .ghost-section {
+  border-style: dashed;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+body.curious .expandable {
+  max-height: none !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+body.curious .phantom-note {
+  border-left-width: 4px;
+}
+
+/* 兴奋状态：挑战性内容，快速节奏 */
+body.excited {
+  animation: fast-pulse 1s infinite alternate;
+}
+
+body.excited .ghost-section {
+  transform: scale(1.01);
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 40px rgba(34, 197, 94, 0.4);
+}
+
+body.excited .ghost-passage {
+  animation: link-blink 0.5s infinite alternate;
+}
+
+@keyframes fast-pulse {
+  from { opacity: 1; }
+  to { opacity: 0.98; }
+}
+
+@keyframes link-blink {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+/* 挫败状态：安抚性设计，简单内容 */
+body.frustrated {
+  font-size: 1.1em;
+  line-height: 2;
+}
+
+body.frustrated .ghost-section {
+  border: none;
+  background: rgba(30, 41, 59, 0.8);
+  box-shadow: none;
+}
+
+body.frustrated h1, body.frustrated h2, body.frustrated h3 {
+  text-shadow: none;
+  border-bottom: none;
+}
+
+body.frustrated .comfort-message {
+  display: block;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 8px;
+  padding: 1em;
+  margin: 1em 0;
+  font-style: italic;
+}
+
+body.frustrated .comfort-message::before {
+  content: "魔瓶低语：";
+  color: var(--emotion-frustrated);
+  font-weight: bold;
+}
+
+/* 情绪特定的隐藏/显示 */
+.confused-content { display: none; }
+.curious-content { display: none; }
+.excited-content { display: none; }
+.frustrated-content { display: none; }
+
+body.confused .confused-content { display: block; }
+body.curious .curious-content { display: block; }
+body.excited .excited-content { display: block; }
+body.frustrated .frustrated-content { display: block; }
+
+/* 情绪切换器 */
+.emotion-switcher {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--phantom-color);
+  border-radius: 8px;
+  padding: 0.5em;
+  display: flex;
+  gap: 0.5em;
+}
+
+.emotion-switcher button {
+  background: none;
+  border: 1px solid currentColor;
+  color: currentColor;
+  border-radius: 4px;
+  padding: 0.3em 0.6em;
+  cursor: pointer;
+  font-size: 0.8em;
+  transition: all 0.3s ease;
+}
+
+.emotion-switcher button:hover {
+  background: currentColor;
+  color: #0f172a;
+}
+
+.emotion-switcher .confused { color: var(--emotion-confused); }
+.emotion-switcher .curious { color: var(--emotion-curious); }
+.emotion-switcher .excited { color: var(--emotion-excited); }
+.emotion-switcher .frustrated { color: var(--emotion-frustrated); }
+
+/* 情绪标签 */
+.emotion-tag {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 12px;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.emotion-tag.confused {
+  background: var(--emotion-confused);
+  color: white;
+}
+
+.emotion-tag.curious {
+  background: var(--emotion-curious);
+  color: white;
+}
+
+.emotion-tag.excited {
+  background: var(--emotion-excited);
+  color: white;
+}
+
+.emotion-tag.frustrated {
+  background: var(--emotion-frustrated);
+  color: white;
+}

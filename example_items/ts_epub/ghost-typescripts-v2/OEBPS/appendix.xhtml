@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>附录：幽灵维度的实用工具箱 v4.0</title>
+  <link rel="stylesheet" href="styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <div class="ghost-section">
+    <div class="emotion-indicator">实用工具箱</div>
+    <h1>附录：幽灵维度的实用工具箱</h1>
+    <div class="phantom-note">
+      幽灵观察：工具不是目的，是延伸。这些工具延伸你在类型维度中的能力。
+    </div>
+    <!-- 速查表 -->
+    <section>
+      <h2>TypeScript幽灵速查表</h2>
+      <div class="cheatsheet">
+        <div class="category">
+          <h3>基本类型</h3>
+          <table>
+            <tr><td><code>let x: number = 42;</code></td><td>数值计算</td></tr>
+            <tr><td><code>let s: string = "幽灵";</code></td><td>文本信息</td></tr>
+            <tr><td><code>let b: boolean = true;</code></td><td>真假判断</td></tr>
+            <tr><td><code>let a: any = anything;</code></td><td>放弃类型检查</td></tr>
+            <tr><td><code>let u: unknown = data;</code></td><td>明确的不确定</td></tr>
+          </table>
+        </div>
+        <div class="category">
+          <h3>数组与元组</h3>
+          <table>
+            <tr><td><code>let arr: number[] = [1, 2, 3];</code></td><td>数字数组</td></tr>
+            <tr><td><code>let tuple: [string, number];</code></td><td>固定结构元组</td></tr>
+            <tr><td><code>arr.push(4);</code></td><td>添加元素</td></tr>
+            <tr><td><code>arr.map(x =&gt; x * 2);</code></td><td>转换数组</td></tr>
+          </table>
+        </div>
+        <div class="category">
+          <h3>接口与类型别名</h3>
+          <table>
+            <tr><td><code>interface Ghost { name: string; }</code></td><td>定义契约</td></tr>
+            <tr><td><code>type GhostAlias = { name: string; };</code></td><td>类型别名</td></tr>
+            <tr><td><code>age?: number;</code></td><td>可选属性</td></tr>
+            <tr><td><code>readonly id: string;</code></td><td>只读属性</td></tr>
+          </table>
+        </div>
+        <div class="category">
+          <h3>泛型</h3>
+          <table>
+            <tr><td><code>function first&lt;T&gt;(arr: T[]): T</code></td><td>泛型函数</td></tr>
+            <tr><td><code>type Box&lt;T&gt; = { value: T };</code></td><td>泛型类型</td></tr>
+            <tr><td><code>&lt;T extends Ghost&gt;</code></td><td>泛型约束</td></tr>
+            <tr><td><code>Partial&lt;T&gt;</code></td><td>所有属性可选</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="phantom-note">
+        速查表不是记忆清单，是模式提醒。当你想到"我需要一个..."时，来这里找模式。
+      </div>
+    </section>
+    <!-- 常见错误解决方案 -->
+    <section>
+      <h2>幽灵错误解码器</h2>
+      <div class="error-solutions">
+        <div class="error">
+          <h3>错误：<code>Property 'x' is missing in type...</code></h3>
+          <p><strong>含义</strong>：接口中定义的属性，对象中没有。</p>
+          <p><strong>解决方案</strong>：添加缺失属性，或将其改为可选属性（<code>?</code>）。</p>
+          <pre><code>// 修复前
+interface Ghost { name: string; age: number; }
+const g: Ghost = { name: "卡斯珀" }; // 错误！
+// 修复后：让age可选
+interface Ghost { name: string; age?: number; }</code></pre>
+        </div>
+        <div class="error">
+          <h3>错误：<code>Type 'X' is not assignable to type 'Y'</code></h3>
+          <p><strong>含义</strong>：类型不匹配。</p>
+          <p><strong>解决方案</strong>：检查你的意图。你真的需要这个类型吗？还是应该用另一个类型？</p>
+          <pre><code>// 修复前
+let temp: number = "23.5"; // 错误！
+// 修复后：明确意图
+let temp: number = 23.5;    // 数字计算
+let tempStr: string = "23.5"; // 字符串显示</code></pre>
+        </div>
+        <div class="error">
+          <h3>错误：<code>Cannot find name 'X'</code></h3>
+          <p><strong>含义</strong>：使用了未定义的变量或类型。</p>
+          <p><strong>解决方案</strong>：检查拼写，或定义该变量/类型。</p>
+          <pre><code>// 修复前
+console.log(ghostName); // 错误：ghostName未定义
+// 修复后：先定义
+const ghostName = "卡斯珀";
+console.log(ghostName);</code></pre>
+        </div>
+        <div class="error">
+          <h3>错误：<code>Object is possibly 'undefined'</code></h3>
+          <p><strong>含义</strong>：可能访问了未定义的值。</p>
+          <p><strong>解决方案</strong>：添加检查，或使用非空断言（谨慎！）。</p>
+          <pre><code>// 修复前
+function getName(ghost?: Ghost): string {
+  return ghost.name; // 错误：ghost可能undefined
+}
+// 修复后：添加检查
+function getName(ghost?: Ghost): string {
+  if (!ghost) return "未知幽灵";
+  return ghost.name;
+}</code></pre>
+        </div>
+      </div>
+      <div class="phantom-note">
+        错误不是敌人，是老师。每个错误都在教你关于类型系统的一课。
+        记住：先读错误信息，再谷歌，最后问AI。
+      </div>
+    </section>
+    <!-- 工具资源 -->
+    <section>
+      <h2>幽灵维度工具库</h2>
+      <div class="tools">
+        <div class="tool">
+          <h3>TypeScript官方</h3>
+          <ul>
+            <li><a href="https://www.typescriptlang.org/docs/" target="_blank">官方文档</a> - 权威参考</li>
+            <li><a href="https://www.typescriptlang.org/play" target="_blank">Playground</a> - 在线实验环境</li>
+            <li><a href="https://github.com/microsoft/TypeScript" target="_blank">GitHub仓库</a> - 源代码和问题追踪</li>
+          </ul>
+        </div>
+        <div class="tool">
+          <h3>编辑器与工具</h3>
+          <ul>
+            <li><strong>VS Code</strong> - 最好的TypeScript编辑器</li>
+            <li><strong>WebStorm</strong> - JetBrains的TypeScript IDE</li>
+            <li><strong>ts-node</strong> - 直接运行TypeScript</li>
+            <li><strong>tsc</strong> - TypeScript编译器</li>
+          </ul>
+        </div>
+        <div class="tool">
+          <h3>代码质量</h3>
+          <ul>
+            <li><strong>ESLint</strong> - 代码检查</li>
+            <li><strong>Prettier</strong> - 代码格式化</li>
+            <li><strong>TypeScript ESLint</strong> - TypeScript专用规则</li>
+          </ul>
+        </div>
+        <div class="tool">
+          <h3>AI工具</h3>
+          <ul>
+            <li><strong>GitHub Copilot</strong> - 编辑器内AI助手</li>
+            <li><strong>ChatGPT/Claude/DeepSeek</strong> - 通用AI对话</li>
+            <li><strong>Cursor</strong> - AI优先的编辑器</li>
+            <li><strong>Sourcegraph Cody</strong> - 企业级AI助手</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phantom-note">
+        工具选择是个人偏好。尝试几个，找到适合你工作流的。
+        记住：最好的工具是你会用的工具。
+      </div>
+    </section>
+    <!-- AI提示词示例库 -->
+    <section>
+      <h2>AI提示词示例库</h2>
+      <p>与AI协作时，清晰的提示是关键。以下是示例：</p>
+      <div class="prompts">
+        <div class="prompt">
+          <h3>基础：描述需求</h3>
+          <blockquote>
+             "基于这个接口，请实现创建用户的函数：<br/>
+             <code>interface User { id: string; name: string; email: string; }</code>"
+          </blockquote>
+        </div>
+        <div class="prompt">
+          <h3>中级：提供上下文</h3>
+          <blockquote>
+            "这是我现有的代码，请在此基础上添加功能：<br/>
+            <code>interface Product { id: string; name: string; price: number; }&lt;br/&gt;
+            function getProducts(): Product[] { ... }</code><br/>
+            请添加根据价格筛选产品的功能。"
+          </blockquote>
+        </div>
+        <div class="prompt">
+          <h3>高级：系统设计</h3>
+          <blockquote>
+            "设计一个任务管理系统。需要这些类型：<br/>
+            - Task: id, title, description, status, assignee<br/>
+            - User: id, name, email<br/>
+            - Project: id, name, tasks<br/>
+            状态可以是：todo, in-progress, done<br/>
+            请创建完整的TypeScript类型定义，并实现基本的CRUD操作。"
+          </blockquote>
+        </div>
+        <div class="prompt">
+          <h3>错误调试</h3>
+          <blockquote>
+            "我在TypeScript中遇到这个错误：<br/>
+            <code>Type 'string' is not assignable to type 'number'.</code><br/>
+            这是我的代码：<br/>
+            <code>function calculateTotal(price: number, quantity: number): number {&lt;br/&gt;
+              return price * quantity;&lt;br/&gt;
+            }&lt;br/&gt;
+            calculateTotal("10", 2); // 错误在这里</code><br/>
+            请解释错误并修复。"
+          </blockquote>
+        </div>
+      </div>
+      <div class="phantom-note">
+        AI提示的关键：具体、有上下文、提供示例。
+        坏的提示："写代码"。好的提示："基于这个具体的接口，实现这个具体的功能。"
+      </div>
+    </section>
+    <!-- 幽灵项目骨架 -->
+    <section>
+      <h2>幽灵项目骨架</h2>
+      <p>开始新项目时的TypeScript配置模板：</p>
+      <pre><code>// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}</code></pre>
+      <pre><code>// package.json 脚本
+{
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src/**/*.ts"
+  }
+}</code></pre>
+      <div class="phantom-note">
+        项目骨架不是神圣的。根据你的需求调整。
+        但这是一个好的起点，避免从零开始配置的麻烦。
+      </div>
+    </section>
+    <!-- 最后的工具 -->
+    <section>
+      <h2>最后的工具：魔瓶的存在</h2>
+      <p>在你离开幽灵维度后，记得这个最终工具：</p>
+      <div class="final-tool">
+        <h3>魔瓶思考框架</h3>
+        <p>当面对编码问题时，问自己：</p>
+        <ol>
+          <li>我的<strong>意图</strong>是什么？（计算、信息、判断）</li>
+          <li>如何用<strong>类型</strong>表达这个意图？</li>
+          <li>这个类型应该是<strong>接口</strong>还是<strong>类型别名</strong>？</li>
+          <li>这个类型需要<strong>泛型</strong>吗？</li>
+          <li>如何向<strong>AI</strong>清晰描述这个需求？</li>
+          <li>如果遇到<strong>错误</strong>，错误信息在告诉我什么？</li>
+        </ol>
+      </div>
+      <div class="phantom-note">
+        这个框架比任何具体语法知识更有价值。
+        它让你能够解决你还没学过的问题。
+      </div>
+    </section>
+    <!-- 穿梭链接 -->
+    <nav class="ghost-passages">
+      <h3>工具箱使用指南</h3>
+      <ul>
+        <li><a href="conclusion.xhtml">回到结语：竞技场散场时刻</a></li>
+        <li><a href="entrance/index.xhtml">重新进入幽灵维度</a></li>
+        <li><a href="basement/errors/index.xhtml">深入研究错误</a></li>
+        <li><a href="toc-haunted-house.xhtml">继续鬼屋项目</a></li>
+        <li><strong>关闭工具箱，开始构建</strong></li>
+      </ul>
+    </nav>
+  </div>
+  <style>
+    .cheatsheet {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+      margin: 1.5em 0;
+    }
+    .cheatsheet .category {
+      border: 1px solid rgba(64, 224, 208, 0.2);
+      border-radius: 8px;
+      padding: 1em;
+    }
+    .cheatsheet table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .cheatsheet td {
+      padding: 0.5em;
+      border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+      font-size: 0.9em;
+    }
+    .error-solutions .error {
+      margin: 1.5em 0;
+      padding: 1em;
+      border-left: 4px solid rgba(239, 68, 68, 0.5);
+      background: rgba(239, 68, 68, 0.05);
+    }
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5em;
+      margin: 1.5em 0;
+    }
+    .tools .tool {
+      border: 1px solid rgba(64, 224, 208, 0.2);
+      border-radius: 8px;
+      padding: 1em;
+    }
+    .prompts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+      margin: 1.5em 0;
+    }
+    .prompts .prompt {
+      border: 1px solid rgba(64, 224, 208, 0.2);
+      border-radius: 8px;
+      padding: 1em;
+    }
+    .prompts blockquote {
+      margin: 0.5em 0;
+      padding: 0.5em;
+      background: rgba(64, 224, 208, 0.05);
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .final-tool {
+      background: rgba(64, 224, 208, 0.1);
+      border: 1px solid rgba(64, 224, 208, 0.3);
+      border-radius: 8px;
+      padding: 1.5em;
+      margin: 2em 0;
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <title>守夜人：编译器配置 v4.0</title>
+  <link rel="stylesheet" href="../styles/ghost-v4.css"/>
+  <script src="/scripts/ghost-environment.js"></script>
+  <script src="/scripts/ambient-environment.js"></script>
+  <script src="/scripts/quantum-content.js"></script>
+  <script src="/scripts/ghost-guide.js"></script>
+</head>
+<body>
+  <!-- 魔瓶环境设定：编译器控制室，各种开关和旋钮控制着类型检查、代码生成、模块解析等各个方面 -->
+  <div class="ghost-section">
+    <h1>守夜人：编译器配置</h1>
+    <div class="phantom-note">
+      幽灵观察：tsconfig.json是鬼屋的建筑规范，定义幽灵世界的物理法则。
+    </div>
+    <!-- 介绍 -->
+    <section>
+      <p>TypeScript编译器有200多个配置选项。这些选项控制从<strong>类型检查到代码生成</strong>的一切。</p>
+      <p>好的配置让TypeScript成为强大的助手，坏的配置让TypeScript成为烦人的绊脚石。</p>
+      <div class="phantom-note">
+        魔瓶建议：从strict: true开始，这是最重要的选项。类型安全是TypeScript的最大优势。
+      </div>
+    </section>
+    <!-- 入口 -->
+    <section>
+      <h2>编译器配置入口</h2>
+      <div class="entrance-options">
+        <div class="option">
+          <h3><a href="tsconfig-basics.xhtml">tsconfig.json基础</a></h3>
+          <p>TypeScript项目配置文件的结构和常用选项。</p>
+          <p class="hint">适合：第一次配置TypeScript项目的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="compiler-options.xhtml">编译器选项解析</a></h3>
+          <p>重要的编译器选项分类和解释。</p>
+          <p class="hint">适合：需要深入控制编译器行为的人</p>
+        </div>
+        <div class="option">
+          <h3><a href="eslint-prettier.xhtml">ESLint与Prettier：代码整洁</a></h3>
+          <p>代码质量工具链的配置和使用。</p>
+          <p class="hint">适合：需要保持代码质量和风格一致的人</p>
+        </div>
+      </div>
+    </section>
+    <!-- 配置哲学 -->
+    <section>
+      <h2>配置哲学</h2>
+      <ol>
+        <li><strong>从严格开始</strong>：strict: true应该是默认设置。</li>
+        <li><strong>逐步放宽</strong>：只在必要时放宽限制，并记录原因。</li>
+        <li><strong>一致性优先</strong>：团队项目需要一致的配置。</li>
+        <li><strong>文档化配置</strong>：在配置文件中添加注释，解释重要选项。</li>
+        <li><strong>版本控制配置</strong>：配置文件应该和代码一起版本控制。</li>
+      </ol>
+      <div class="phantom-note">
+        记住：配置是工具，不是目标。目标是写出类型安全、可维护的代码。
+      </div>
+    </section>
+    <!-- 常见配置模式 -->
+    <section>
+      <h2>常见配置模式</h2>
+      <pre><code>// 现代TypeScript项目推荐配置
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}</code></pre>
+    </section>
+    <!-- 穿梭到其他区域 -->
+    <nav class="ghost-passages">
+      <h3>穿梭到相关区域</h3>
+      <ul>
+        <li><a href="../../rooms/modules/index.xhtml">昏暗环境：模块与命名空间</a> - 模块解析配置</li>
+        <li><a href="../../toc-haunted-house.xhtml">鬼屋项目：完整实践</a> - 项目配置实践</li>
+        <li><a href="../../basement/errors/index.xhtml">错误地下室：配置相关错误</a> - 理解配置错误</li>
+        <li><a href="../../attic/ai-assistance/index.xhtml">AI辅助开发：配置AI开发环境</a> - AI工具的配置</li>
+      </ul>
+    </nav>
+    </div>
+</body>
+</html>
