@@ -1,0 +1,43 @@
+# 依赖包
+__pycache__/
+venv/
+env/
+.venv/
+
+# 日志文件
+*.log
+# 编辑器配置
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 配置文件
+.env
+.env.local
+!.env.example
+
+# 测试文件
+test_*.py
+*_test.py
+
+# 生产文件
+output/*
+!output/.gitkeep
+
+# 临时文件
+data/*
+!data/history_snapes/
+data/history_snapes/*
+!data/history_snapes/.gitkeep
+data/feedback.txt
+data/feedback_b.txt
+!data/system_info.txt
+
+world_view.txt
+prompts/reader/memerry.txt
+prompts/reader_b/memerry_b.txt
