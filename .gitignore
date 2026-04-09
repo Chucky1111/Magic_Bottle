@@ -41,3 +41,8 @@ data/feedback_b.txt
 world_view.txt
 prompts/reader/memerry.txt
 prompts/reader_b/memerry_b.txt
+
+# 用户数据
+prompts/user_idea/*
+!prompts/user_idea/completed_123.txt
+!prompts/user_idea/completed_example.txt
